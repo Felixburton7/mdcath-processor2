@@ -1,0 +1,59 @@
+input:
+  mdcath_folder: "/mnt/datasets/MD_CATH/data"  # Path to the mdCATH folder
+  domain_ids: ["1a02F00", "1a0hA01"]   # Empty means process default domain (12asA00)
+
+temperatures: [320, 348, 379, 413, 450]
+num_replicas: 5  # Number of replicas to process per temperature
+
+output:
+  base_dir: "./outputs"
+
+processing:
+  frame_selection:
+    method: "rmsd"  # Options: regular, rmsd, gyration, random
+    num_frames: 1   # Number of frames to extract per domain/temperature
+    cluster_method: "kmeans"  # For RMSD-based selection
+
+  pdb_cleaning:
+    replace_chain_0_with_A: true
+    fix_atom_numbering: true
+    correct_unusual_residue_names: true
+    add_cryst1_record: true  # Add CRYST1 record for MSMS compatibility
+    remove_hydrogens: false  # Whether to remove hydrogen atoms
+
+  ml_feature_extraction:
+    min_residues_per_domain: 0
+    max_residues_per_domain: 50000
+    normalize_features: true
+    include_secondary_structure: true
+    include_core_exterior: true
+    include_dssp: true  # Extract and include per-residue DSSP data
+
+  core_exterior:
+    method: "msms"  # Options: msms, biopython, fallback
+    msms_executable_dir: "./msms_executables"  # Path to MSMS executables
+    ses_threshold: 1.0  # Threshold for classifying residues (Å²)
+    sasa_threshold: 20.0  # Threshold for Biopython SASA (Å²)
+
+  voxelization:
+    frame_edge_length: 12.0  # Physical size of the voxel grid (Å)
+    voxels_per_side: 21  # Number of voxels along each dimension
+    atom_encoder: "CNOCBCA"  # Atom types to include (options: CNO, CNOCB, CNOCBCA)
+    encode_cb: true  # Whether to include CB atoms
+    compression_gzip: true  # Whether to compress the output files
+    voxelise_all_states: false  # Whether to voxelize all states in NMR structures
+    process_frames: true  # Whether to also voxelize frame directories
+    process_temps: [320, 348, 379, 413, 450]  # Temperatures to process for frame voxelization
+
+performance:
+  num_cores: 0  # 0 means auto-detect (use max available cores - 2)
+  batch_size: 100
+  memory_limit_gb: 0  # 0 means no limit
+  use_gpu: false  # Whether to use GPU acceleration if available
+
+logging:
+  verbose: true
+  level: "INFO"
+  console_level: "INFO"
+  file_level: "DEBUG"
+  show_progress_bars: true

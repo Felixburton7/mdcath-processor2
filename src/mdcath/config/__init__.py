@@ -1,0 +1,3 @@
+"""
+Configuration handling for mdCATH
+"""
