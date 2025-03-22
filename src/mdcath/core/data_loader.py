@@ -1,3 +1,5 @@
+
+
 #!/usr/bin/env python3
 """
 Core functionality for loading and processing H5 data from mdCATH dataset.
@@ -86,76 +88,77 @@ class H5DataLoader:
     def extract_rmsf(self, temperature: str, replica: str) -> Optional[pd.DataFrame]:
         """
         Extract RMSF data for a specific temperature and replica.
+        RMSF is per-residue, so we build a unique residue-level list
+        from the full 'resid'/'resname' arrays (which may be per-atom).
         
         Args:
             temperature: Temperature (e.g., "320")
             replica: Replica (e.g., "0")
         
         Returns:
-            DataFrame with RMSF data or None if extraction fails
+            DataFrame with columns: [domain_id, resid, resname, rmsf_{temperature}]
+            or None if extraction fails
         """
         try:
             with h5py.File(self.h5_path, 'r') as f:
                 # Check if temperature and replica exist
-                if temperature not in f[self.domain_id] or replica not in f[self.domain_id][temperature]:
+                if (temperature not in f[self.domain_id]) or (replica not in f[self.domain_id][temperature]):
                     logging.warning(f"Temperature {temperature} or replica {replica} not found for domain {self.domain_id}")
                     return None
                 
-                # Check if RMSF dataset exists
                 if 'rmsf' not in f[self.domain_id][temperature][replica]:
                     logging.warning(f"RMSF data not found for domain {self.domain_id}, temperature {temperature}, replica {replica}")
                     return None
                 
-                # Get dataset and check size
-                rmsf_dataset = f[self.domain_id][temperature][replica]['rmsf']
-                rmsf_data = rmsf_dataset[:]
-                
-                # Extract residue information
-                resid_dataset = f[self.domain_id]['resid']
-                resname_dataset = f[self.domain_id]['resname']
-                
-                resids = resid_dataset[:]
-                resnames_bytes = resname_dataset[:]
-                
-                # Decode resnames from bytes to strings
-                resnames = [name.decode('utf-8') if isinstance(name, bytes) else str(name) for name in resnames_bytes]
-                
-                # Handle dimension mismatch - RMSF is typically per residue (not per atom)
-                if len(resids) != len(rmsf_data):
-                    logging.info(f"Dimension mismatch: resids {len(resids)}, rmsf_data {len(rmsf_data)}")
-                    
-                    # Build a proper mapping between atoms and residues
-                    residue_dict = {}
-                    for i, resid in enumerate(resids):
-                        if resid not in residue_dict:
-                            residue_dict[resid] = resnames[i]
-                    
-                    # Get the unique residue IDs in order
-                    unique_resids = sorted(residue_dict.keys())
-                    unique_resnames = [residue_dict[resid] for resid in unique_resids]
-                    
-                    if len(unique_resids) == len(rmsf_data):
-                        logging.info(f"Using unique residue IDs for RMSF data alignment")
-                        # Use unique residues for RMSF data
-                        resids = unique_resids
-                        resnames = unique_resnames
-                    elif len(unique_resids) > len(rmsf_data):
-                        # If we have more unique residues than RMSF data points,
-                        # match by position in sequence
-                        logging.warning(f"More unique residues ({len(unique_resids)}) than RMSF data points ({len(rmsf_data)})")
-                        resids = unique_resids[:len(rmsf_data)]
-                        resnames = unique_resnames[:len(rmsf_data)]
-                    elif len(unique_resids) < len(rmsf_data):
-                        # If we have fewer unique residues than RMSF data points,
-                        # truncate the RMSF data
-                        logging.warning(f"Fewer unique residues ({len(unique_resids)}) than RMSF data points ({len(rmsf_data)})")
+                # RMSF data is typically length = number_of_residues
+                rmsf_data = f[self.domain_id][temperature][replica]['rmsf'][:]
+
+                # Extract the full, per-atom arrays
+                resids_all = f[self.domain_id]['resid'][:]
+                resnames_all = f[self.domain_id]['resname'][:]
+
+                # Convert bytes -> string if needed
+                resnames_all = [
+                    rn.decode("utf-8") if isinstance(rn, bytes) else str(rn)
+                    for rn in resnames_all
+                ]
+
+                # Build unique residue-level list
+                # Map resid -> resname (the first occurrence of that resid)
+                # This ensures one row per residue
+                residue_dict = {}
+                for i, resid_val in enumerate(resids_all):
+                    if resid_val not in residue_dict:
+                        residue_dict[resid_val] = resnames_all[i]
+
+                unique_resids = sorted(residue_dict.keys())
+                unique_resnames = [residue_dict[rid] for rid in unique_resids]
+
+                # Check dimension mismatch
+                if len(unique_resids) != len(rmsf_data):
+                    logging.info(
+                        f"Dimension mismatch: unique_resids {len(unique_resids)}, "
+                        f"rmsf_data {len(rmsf_data)}"
+                    )
+                    # Attempt to align by length
+                    if len(unique_resids) > len(rmsf_data):
+                        logging.warning(
+                            f"More unique residues ({len(unique_resids)}) than RMSF points ({len(rmsf_data)}) -- truncating residues"
+                        )
+                        unique_resids = unique_resids[:len(rmsf_data)]
+                        unique_resnames = unique_resnames[:len(rmsf_data)]
+                    else:
+                        logging.warning(
+                            f"Fewer unique residues ({len(unique_resids)}) than RMSF points ({len(rmsf_data)}) -- truncating RMSF"
+                        )
                         rmsf_data = rmsf_data[:len(unique_resids)]
-                    
-                # Create DataFrame
+                    logging.info("Using unique residue-level alignment for RMSF data")
+
+                # Create DataFrame with final 1:1 alignment
                 df = pd.DataFrame({
                     'domain_id': self.domain_id,
-                    'resid': resids,
-                    'resname': resnames,
+                    'resid': unique_resids,
+                    'resname': unique_resnames,
                     f'rmsf_{temperature}': rmsf_data
                 })
                 
@@ -184,93 +187,94 @@ class H5DataLoader:
     def extract_dssp(self, temperature: str, replica: str, frame: int = -1) -> Optional[pd.DataFrame]:
         """
         Extract DSSP data for a specific temperature, replica, and frame.
-
+        DSSP is per-residue, so we build a unique residue-level list
+        from the full 'resid'/'resname' arrays. Then align to DSSP codes.
+        
         Args:
             temperature: Temperature (e.g., "320")
             replica: Replica (e.g., "0")
             frame: Frame index (default: -1 for last frame)
 
         Returns:
-            DataFrame with DSSP data or None if extraction fails
+            DataFrame [domain_id, resid, resname, dssp] or None if extraction fails
         """
         try:
             with h5py.File(self.h5_path, 'r') as f:
-                # Check if temperature and replica exist
-                if temperature not in f[self.domain_id] or replica not in f[self.domain_id][temperature]:
+                if (temperature not in f[self.domain_id]) or (replica not in f[self.domain_id][temperature]):
                     logging.warning(f"Temperature {temperature} or replica {replica} not found for domain {self.domain_id}")
                     return None
 
-                # Check if DSSP dataset exists
                 if 'dssp' not in f[self.domain_id][temperature][replica]:
                     logging.warning(f"DSSP data not found for domain {self.domain_id}, temperature {temperature}, replica {replica}")
                     return None
                     
-                # Extract DSSP data
                 dssp_dataset = f[self.domain_id][temperature][replica]['dssp']
-                
-                # Handle the case where frame is out of bounds
+
+                # Number of frames
                 num_frames = dssp_dataset.shape[0] if len(dssp_dataset.shape) > 0 else 0
                 if num_frames == 0:
                     logging.warning(f"Empty DSSP dataset for domain {self.domain_id}, temperature {temperature}, replica {replica}")
                     return None
-                    
+
+                # Convert negative frame index
                 if frame < 0:
-                    # Convert negative indices to positive
                     frame = num_frames + frame
-                    
                 if frame < 0 or frame >= num_frames:
-                    logging.warning(f"Frame index {frame} out of bounds (0-{num_frames-1}) for domain {self.domain_id}")
-                    frame = min(max(0, frame), num_frames - 1)  # Clamp to valid range
-                    
+                    logging.warning(f"Frame index {frame} out of bounds (0-{num_frames-1}) for {self.domain_id}")
+                    frame = max(0, min(frame, num_frames-1))  # clamp
+
                 dssp_data = dssp_dataset[frame]
 
-                # Extract residue information
-                resids = f[self.domain_id]['resid'][:]
-                resnames = [name.decode('utf-8') if isinstance(name, bytes) else str(name) for name in f[self.domain_id]['resname'][:]]
+                # Full, per-atom arrays
+                resids_all = f[self.domain_id]['resid'][:]
+                resnames_all = f[self.domain_id]['resname'][:]
+                resnames_all = [
+                    rn.decode("utf-8") if isinstance(rn, bytes) else str(rn)
+                    for rn in resnames_all
+                ]
 
-                # Decode DSSP codes
-                dssp_codes = [code.decode('utf-8') if isinstance(code, bytes) else str(code) for code in dssp_data]
+                # Build unique residue-level list
+                residue_dict = {}
+                for i, resid_val in enumerate(resids_all):
+                    if resid_val not in residue_dict:
+                        residue_dict[resid_val] = resnames_all[i]
 
-                # Handle dimension mismatch - DSSP is per residue, not per atom
-                if len(resids) != len(dssp_codes):
-                    logging.info(f"Dimension mismatch in DSSP: resids {len(resids)}, dssp_codes {len(dssp_codes)}")
-                    
-                    # Build a proper mapping between atoms and residues
-                    residue_dict = {}
-                    for i, resid in enumerate(resids):
-                        if resid not in residue_dict:
-                            residue_dict[resid] = resnames[i]
-                    
-                    # Get the unique residue IDs in order
-                    unique_resids = sorted(residue_dict.keys())
-                    unique_resnames = [residue_dict[resid] for resid in unique_resids]
-                    
-                    if len(unique_resids) == len(dssp_codes):
-                        logging.info(f"Using unique residue IDs for DSSP data alignment")
-                        # Use unique residues for DSSP data
-                        resids = unique_resids
-                        resnames = unique_resnames
-                    elif len(unique_resids) > len(dssp_codes):
-                        # If we have more unique residues than DSSP data points, 
-                        # match by position in sequence
-                        logging.warning(f"More unique residues ({len(unique_resids)}) than DSSP data points ({len(dssp_codes)})")
-                        resids = unique_resids[:len(dssp_codes)]
-                        resnames = unique_resnames[:len(dssp_codes)]
-                    elif len(unique_resids) < len(dssp_codes):
-                        # If we have fewer unique residues than DSSP data points,
-                        # truncate the DSSP data
-                        logging.warning(f"Fewer unique residues ({len(unique_resids)}) than DSSP data points ({len(dssp_codes)})")
+                unique_resids = sorted(residue_dict.keys())
+                unique_resnames = [residue_dict[rid] for rid in unique_resids]
+
+                # DSSP codes might already be length = # of residues
+                dssp_codes = [
+                    c.decode("utf-8") if isinstance(c, bytes) else str(c)
+                    for c in dssp_data
+                ]
+
+                if len(unique_resids) != len(dssp_codes):
+                    logging.info(
+                        f"Dimension mismatch in DSSP: unique_resids {len(unique_resids)}, dssp_codes {len(dssp_codes)}"
+                    )
+                    if len(unique_resids) > len(dssp_codes):
+                        logging.warning(
+                            f"More unique residues ({len(unique_resids)}) than DSSP codes ({len(dssp_codes)}) -- truncating residues"
+                        )
+                        unique_resids = unique_resids[:len(dssp_codes)]
+                        unique_resnames = unique_resnames[:len(dssp_codes)]
+                    else:
+                        logging.warning(
+                            f"Fewer unique residues ({len(unique_resids)}) than DSSP codes ({len(dssp_codes)}) -- truncating DSSP codes"
+                        )
                         dssp_codes = dssp_codes[:len(unique_resids)]
+                    logging.info("Using unique residue-level alignment for DSSP data")
 
-                # Create DataFrame
+                # Create final DataFrame
                 df = pd.DataFrame({
                     'domain_id': self.domain_id,
-                    'resid': resids,
-                    'resname': resnames,
+                    'resid': unique_resids,
+                    'resname': unique_resnames,
                     'dssp': dssp_codes
                 })
 
                 return df
+
         except Exception as e:
             logging.error(f"Failed to extract DSSP data: {e}")
             return None
@@ -285,80 +289,70 @@ class H5DataLoader:
             frame: Frame index (default: -1 for last frame)
 
         Returns:
-            Tuple of (coordinates, residue IDs, residue names) or None if extraction fails
+            Tuple of (coords, resids, resnames) where coords shape is (n_atoms, 3),
+            or None if extraction fails.
         """
         try:
             with h5py.File(self.h5_path, 'r') as f:
-                # Check if temperature and replica exist
-                if temperature not in f[self.domain_id] or replica not in f[self.domain_id][temperature]:
+                if (temperature not in f[self.domain_id]) or (replica not in f[self.domain_id][temperature]):
                     logging.warning(f"Temperature {temperature} or replica {replica} not found for domain {self.domain_id}")
                     return None
 
-                # Extract coordinate data for specified frame
                 if 'coords' not in f[self.domain_id][temperature][replica]:
                     logging.warning(f"Coordinate data not found for domain {self.domain_id}, temperature {temperature}, replica {replica}")
                     return None
-                    
+
                 coords_dataset = f[self.domain_id][temperature][replica]['coords']
-                
-                # Handle the case where frame is out of bounds
-                num_frames = coords_dataset.shape[0] if len(coords_dataset.shape) > 0 else 0
+                num_frames = coords_dataset.shape[0] if coords_dataset.ndim > 0 else 0
                 if num_frames == 0:
-                    logging.warning(f"Empty coordinates dataset for domain {self.domain_id}, temperature {temperature}, replica {replica}")
+                    logging.warning(f"Empty coords dataset for domain {self.domain_id}, temperature {temperature}, replica {replica}")
                     return None
-                
+
+                # Convert negative frame index
                 if frame < 0:
-                    # Convert negative indices to positive
                     frame = num_frames + frame
-                    
                 if frame < 0 or frame >= num_frames:
                     logging.warning(f"Frame index {frame} out of bounds (0-{num_frames-1}) for domain {self.domain_id}")
-                    frame = min(max(0, frame), num_frames - 1)  # Clamp to valid range
-                
-                # Extract the full coordinate array for the specified frame
-                # coords should have shape (num_atoms, 3)
-                coords = coords_dataset[frame]
-                
-                # Check correct shape - should be 2D with second dimension of 3
+                    frame = max(0, min(frame, num_frames - 1))
+
+                coords = coords_dataset[frame]  # shape (n_atoms, 3)
                 if coords.ndim != 2 or coords.shape[1] != 3:
                     logging.error(f"Unexpected coordinate shape: {coords.shape} for domain {self.domain_id}")
                     return None
 
-                # Extract residue information
-                resids = f[self.domain_id]['resid'][:].tolist()
-                resnames = [name.decode('utf-8') if isinstance(name, bytes) else str(name) for name in f[self.domain_id]['resname'][:]]
+                resids_all = f[self.domain_id]['resid'][:].tolist()
+                resnames_all = f[self.domain_id]['resname'][:]
+                resnames_all = [
+                    rn.decode("utf-8") if isinstance(rn, bytes) else str(rn)
+                    for rn in resnames_all
+                ]
 
-                # Verify we have correct number of atoms
-                if len(resids) != coords.shape[0]:
-                    logging.warning(f"Mismatch between residue IDs ({len(resids)}) and coordinates ({coords.shape[0]})")
-                    # Truncate to the smaller size if needed
-                    min_size = min(len(resids), coords.shape[0])
-                    resids = resids[:min_size]
-                    resnames = resnames[:min_size]
+                # Check shape alignment
+                if len(resids_all) != coords.shape[0]:
+                    logging.warning(
+                        f"Mismatch between residue IDs ({len(resids_all)}) and coords ({coords.shape[0]})"
+                    )
+                    min_size = min(len(resids_all), coords.shape[0])
+                    resids_all = resids_all[:min_size]
+                    resnames_all = resnames_all[:min_size]
                     coords = coords[:min_size]
 
-                return coords, resids, resnames
+                return coords, resids_all, resnames_all
+
         except Exception as e:
             logging.error(f"Failed to extract coordinate data: {e}")
             import traceback
             logging.error(traceback.format_exc())
             return None
 
+
 def process_domains(domain_ids: List[str], data_dir: str, config: Dict[str, Any],
                     num_cores: int = 1) -> Dict[str, Any]:
     """
     Process multiple domains in parallel.
-
-    Args:
-        domain_ids: List of domain IDs to process
-        data_dir: Directory containing H5 files
-        config: Configuration dictionary
-        num_cores: Number of CPU cores to use
-
-    Returns:
-        Dictionary with processing results
     """
-    # Determine number of cores to use
+    from concurrent.futures import ProcessPoolExecutor, as_completed
+
     max_cores = os.cpu_count() - 2 if os.cpu_count() > 2 else 1
     n_cores = min(num_cores if num_cores > 0 else max_cores, max_cores)
 
@@ -388,20 +382,13 @@ def process_domains(domain_ids: List[str], data_dir: str, config: Dict[str, Any]
 def _process_single_domain(h5_path: str, config: Dict[str, Any]) -> Dict[str, Any]:
     """
     Process a single domain (helper function for parallel processing).
-
-    Args:
-        h5_path: Path to H5 file
-        config: Configuration dictionary
-
-    Returns:
-        Dictionary with processing results
     """
     loader = H5DataLoader(h5_path, config)
     domain_id = loader.domain_id
 
     results = {"domain_id": domain_id, "success": False}
 
-    # Extract RMSF data for all temperatures and replicas
+    # Extract RMSF data
     temps = [str(t) for t in config.get("temperatures", [320, 348, 379, 413, 450])]
     num_replicas = config.get("num_replicas", 5)
 
@@ -410,10 +397,9 @@ def _process_single_domain(h5_path: str, config: Dict[str, Any]) -> Dict[str, An
         rmsf_data[temp] = {}
         for r in range(num_replicas):
             replica = str(r)
-            df = loader.extract_rmsf(temp, replica)
-            if df is not None:
-                rmsf_data[temp][replica] = df
-
+            df_rmsf = loader.extract_rmsf(temp, replica)
+            if df_rmsf is not None:
+                rmsf_data[temp][replica] = df_rmsf
     results["rmsf_data"] = rmsf_data
 
     # Extract PDB data
@@ -427,11 +413,10 @@ def _process_single_domain(h5_path: str, config: Dict[str, Any]) -> Dict[str, An
         dssp_data[temp] = {}
         for r in range(num_replicas):
             replica = str(r)
-            df = loader.extract_dssp(temp, replica)
-            if df is not None:
-                dssp_data[temp][replica] = df
-
+            df_dssp = loader.extract_dssp(temp, replica)
+            if df_dssp is not None:
+                dssp_data[temp][replica] = df_dssp
     results["dssp_data"] = dssp_data
-    results["success"] = True
 
+    results["success"] = True
     return results

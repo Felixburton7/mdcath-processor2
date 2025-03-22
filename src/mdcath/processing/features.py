@@ -1,3 +1,5 @@
+
+
 #!/usr/bin/env python3
 """
 Processing module for generating ML features.
@@ -5,18 +7,21 @@ Processing module for generating ML features.
 
 import os
 import logging
+import shutil  # <-- Added to fix "name 'shutil' is not defined" DSSP fallback error
 import numpy as np
 import pandas as pd
 from typing import Dict, Any, Optional, List, Tuple, Union
 from tqdm import tqdm
+
 from src.mdcath.processing.core_exterior import compute_core_exterior
 
+
 def generate_ml_features(rmsf_data: Dict[str, pd.DataFrame],
-                       core_exterior_data: Dict[str, pd.DataFrame],
-                       dssp_data: Dict[str, Dict[str, pd.DataFrame]],
-                       config: Dict[str, Any]) -> Dict[str, pd.DataFrame]:
+                         core_exterior_data: Dict[str, pd.DataFrame],
+                         dssp_data: Dict[str, Dict[str, pd.DataFrame]],
+                         config: Dict[str, Any]) -> Dict[str, pd.DataFrame]:
     """
-    Generate ML features for all domains.
+    Generate ML features for all domains with improved handling of missing values.
     """
     try:
         # Get list of all domains
@@ -42,150 +47,175 @@ def generate_ml_features(rmsf_data: Dict[str, pd.DataFrame],
             # Ensure RMSF column is numeric
             rmsf_col = f"rmsf_{temp}"
             if rmsf_col in df.columns:
-                # Convert to numeric, coerce errors to NaN
-                df[rmsf_col] = pd.to_numeric(df[rmsf_col], errors='coerce')
-                # Fill NaN values with 0
-                df[rmsf_col] = df[rmsf_col].fillna(0.0)
+                df[rmsf_col] = pd.to_numeric(df[rmsf_col], errors='coerce').fillna(0.0)
 
-            # Add protein size
+            # Add protein size (number of residues for each domain)
             df["protein_size"] = df.groupby("domain_id")["resid"].transform("count")
 
-            # Add normalized residue position - handle potential division by zero
+            # Add normalized residue position
             df["normalized_resid"] = df.groupby("domain_id")["resid"].transform(
                 lambda x: (x - x.min()) / max(x.max() - x.min(), 1)
             )
 
-            # Add core/exterior classification
+            # Create core_exterior column with default value
+            if "core_exterior" not in df.columns:
+                df["core_exterior"] = "core"  # Default to core (more conservative)
+                
+            # Create empty columns for missing data with default values
+            if "relative_accessibility" not in df.columns:
+                df["relative_accessibility"] = 0.5  # Default to moderate accessibility
+
+            if "dssp" not in df.columns:
+                df["dssp"] = "C"  # Default to coil
+
+            # ---------------------------
+            # MERGE CORE/EXTERIOR DATA
+            # ---------------------------
             for domain_id in df["domain_id"].unique():
                 if domain_id in core_exterior_data:
                     core_ext_df = core_exterior_data[domain_id]
-
-                    # Merge core/exterior data
+                    
+                    # Use regular merge to avoid dimension mismatch
+                    domain_df = df[df["domain_id"] == domain_id][["domain_id", "resid"]].copy()
+                    merged = pd.merge(domain_df, core_ext_df, on="resid", how="left")
+                    
+                    # Create mappings from resid to values
+                    ce_mapping = dict(zip(merged["resid"], merged["core_exterior"]))
+                    
+                    # Apply the mapping to the original dataframe
                     domain_mask = df["domain_id"] == domain_id
-                    df_domain = df[domain_mask].copy()
+                    df.loc[domain_mask, "core_exterior"] = df.loc[domain_mask, "resid"].map(ce_mapping).fillna("core")
+                    
+                    # If core_exterior_data contains relative_accessibility, use it
+                    if "relative_accessibility" in core_ext_df.columns:
+                        ra_mapping = dict(zip(core_ext_df["resid"], core_ext_df["relative_accessibility"]))
+                        df.loc[domain_mask, "relative_accessibility"] = df.loc[domain_mask, "resid"].map(ra_mapping).fillna(0.5)
 
-                    # Reset index for proper merging
-                    df_domain = df_domain.reset_index(drop=True)
-                    df_domain = pd.merge(df_domain, core_ext_df, on="resid", how="left")
+            # Ensure no missing values in core_exterior
+            df["core_exterior"] = df["core_exterior"].fillna("core")
 
-                    # Update the main dataframe
-                    df.loc[domain_mask] = df_domain
+            # ---------------------------
+            # ADD DSSP DATA
+            # ---------------------------
+            if temp in dssp_data:
+                for replica, replica_dssp in dssp_data[temp].items():
+                    if not replica_dssp.empty:
+                        for domain_id in df["domain_id"].unique():
+                            domain_dssp = replica_dssp[replica_dssp["domain_id"] == domain_id]
+                            if not domain_dssp.empty:
+                                # Convert resid to numeric carefully
+                                domain_dssp.loc[:, "resid"] = pd.to_numeric(domain_dssp["resid"], errors='coerce')
+                                
+                                # Create mappings
+                                dssp_mapping = dict(zip(domain_dssp["resid"], domain_dssp["dssp"]))
+                                
+                                # Apply mappings
+                                domain_mask = df["domain_id"] == domain_id
+                                df.loc[domain_mask, "dssp"] = df.loc[domain_mask, "resid"].map(dssp_mapping).fillna("C")
+                                
+                                # If relative_accessibility is present, use it
+                                if "relative_accessibility" in domain_dssp.columns:
+                                    ra_mapping = dict(zip(domain_dssp["resid"], domain_dssp["relative_accessibility"]))
+                                    df.loc[domain_mask, "relative_accessibility"] = df.loc[domain_mask, "resid"].map(ra_mapping).fillna(0.5)
+                                
+                                # Break after first valid replica with data for this domain
+                                break
 
-            # Fill missing core/exterior values with 'unknown'
-            if "core_exterior" in df.columns:
-                df["core_exterior"] = df["core_exterior"].fillna("unknown")
-            else:
-                df["core_exterior"] = "unknown"
+            # Ensure no empty strings in DSSP
+            df["dssp"] = df["dssp"].replace("", "C").replace(" ", "C").fillna("C")
+            
+            # Ensure relative_accessibility is numeric and not empty
+            df["relative_accessibility"] = pd.to_numeric(df["relative_accessibility"], errors='coerce').fillna(0.5)
 
-            # Add DSSP data
-            if temp in dssp_data and "0" in dssp_data[temp]:
-                for domain_id in df["domain_id"].unique():
-                    domain_dssp = None
+            # ---------------------------
+            # ENCODE CATEGORICAL VARIABLES
+            # ---------------------------
+            # 1) Resname encoding: ensure all are strings
+            if "resname" not in df.columns:
+                # If resname is missing, create a placeholder
+                df["resname"] = "UNK"
 
-                    # Find DSSP data for this domain
-                    for replica, dssp_df in dssp_data[temp].items():
-                        domain_dssp_subset = dssp_df[dssp_df["domain_id"] == domain_id]
-                        if not domain_dssp_subset.empty:
-                            domain_dssp = domain_dssp_subset[["resid", "dssp"]]
-                            break
+            # Convert to string and remove invalid placeholders
+            df["resname"] = df["resname"].astype(str)
+            filtered_resnames = [r for r in df["resname"].unique() if r not in ["nan", "None", ""]]
+            unique_resnames = sorted(filtered_resnames)
 
-                    if domain_dssp is not None:
-                        # Ensure resid is numeric in both dataframes
-                        domain_dssp["resid"] = pd.to_numeric(domain_dssp["resid"], errors='coerce')
-                        df_domain = df[df["domain_id"] == domain_id].copy()
-                        df_domain["resid"] = pd.to_numeric(df_domain["resid"], errors='coerce')
-                        
-                        # Merge DSSP data
-                        df_domain = df_domain.reset_index(drop=True)
-                        df_domain = pd.merge(df_domain, domain_dssp, on="resid", how="left")
+            # Build mapping
+            resname_mapping = {name: i+1 for i, name in enumerate(unique_resnames)}  # Start at 1
+            df["resname_encoded"] = df["resname"].map(resname_mapping).fillna(0).astype(int)
 
-                        # Update the main dataframe
-                        df.loc[df["domain_id"] == domain_id] = df_domain
+            # 2) Core/Exterior encoding
+            core_ext_mapping = {"core": 0, "exterior": 1, "unknown": 2}
+            df["core_exterior_encoded"] = df["core_exterior"].map(core_ext_mapping).fillna(0).astype(int)
 
-            # Fill missing DSSP values with 'C' (coil)
-            if "dssp" in df.columns:
-                df["dssp"] = df["dssp"].fillna("C")
-            else:
-                df["dssp"] = "C"
-
-            # Encode categorical variables
-            # Resname encoding
-            unique_resnames = df["resname"].unique()
-            resname_mapping = {name: i for i, name in enumerate(sorted(unique_resnames))}
-            df["resname_encoded"] = df["resname"].map(resname_mapping)
-
-            # Core/exterior encoding
-            core_ext_mapping = {"core": 1, "exterior": 2, "unknown": 0}
-            df["core_exterior_encoded"] = df["core_exterior"].map(core_ext_mapping)
-
-            # Secondary structure encoding
-            # Simplified 3-state encoding: Helix (H,G,I), Sheet (E,B), Coil (others)
+            # 3) DSSP encoding (3-state secondary structure)
             def encode_ss(ss):
                 if ss in ["H", "G", "I"]:
                     return 0  # Helix
                 elif ss in ["E", "B"]:
                     return 1  # Sheet
                 else:
-                    return 2  # Coil
+                    return 2  # Coil, Loop, or other
 
             df["secondary_structure_encoded"] = df["dssp"].apply(encode_ss)
 
-            # Add dummy relative accessibility (placeholder for more advanced calculation)
-            df["relative_accessibility"] = 1.0
-
             # Reorder columns to put domain_id first
             cols = df.columns.tolist()
-            cols.remove("domain_id")
-            cols = ["domain_id"] + cols
-            df = df[cols]
+            if "domain_id" in cols:
+                cols.remove("domain_id")
+                df = df[["domain_id"] + cols]
+
+            # Final validation - ensure no NaN or empty values
+            for col in df.columns:
+                if df[col].dtype == 'object':
+                    # For string columns, fill empty strings and NaNs with appropriate defaults
+                    if col == 'dssp':
+                        df[col] = df[col].replace('', 'C').replace(' ', 'C').fillna('C')
+                    elif col == 'core_exterior':
+                        df[col] = df[col].replace('', 'core').fillna('core')
+                    elif col == 'resname':
+                        df[col] = df[col].replace('', 'UNK').fillna('UNK')
+                    else:
+                        df[col] = df[col].fillna('unknown')
+                else:
+                    # For numeric columns, fill NaNs with appropriate defaults
+                    if col == 'relative_accessibility':
+                        df[col] = df[col].fillna(0.5)
+                    else:
+                        df[col] = df[col].fillna(0)
 
             # Store the feature dataframe
             feature_dfs[temp] = df
 
-        # Calculate average features
+        # --------------------------------
+        # CALCULATE AVERAGE FEATURES ACROSS TEMPS
+        # --------------------------------
         if temps:
-            # Start with a copy of the first temperature's features
-            avg_df = feature_dfs[temps[0]].copy()
+            avg_df = feature_dfs[temps[0]].copy(deep=True)
 
-            # Collect RMSF columns
+            # Calculate average RMSF across temperatures
             rmsf_cols = [f"rmsf_{temp}" for temp in temps]
-            rmsf_vals = []
-
-            for temp in temps:
-                if temp in feature_dfs and f"rmsf_{temp}" in feature_dfs[temp].columns:
-                    temp_df = feature_dfs[temp]
-                    # Extract the domain, resid, and RMSF columns
-                    temp_subset = temp_df[["domain_id", "resid", f"rmsf_{temp}"]].copy()
-                    
-                    # Ensure all RMSF values are numeric
-                    temp_subset[f"rmsf_{temp}"] = pd.to_numeric(temp_subset[f"rmsf_{temp}"], errors='coerce').fillna(0.0)
-                    
-                    rmsf_vals.append(temp_subset)
-
-            # Merge all RMSF values
-            if rmsf_vals:
-                merged_df = rmsf_vals[0]
-                for i in range(1, len(rmsf_vals)):
-                    merged_df = pd.merge(merged_df, rmsf_vals[i], on=["domain_id", "resid"])
-
-                # Calculate average RMSF
-                merged_df["rmsf_average"] = merged_df[[f"rmsf_{temp}" for temp in temps]].mean(axis=1)
-
-                # Replace the RMSF columns in the average dataframe
-                avg_df = pd.merge(avg_df.drop(rmsf_cols, axis=1, errors="ignore"),
-                                merged_df[["domain_id", "resid", "rmsf_average"]],
-                                on=["domain_id", "resid"])
+            if all(col in avg_df.columns for col in rmsf_cols):
+                avg_df["rmsf_average"] = avg_df[rmsf_cols].mean(axis=1)
+            else:
+                # If missing some temperature data
+                available_cols = [col for col in rmsf_cols if col in avg_df.columns]
+                if available_cols:
+                    avg_df["rmsf_average"] = avg_df[available_cols].mean(axis=1)
+                else:
+                    # No RMSF data available
+                    avg_df["rmsf_average"] = 0.0
 
             feature_dfs["average"] = avg_df
 
         return feature_dfs
+
     except Exception as e:
         logging.error(f"Failed to generate ML features: {e}")
-        # Print the traceback for better debugging
         import traceback
         logging.error(traceback.format_exc())
         return {}
-
+    
 def save_ml_features(feature_dfs: Dict[str, pd.DataFrame], output_dir: str) -> bool:
     """
     Save ML features to CSV files.
@@ -198,10 +228,8 @@ def save_ml_features(feature_dfs: Dict[str, pd.DataFrame], output_dir: str) -> b
         Boolean indicating if saving was successful
     """
     try:
-        # Create output directory
         os.makedirs(output_dir, exist_ok=True)
 
-        # Save each feature dataframe
         for temp, df in feature_dfs.items():
             if temp == "average":
                 output_file = os.path.join(output_dir, "final_dataset_temperature_average.csv")
@@ -215,79 +243,66 @@ def save_ml_features(feature_dfs: Dict[str, pd.DataFrame], output_dir: str) -> b
     except Exception as e:
         logging.error(f"Failed to save ML features: {e}")
         return False
+
+
 def process_ml_features(rmsf_results: Dict[str, Any],
-                       pdb_results: Dict[str, Any],
-                       domain_results: Dict[str, Dict[str, Any]],
-                       config: Dict[str, Any]) -> Dict[str, Any]:
+                        pdb_results: Dict[str, Any],
+                        domain_results: Dict[str, Dict[str, Any]],
+                        config: Dict[str, Any]) -> Dict[str, Any]:
     """
     Process ML features for all domains.
-    
-    Args:
-        rmsf_results: Dictionary with RMSF processing results
-        pdb_results: Dictionary with PDB processing results
-        domain_results: Dictionary with processing results for all domains
-        config: Configuration dictionary
-    
-    Returns:
-        Dictionary with ML feature processing results
     """
-    
-    
     output_dir = config.get("output", {}).get("base_dir", "./outputs")
-    
+
     # Extract RMSF data
     replica_averages = rmsf_results.get("replica_averages", {})
     temperature_average = rmsf_results.get("temperature_average")
-    
+
     if not replica_averages:
         logging.error("No RMSF data available for ML feature generation")
         return {"success": False, "error": "No RMSF data available"}
-    
+
     # Create dictionary with all RMSF data
     rmsf_data = replica_averages.copy()
     if temperature_average is not None:
         rmsf_data["average"] = temperature_average
-    
-    # Extract core/exterior data
+
+    # Compute core/exterior data
     core_exterior_data = {}
-    
-    # Compute core/exterior classification for each domain
     logging.info("Computing core/exterior classification for domains")
     for domain_id, result in tqdm(pdb_results.items(), desc="Core/exterior classification"):
         if not result.get("pdb_saved", False):
             continue
-        
+
         pdb_path = result.get("pdb_path")
         if not pdb_path or not os.path.exists(pdb_path):
             logging.warning(f"PDB file not found for domain {domain_id}")
             continue
-        
+
         core_ext_df = compute_core_exterior(pdb_path, config)
         if core_ext_df is not None:
             core_exterior_data[domain_id] = core_ext_df
-    
+
     # Collect DSSP data
     dssp_data = {}
     temps = [str(t) for t in config.get("temperatures", [320, 348, 379, 413, 450])]
-    
+
     logging.info("Collecting DSSP data")
     for domain_id, result in tqdm(domain_results.items(), desc="Processing DSSP data"):
         if not result.get("success", False):
             continue
-        
-        # Extract DSSP data
+
         domain_dssp = result.get("dssp_data", {})
         for temp in temps:
             if temp in domain_dssp:
                 if temp not in dssp_data:
                     dssp_data[temp] = {}
-                
+
                 for replica, df in domain_dssp[temp].items():
                     if replica not in dssp_data[temp]:
                         dssp_data[temp][replica] = []
-                    
                     dssp_data[temp][replica].append(df)
-    
+
     # Concatenate DSSP dataframes
     logging.info("Concatenating DSSP data")
     for temp in temps:
@@ -295,19 +310,19 @@ def process_ml_features(rmsf_results: Dict[str, Any],
             for replica in dssp_data[temp]:
                 if dssp_data[temp][replica]:
                     dssp_data[temp][replica] = pd.concat(dssp_data[temp][replica], ignore_index=True)
-    
-    # Generate and save ML features
+
+    # Generate ML features
     logging.info("Generating ML features")
     feature_dfs = generate_ml_features(rmsf_data, core_exterior_data, dssp_data, config)
-    
+
     if not feature_dfs:
         logging.error("Failed to generate ML features")
         return {"success": False, "error": "Feature generation failed"}
-    
+
     # Save ML features
     ml_dir = os.path.join(output_dir, "ML_features")
     save_success = save_ml_features(feature_dfs, ml_dir)
-    
+
     return {
         "success": save_success,
         "feature_dfs": feature_dfs,

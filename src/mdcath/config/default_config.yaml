@@ -1,6 +1,6 @@
 input:
   mdcath_folder: "/mnt/datasets/MD_CATH/data"  # Path to the mdCATH folder
-  domain_ids: ["1a02F00", "1a0hA01"]   # Empty means process default domain (12asA00)
+  domain_ids: ["1a02F00", "1a0aA00"]   # Empty means process default domain (12asA00)
 
 temperatures: [320, 348, 379, 413, 450]
 num_replicas: 5  # Number of replicas to process per temperature
@@ -20,6 +20,9 @@ processing:
     correct_unusual_residue_names: true
     add_cryst1_record: true  # Add CRYST1 record for MSMS compatibility
     remove_hydrogens: false  # Whether to remove hydrogen atoms
+    remove_solvent_ions: true   # If set to true, skip TIP, HOH, SOD, CLA, chain 'W'
+    stop_after_ter: true #Stop cleaning after the first TER (this is only if later you wanted to use solvent ions for any reason)
+
 
   ml_feature_extraction:
     min_residues_per_domain: 0
@@ -42,14 +45,14 @@ processing:
     encode_cb: true  # Whether to include CB atoms
     compression_gzip: true  # Whether to compress the output files
     voxelise_all_states: false  # Whether to voxelize all states in NMR structures
-    process_frames: true  # Whether to also voxelize frame directories
+    process_frames: false  # Whether to also voxelize frame directories
     process_temps: [320, 348, 379, 413, 450]  # Temperatures to process for frame voxelization
 
 performance:
   num_cores: 0  # 0 means auto-detect (use max available cores - 2)
   batch_size: 100
   memory_limit_gb: 0  # 0 means no limit
-  use_gpu: false  # Whether to use GPU acceleration if available
+  use_gpu: true  # Whether to use GPU acceleration if available
 
 logging:
   verbose: true

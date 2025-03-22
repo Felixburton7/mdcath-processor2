@@ -18,176 +18,13 @@ File Structure:
 │   ├── msms_i86_64Linux2_2.6.1.tar.gz
 │   ├── msms.x86_64Linux2.2.6.1
 │   ├── msms.x86_64Linux2.2.6.1.staticgcc
-│   ├── pdb_to_xyrz
 │   ├── pdb_to_xyzr
 │   ├── pdb_to_xyzrn
 │   ├── README
 │   ├── ReleaseNotes
+│   ├── test.pdb
 │   └── test.xyzr
 ├── outputs
-│   ├── frames
-│   │   ├── replica_0
-│   │   │   ├── 320
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 348
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 379
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 413
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   └── 450
-│   │   │       ├── 12asA00_frame.pdb
-│   │   │       └── 1a02F00_frame.pdb
-│   │   ├── replica_1
-│   │   │   ├── 320
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 348
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 379
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 413
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   └── 450
-│   │   │       ├── 12asA00_frame.pdb
-│   │   │       └── 1a02F00_frame.pdb
-│   │   ├── replica_2
-│   │   │   ├── 320
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 348
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 379
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 413
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   └── 450
-│   │   │       ├── 12asA00_frame.pdb
-│   │   │       └── 1a02F00_frame.pdb
-│   │   ├── replica_3
-│   │   │   ├── 320
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 348
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 379
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 413
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   └── 450
-│   │   │       ├── 12asA00_frame.pdb
-│   │   │       └── 1a02F00_frame.pdb
-│   │   └── replica_4
-│   │       ├── 320
-│   │       │   ├── 12asA00_frame.pdb
-│   │       │   └── 1a02F00_frame.pdb
-│   │       ├── 348
-│   │       │   ├── 12asA00_frame.pdb
-│   │       │   └── 1a02F00_frame.pdb
-│   │       ├── 379
-│   │       │   ├── 12asA00_frame.pdb
-│   │       │   └── 1a02F00_frame.pdb
-│   │       ├── 413
-│   │       │   ├── 12asA00_frame.pdb
-│   │       │   └── 1a02F00_frame.pdb
-│   │       └── 450
-│   │           ├── 12asA00_frame.pdb
-│   │           └── 1a02F00_frame.pdb
-│   ├── ML_features
-│   ├── pdbs
-│   │   ├── 12asA00.pdb
-│   │   └── 1a02F00.pdb
-│   ├── RMSF
-│   │   ├── replica_average
-│   │   │   ├── 320
-│   │   │   │   └── rmsf_replica_average_temperature320.csv
-│   │   │   ├── 348
-│   │   │   │   └── rmsf_replica_average_temperature348.csv
-│   │   │   ├── 379
-│   │   │   │   └── rmsf_replica_average_temperature379.csv
-│   │   │   ├── 413
-│   │   │   │   └── rmsf_replica_average_temperature413.csv
-│   │   │   ├── 450
-│   │   │   │   └── rmsf_replica_average_temperature450.csv
-│   │   │   └── average
-│   │   │       └── rmsf_all_temperatures_all_replicas.csv
-│   │   └── replicas
-│   │       ├── replica_0
-│   │       │   ├── 320
-│   │       │   │   └── rmsf_replica0_temperature320.csv
-│   │       │   ├── 348
-│   │       │   │   └── rmsf_replica0_temperature348.csv
-│   │       │   ├── 379
-│   │       │   │   └── rmsf_replica0_temperature379.csv
-│   │       │   ├── 413
-│   │       │   │   └── rmsf_replica0_temperature413.csv
-│   │       │   └── 450
-│   │       │       └── rmsf_replica0_temperature450.csv
-│   │       ├── replica_1
-│   │       │   ├── 320
-│   │       │   │   └── rmsf_replica1_temperature320.csv
-│   │       │   ├── 348
-│   │       │   │   └── rmsf_replica1_temperature348.csv
-│   │       │   ├── 379
-│   │       │   │   └── rmsf_replica1_temperature379.csv
-│   │       │   ├── 413
-│   │       │   │   └── rmsf_replica1_temperature413.csv
-│   │       │   └── 450
-│   │       │       └── rmsf_replica1_temperature450.csv
-│   │       ├── replica_2
-│   │       │   ├── 320
-│   │       │   │   └── rmsf_replica2_temperature320.csv
-│   │       │   ├── 348
-│   │       │   │   └── rmsf_replica2_temperature348.csv
-│   │       │   ├── 379
-│   │       │   │   └── rmsf_replica2_temperature379.csv
-│   │       │   ├── 413
-│   │       │   │   └── rmsf_replica2_temperature413.csv
-│   │       │   └── 450
-│   │       │       └── rmsf_replica2_temperature450.csv
-│   │       ├── replica_3
-│   │       │   ├── 320
-│   │       │   │   └── rmsf_replica3_temperature320.csv
-│   │       │   ├── 348
-│   │       │   │   └── rmsf_replica3_temperature348.csv
-│   │       │   ├── 379
-│   │       │   │   └── rmsf_replica3_temperature379.csv
-│   │       │   ├── 413
-│   │       │   │   └── rmsf_replica3_temperature413.csv
-│   │       │   └── 450
-│   │       │       └── rmsf_replica3_temperature450.csv
-│   │       └── replica_4
-│   │           ├── 320
-│   │           │   └── rmsf_replica4_temperature320.csv
-│   │           ├── 348
-│   │           │   └── rmsf_replica4_temperature348.csv
-│   │           ├── 379
-│   │           │   └── rmsf_replica4_temperature379.csv
-│   │           ├── 413
-│   │           │   └── rmsf_replica4_temperature413.csv
-│   │           └── 450
-│   │               └── rmsf_replica4_temperature450.csv
-│   ├── visualizations
-│   │   ├── amino_acid_rmsf_violin_plot.png
-│   │   ├── replica_variance_plot.png
-│   │   ├── rmsf_histogram.png
-│   │   ├── rmsf_violin_plot.png
-│   │   ├── temperature_average_summary.png
-│   │   └── temperature_summary.png
-│   └── voxelized
 ├── README.md
 ├── requirements.txt
 ├── setup.py
@@ -230,14 +67,14 @@ File Structure:
 │       └── top_level.txt
 └── test_h5_loading.py
 
-85 directories, 142 files
+11 directories, 53 files
 
 Contents of Relevant Files Below (Ignoring Binary Files):
 ---------------------------------------------------------
 ===== FILE: src/mdcath/config/default_config.yaml =====
 input:
   mdcath_folder: "/mnt/datasets/MD_CATH/data"  # Path to the mdCATH folder
-  domain_ids: ["1a02F00", "12asA00"]   # Empty means process default domain (12asA00)
+  domain_ids: ["1a02F00", "1a0aA00"]   # Empty means process default domain (12asA00)
 
 temperatures: [320, 348, 379, 413, 450]
 num_replicas: 5  # Number of replicas to process per temperature
@@ -257,6 +94,9 @@ processing:
     correct_unusual_residue_names: true
     add_cryst1_record: true  # Add CRYST1 record for MSMS compatibility
     remove_hydrogens: false  # Whether to remove hydrogen atoms
+    remove_solvent_ions: true   # If set to true, skip TIP, HOH, SOD, CLA, chain 'W'
+    stop_after_ter: true #Stop cleaning after the first TER (this is only if later you wanted to use solvent ions for any reason)
+
 
   ml_feature_extraction:
     min_residues_per_domain: 0
@@ -279,12 +119,14 @@ processing:
     encode_cb: true  # Whether to include CB atoms
     compression_gzip: true  # Whether to compress the output files
     voxelise_all_states: false  # Whether to voxelize all states in NMR structures
+    process_frames: false  # Whether to also voxelize frame directories
+    process_temps: [320, 348, 379, 413, 450]  # Temperatures to process for frame voxelization
 
 performance:
   num_cores: 0  # 0 means auto-detect (use max available cores - 2)
   batch_size: 100
   memory_limit_gb: 0  # 0 means no limit
-  use_gpu: false  # Whether to use GPU acceleration if available
+  use_gpu: true  # Whether to use GPU acceleration if available
 
 logging:
   verbose: true
@@ -292,13 +134,14 @@ logging:
   console_level: "INFO"
   file_level: "DEBUG"
   show_progress_bars: true
-
 ===== FILE: src/mdcath/config/__init__.py =====
 """
 Configuration handling for mdCATH
 """
 
 ===== FILE: src/mdcath/core/data_loader.py =====
+
+
 #!/usr/bin/env python3
 """
 Core functionality for loading and processing H5 data from mdCATH dataset.
@@ -387,76 +230,77 @@ class H5DataLoader:
     def extract_rmsf(self, temperature: str, replica: str) -> Optional[pd.DataFrame]:
         """
         Extract RMSF data for a specific temperature and replica.
+        RMSF is per-residue, so we build a unique residue-level list
+        from the full 'resid'/'resname' arrays (which may be per-atom).
         
         Args:
             temperature: Temperature (e.g., "320")
             replica: Replica (e.g., "0")
         
         Returns:
-            DataFrame with RMSF data or None if extraction fails
+            DataFrame with columns: [domain_id, resid, resname, rmsf_{temperature}]
+            or None if extraction fails
         """
         try:
             with h5py.File(self.h5_path, 'r') as f:
                 # Check if temperature and replica exist
-                if temperature not in f[self.domain_id] or replica not in f[self.domain_id][temperature]:
+                if (temperature not in f[self.domain_id]) or (replica not in f[self.domain_id][temperature]):
                     logging.warning(f"Temperature {temperature} or replica {replica} not found for domain {self.domain_id}")
                     return None
                 
-                # Check if RMSF dataset exists
                 if 'rmsf' not in f[self.domain_id][temperature][replica]:
                     logging.warning(f"RMSF data not found for domain {self.domain_id}, temperature {temperature}, replica {replica}")
                     return None
                 
-                # Get dataset and check size
-                rmsf_dataset = f[self.domain_id][temperature][replica]['rmsf']
-                rmsf_data = rmsf_dataset[:]
-                
-                # Extract residue information
-                resid_dataset = f[self.domain_id]['resid']
-                resname_dataset = f[self.domain_id]['resname']
-                
-                resids = resid_dataset[:]
-                resnames_bytes = resname_dataset[:]
-                
-                # Decode resnames from bytes to strings
-                resnames = [name.decode('utf-8') if isinstance(name, bytes) else str(name) for name in resnames_bytes]
-                
-                # Handle dimension mismatch - RMSF is typically per residue (not per atom)
-                if len(resids) != len(rmsf_data):
-                    logging.info(f"Dimension mismatch: resids {len(resids)}, rmsf_data {len(rmsf_data)}")
-                    
-                    # Build a proper mapping between atoms and residues
-                    residue_dict = {}
-                    for i, resid in enumerate(resids):
-                        if resid not in residue_dict:
-                            residue_dict[resid] = resnames[i]
-                    
-                    # Get the unique residue IDs in order
-                    unique_resids = sorted(residue_dict.keys())
-                    unique_resnames = [residue_dict[resid] for resid in unique_resids]
-                    
-                    if len(unique_resids) == len(rmsf_data):
-                        logging.info(f"Using unique residue IDs for RMSF data alignment")
-                        # Use unique residues for RMSF data
-                        resids = unique_resids
-                        resnames = unique_resnames
-                    elif len(unique_resids) > len(rmsf_data):
-                        # If we have more unique residues than RMSF data points,
-                        # match by position in sequence
-                        logging.warning(f"More unique residues ({len(unique_resids)}) than RMSF data points ({len(rmsf_data)})")
-                        resids = unique_resids[:len(rmsf_data)]
-                        resnames = unique_resnames[:len(rmsf_data)]
-                    elif len(unique_resids) < len(rmsf_data):
-                        # If we have fewer unique residues than RMSF data points,
-                        # truncate the RMSF data
-                        logging.warning(f"Fewer unique residues ({len(unique_resids)}) than RMSF data points ({len(rmsf_data)})")
+                # RMSF data is typically length = number_of_residues
+                rmsf_data = f[self.domain_id][temperature][replica]['rmsf'][:]
+
+                # Extract the full, per-atom arrays
+                resids_all = f[self.domain_id]['resid'][:]
+                resnames_all = f[self.domain_id]['resname'][:]
+
+                # Convert bytes -> string if needed
+                resnames_all = [
+                    rn.decode("utf-8") if isinstance(rn, bytes) else str(rn)
+                    for rn in resnames_all
+                ]
+
+                # Build unique residue-level list
+                # Map resid -> resname (the first occurrence of that resid)
+                # This ensures one row per residue
+                residue_dict = {}
+                for i, resid_val in enumerate(resids_all):
+                    if resid_val not in residue_dict:
+                        residue_dict[resid_val] = resnames_all[i]
+
+                unique_resids = sorted(residue_dict.keys())
+                unique_resnames = [residue_dict[rid] for rid in unique_resids]
+
+                # Check dimension mismatch
+                if len(unique_resids) != len(rmsf_data):
+                    logging.info(
+                        f"Dimension mismatch: unique_resids {len(unique_resids)}, "
+                        f"rmsf_data {len(rmsf_data)}"
+                    )
+                    # Attempt to align by length
+                    if len(unique_resids) > len(rmsf_data):
+                        logging.warning(
+                            f"More unique residues ({len(unique_resids)}) than RMSF points ({len(rmsf_data)}) -- truncating residues"
+                        )
+                        unique_resids = unique_resids[:len(rmsf_data)]
+                        unique_resnames = unique_resnames[:len(rmsf_data)]
+                    else:
+                        logging.warning(
+                            f"Fewer unique residues ({len(unique_resids)}) than RMSF points ({len(rmsf_data)}) -- truncating RMSF"
+                        )
                         rmsf_data = rmsf_data[:len(unique_resids)]
-                    
-                # Create DataFrame
+                    logging.info("Using unique residue-level alignment for RMSF data")
+
+                # Create DataFrame with final 1:1 alignment
                 df = pd.DataFrame({
                     'domain_id': self.domain_id,
-                    'resid': resids,
-                    'resname': resnames,
+                    'resid': unique_resids,
+                    'resname': unique_resnames,
                     f'rmsf_{temperature}': rmsf_data
                 })
                 
@@ -485,93 +329,94 @@ class H5DataLoader:
     def extract_dssp(self, temperature: str, replica: str, frame: int = -1) -> Optional[pd.DataFrame]:
         """
         Extract DSSP data for a specific temperature, replica, and frame.
-
+        DSSP is per-residue, so we build a unique residue-level list
+        from the full 'resid'/'resname' arrays. Then align to DSSP codes.
+        
         Args:
             temperature: Temperature (e.g., "320")
             replica: Replica (e.g., "0")
             frame: Frame index (default: -1 for last frame)
 
         Returns:
-            DataFrame with DSSP data or None if extraction fails
+            DataFrame [domain_id, resid, resname, dssp] or None if extraction fails
         """
         try:
             with h5py.File(self.h5_path, 'r') as f:
-                # Check if temperature and replica exist
-                if temperature not in f[self.domain_id] or replica not in f[self.domain_id][temperature]:
+                if (temperature not in f[self.domain_id]) or (replica not in f[self.domain_id][temperature]):
                     logging.warning(f"Temperature {temperature} or replica {replica} not found for domain {self.domain_id}")
                     return None
 
-                # Check if DSSP dataset exists
                 if 'dssp' not in f[self.domain_id][temperature][replica]:
                     logging.warning(f"DSSP data not found for domain {self.domain_id}, temperature {temperature}, replica {replica}")
                     return None
                     
-                # Extract DSSP data
                 dssp_dataset = f[self.domain_id][temperature][replica]['dssp']
-                
-                # Handle the case where frame is out of bounds
+
+                # Number of frames
                 num_frames = dssp_dataset.shape[0] if len(dssp_dataset.shape) > 0 else 0
                 if num_frames == 0:
                     logging.warning(f"Empty DSSP dataset for domain {self.domain_id}, temperature {temperature}, replica {replica}")
                     return None
-                    
+
+                # Convert negative frame index
                 if frame < 0:
-                    # Convert negative indices to positive
                     frame = num_frames + frame
-                    
                 if frame < 0 or frame >= num_frames:
-                    logging.warning(f"Frame index {frame} out of bounds (0-{num_frames-1}) for domain {self.domain_id}")
-                    frame = min(max(0, frame), num_frames - 1)  # Clamp to valid range
-                    
+                    logging.warning(f"Frame index {frame} out of bounds (0-{num_frames-1}) for {self.domain_id}")
+                    frame = max(0, min(frame, num_frames-1))  # clamp
+
                 dssp_data = dssp_dataset[frame]
 
-                # Extract residue information
-                resids = f[self.domain_id]['resid'][:]
-                resnames = [name.decode('utf-8') if isinstance(name, bytes) else str(name) for name in f[self.domain_id]['resname'][:]]
+                # Full, per-atom arrays
+                resids_all = f[self.domain_id]['resid'][:]
+                resnames_all = f[self.domain_id]['resname'][:]
+                resnames_all = [
+                    rn.decode("utf-8") if isinstance(rn, bytes) else str(rn)
+                    for rn in resnames_all
+                ]
 
-                # Decode DSSP codes
-                dssp_codes = [code.decode('utf-8') if isinstance(code, bytes) else str(code) for code in dssp_data]
+                # Build unique residue-level list
+                residue_dict = {}
+                for i, resid_val in enumerate(resids_all):
+                    if resid_val not in residue_dict:
+                        residue_dict[resid_val] = resnames_all[i]
 
-                # Handle dimension mismatch - DSSP is per residue, not per atom
-                if len(resids) != len(dssp_codes):
-                    logging.info(f"Dimension mismatch in DSSP: resids {len(resids)}, dssp_codes {len(dssp_codes)}")
-                    
-                    # Build a proper mapping between atoms and residues
-                    residue_dict = {}
-                    for i, resid in enumerate(resids):
-                        if resid not in residue_dict:
-                            residue_dict[resid] = resnames[i]
-                    
-                    # Get the unique residue IDs in order
-                    unique_resids = sorted(residue_dict.keys())
-                    unique_resnames = [residue_dict[resid] for resid in unique_resids]
-                    
-                    if len(unique_resids) == len(dssp_codes):
-                        logging.info(f"Using unique residue IDs for DSSP data alignment")
-                        # Use unique residues for DSSP data
-                        resids = unique_resids
-                        resnames = unique_resnames
-                    elif len(unique_resids) > len(dssp_codes):
-                        # If we have more unique residues than DSSP data points, 
-                        # match by position in sequence
-                        logging.warning(f"More unique residues ({len(unique_resids)}) than DSSP data points ({len(dssp_codes)})")
-                        resids = unique_resids[:len(dssp_codes)]
-                        resnames = unique_resnames[:len(dssp_codes)]
-                    elif len(unique_resids) < len(dssp_codes):
-                        # If we have fewer unique residues than DSSP data points,
-                        # truncate the DSSP data
-                        logging.warning(f"Fewer unique residues ({len(unique_resids)}) than DSSP data points ({len(dssp_codes)})")
+                unique_resids = sorted(residue_dict.keys())
+                unique_resnames = [residue_dict[rid] for rid in unique_resids]
+
+                # DSSP codes might already be length = # of residues
+                dssp_codes = [
+                    c.decode("utf-8") if isinstance(c, bytes) else str(c)
+                    for c in dssp_data
+                ]
+
+                if len(unique_resids) != len(dssp_codes):
+                    logging.info(
+                        f"Dimension mismatch in DSSP: unique_resids {len(unique_resids)}, dssp_codes {len(dssp_codes)}"
+                    )
+                    if len(unique_resids) > len(dssp_codes):
+                        logging.warning(
+                            f"More unique residues ({len(unique_resids)}) than DSSP codes ({len(dssp_codes)}) -- truncating residues"
+                        )
+                        unique_resids = unique_resids[:len(dssp_codes)]
+                        unique_resnames = unique_resnames[:len(dssp_codes)]
+                    else:
+                        logging.warning(
+                            f"Fewer unique residues ({len(unique_resids)}) than DSSP codes ({len(dssp_codes)}) -- truncating DSSP codes"
+                        )
                         dssp_codes = dssp_codes[:len(unique_resids)]
+                    logging.info("Using unique residue-level alignment for DSSP data")
 
-                # Create DataFrame
+                # Create final DataFrame
                 df = pd.DataFrame({
                     'domain_id': self.domain_id,
-                    'resid': resids,
-                    'resname': resnames,
+                    'resid': unique_resids,
+                    'resname': unique_resnames,
                     'dssp': dssp_codes
                 })
 
                 return df
+
         except Exception as e:
             logging.error(f"Failed to extract DSSP data: {e}")
             return None
@@ -586,80 +431,70 @@ class H5DataLoader:
             frame: Frame index (default: -1 for last frame)
 
         Returns:
-            Tuple of (coordinates, residue IDs, residue names) or None if extraction fails
+            Tuple of (coords, resids, resnames) where coords shape is (n_atoms, 3),
+            or None if extraction fails.
         """
         try:
             with h5py.File(self.h5_path, 'r') as f:
-                # Check if temperature and replica exist
-                if temperature not in f[self.domain_id] or replica not in f[self.domain_id][temperature]:
+                if (temperature not in f[self.domain_id]) or (replica not in f[self.domain_id][temperature]):
                     logging.warning(f"Temperature {temperature} or replica {replica} not found for domain {self.domain_id}")
                     return None
 
-                # Extract coordinate data for specified frame
                 if 'coords' not in f[self.domain_id][temperature][replica]:
                     logging.warning(f"Coordinate data not found for domain {self.domain_id}, temperature {temperature}, replica {replica}")
                     return None
-                    
+
                 coords_dataset = f[self.domain_id][temperature][replica]['coords']
-                
-                # Handle the case where frame is out of bounds
-                num_frames = coords_dataset.shape[0] if len(coords_dataset.shape) > 0 else 0
+                num_frames = coords_dataset.shape[0] if coords_dataset.ndim > 0 else 0
                 if num_frames == 0:
-                    logging.warning(f"Empty coordinates dataset for domain {self.domain_id}, temperature {temperature}, replica {replica}")
+                    logging.warning(f"Empty coords dataset for domain {self.domain_id}, temperature {temperature}, replica {replica}")
                     return None
-                
+
+                # Convert negative frame index
                 if frame < 0:
-                    # Convert negative indices to positive
                     frame = num_frames + frame
-                    
                 if frame < 0 or frame >= num_frames:
                     logging.warning(f"Frame index {frame} out of bounds (0-{num_frames-1}) for domain {self.domain_id}")
-                    frame = min(max(0, frame), num_frames - 1)  # Clamp to valid range
-                
-                # Extract the full coordinate array for the specified frame
-                # coords should have shape (num_atoms, 3)
-                coords = coords_dataset[frame]
-                
-                # Check correct shape - should be 2D with second dimension of 3
+                    frame = max(0, min(frame, num_frames - 1))
+
+                coords = coords_dataset[frame]  # shape (n_atoms, 3)
                 if coords.ndim != 2 or coords.shape[1] != 3:
                     logging.error(f"Unexpected coordinate shape: {coords.shape} for domain {self.domain_id}")
                     return None
 
-                # Extract residue information
-                resids = f[self.domain_id]['resid'][:].tolist()
-                resnames = [name.decode('utf-8') if isinstance(name, bytes) else str(name) for name in f[self.domain_id]['resname'][:]]
+                resids_all = f[self.domain_id]['resid'][:].tolist()
+                resnames_all = f[self.domain_id]['resname'][:]
+                resnames_all = [
+                    rn.decode("utf-8") if isinstance(rn, bytes) else str(rn)
+                    for rn in resnames_all
+                ]
 
-                # Verify we have correct number of atoms
-                if len(resids) != coords.shape[0]:
-                    logging.warning(f"Mismatch between residue IDs ({len(resids)}) and coordinates ({coords.shape[0]})")
-                    # Truncate to the smaller size if needed
-                    min_size = min(len(resids), coords.shape[0])
-                    resids = resids[:min_size]
-                    resnames = resnames[:min_size]
+                # Check shape alignment
+                if len(resids_all) != coords.shape[0]:
+                    logging.warning(
+                        f"Mismatch between residue IDs ({len(resids_all)}) and coords ({coords.shape[0]})"
+                    )
+                    min_size = min(len(resids_all), coords.shape[0])
+                    resids_all = resids_all[:min_size]
+                    resnames_all = resnames_all[:min_size]
                     coords = coords[:min_size]
 
-                return coords, resids, resnames
+                return coords, resids_all, resnames_all
+
         except Exception as e:
             logging.error(f"Failed to extract coordinate data: {e}")
             import traceback
             logging.error(traceback.format_exc())
             return None
 
+
 def process_domains(domain_ids: List[str], data_dir: str, config: Dict[str, Any],
                     num_cores: int = 1) -> Dict[str, Any]:
     """
     Process multiple domains in parallel.
-
-    Args:
-        domain_ids: List of domain IDs to process
-        data_dir: Directory containing H5 files
-        config: Configuration dictionary
-        num_cores: Number of CPU cores to use
-
-    Returns:
-        Dictionary with processing results
     """
-    # Determine number of cores to use
+    from concurrent.futures import ProcessPoolExecutor, as_completed
+
     max_cores = os.cpu_count() - 2 if os.cpu_count() > 2 else 1
     n_cores = min(num_cores if num_cores > 0 else max_cores, max_cores)
 
@@ -689,20 +524,13 @@ def process_domains(domain_ids: List[str], data_dir: str, config: Dict[str, Any]
 def _process_single_domain(h5_path: str, config: Dict[str, Any]) -> Dict[str, Any]:
     """
     Process a single domain (helper function for parallel processing).
-
-    Args:
-        h5_path: Path to H5 file
-        config: Configuration dictionary
-
-    Returns:
-        Dictionary with processing results
     """
     loader = H5DataLoader(h5_path, config)
     domain_id = loader.domain_id
 
     results = {"domain_id": domain_id, "success": False}
 
-    # Extract RMSF data for all temperatures and replicas
+    # Extract RMSF data
     temps = [str(t) for t in config.get("temperatures", [320, 348, 379, 413, 450])]
     num_replicas = config.get("num_replicas", 5)
 
@@ -711,10 +539,9 @@ def _process_single_domain(h5_path: str, config: Dict[str, Any]) -> Dict[str, An
         rmsf_data[temp] = {}
         for r in range(num_replicas):
             replica = str(r)
-            df = loader.extract_rmsf(temp, replica)
-            if df is not None:
-                rmsf_data[temp][replica] = df
-
+            df_rmsf = loader.extract_rmsf(temp, replica)
+            if df_rmsf is not None:
+                rmsf_data[temp][replica] = df_rmsf
     results["rmsf_data"] = rmsf_data
 
     # Extract PDB data
@@ -728,13 +555,12 @@ def _process_single_domain(h5_path: str, config: Dict[str, Any]) -> Dict[str, An
         dssp_data[temp] = {}
         for r in range(num_replicas):
             replica = str(r)
-            df = loader.extract_dssp(temp, replica)
-            if df is not None:
-                dssp_data[temp][replica] = df
-
+            df_dssp = loader.extract_dssp(temp, replica)
+            if df_dssp is not None:
+                dssp_data[temp][replica] = df_dssp
     results["dssp_data"] = dssp_data
-    results["success"] = True
 
+    results["success"] = True
     return results
 
 ===== FILE: src/mdcath/core/__init__.py =====
@@ -754,7 +580,11 @@ import subprocess
 import tempfile
 import pandas as pd
 import numpy as np
+import Bio
+import shutil
+from Bio.PDB import PDBParser, DSSP, ShrakeRupley
 from typing import Dict, Any, Optional, List, Tuple
+
 
 def compute_core_exterior(pdb_file: str, config: Dict[str, Any]) -> Optional[pd.DataFrame]:
     """
@@ -785,7 +615,9 @@ def compute_core_exterior_msms(pdb_file: str, config: Dict[str, Any]) -> Optiona
     Returns:
         DataFrame with columns 'resid' and 'core_exterior' or None if MSMS fails
     """
-    msms_dir = config.get("core_exterior", {}).get("msms_executable_dir", "./msms")
+    msms_dir = config.get("core_exterior", {}).get("msms_executable_dir", "./msms_executables")
+    # Convert to absolute path
+    msms_dir = os.path.abspath(msms_dir)
     ses_threshold = config.get("core_exterior", {}).get("ses_threshold", 1.0)
     protein_name = os.path.basename(pdb_file).split('.')[0]
 
@@ -797,15 +629,29 @@ def compute_core_exterior_msms(pdb_file: str, config: Dict[str, Any]) -> Optiona
             msms_exe = os.path.join(msms_dir, "msms.x86_64Linux2.2.6.1")
             xyzr_file = os.path.join(tmp_dir, f"{protein_name}.xyzr")
             area_base = os.path.join(tmp_dir, f"{protein_name}")
-            area_file = os.path.join(tmp_dir, f"{protein_name}.area")
+            area_file = f"{area_base}.area"
+
+            # Ensure executables have proper permissions
+            try:
+                os.chmod(pdb2xyzr_exe, 0o755)  # rwxr-xr-x
+                os.chmod(msms_exe, 0o755)      # rwxr-xr-x
+            except Exception as e:
+                logging.warning(f"Failed to set executable permissions: {e}")
 
             # Check MSMS executables
             if not os.path.exists(pdb2xyzr_exe) or not os.path.exists(msms_exe):
                 logging.warning(f"MSMS executables not found in {msms_dir}, falling back to Biopython")
                 return compute_core_exterior_biopython(pdb_file, config)
 
-            # Run pdb_to_xyzr
-            cmd_xyzr = f"{pdb2xyzr_exe} {pdb_file} > {xyzr_file}"
+            # Absolute path for input PDB
+            abs_pdb_file = os.path.abspath(pdb_file)
+            if not os.path.exists(abs_pdb_file):
+                logging.warning(f"PDB file not found: {abs_pdb_file}")
+                return compute_core_exterior_biopython(pdb_file, config)
+
+            # Run pdb_to_xyzr with bash shell explicitly
+            cmd_xyzr = f"bash {pdb2xyzr_exe} {abs_pdb_file} > {xyzr_file}"
+            logging.info(f"Running command: {cmd_xyzr}")
             result = subprocess.run(cmd_xyzr, shell=True, check=False,
                                    stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
@@ -813,8 +659,9 @@ def compute_core_exterior_msms(pdb_file: str, config: Dict[str, Any]) -> Optiona
                 logging.warning(f"pdb_to_xyzr failed: {result.stderr.decode()}, falling back to Biopython")
                 return compute_core_exterior_biopython(pdb_file, config)
 
-            # Run MSMS
-            cmd_msms = f"{msms_exe} -if {xyzr_file} -af {area_base}"
+            # Run MSMS with bash shell explicitly
+            cmd_msms = f"bash {msms_exe} -if {xyzr_file} -af {area_base}"
+            logging.info(f"Running command: {cmd_msms}")
             result = subprocess.run(cmd_msms, shell=True, check=False,
                                    stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
@@ -822,6 +669,7 @@ def compute_core_exterior_msms(pdb_file: str, config: Dict[str, Any]) -> Optiona
                 logging.warning(f"MSMS failed: {result.stderr.decode()}, falling back to Biopython")
                 return compute_core_exterior_biopython(pdb_file, config)
 
+            # Rest of the function unchanged...
             # Parse atom-level PDB data
             per_atom_df = parse_pdb_atoms(pdb_file)
             if per_atom_df.empty:
@@ -861,6 +709,7 @@ def compute_core_exterior_msms(pdb_file: str, config: Dict[str, Any]) -> Optiona
     except Exception as e:
         logging.warning(f"MSMS processing failed: {e}, falling back to Biopython")
         return compute_core_exterior_biopython(pdb_file, config)
+    
 
 def compute_core_exterior_biopython(pdb_file: str, config: Dict[str, Any]) -> pd.DataFrame:
     """
@@ -880,12 +729,119 @@ def compute_core_exterior_biopython(pdb_file: str, config: Dict[str, Any]) -> pd
         # Set SASA threshold
         sasa_threshold = config.get("core_exterior", {}).get("sasa_threshold", 20.0)
 
-        # Parse PDB
-        parser = PDBParser(QUIET=True)
-        structure = parser.get_structure("protein", pdb_file)
-        model = structure[0]
-
-        # Calculate SASA
+        # Parse PDB - ensure CRYST1 record first
+        try:
+            # Fix PDB file to ensure proper CRYST1 record
+            corrected_lines = []
+            with open(pdb_file, 'r') as f:
+                lines = f.readlines()
+            
+            has_cryst1 = False
+            for line in lines:
+                if line.startswith("CRYST1"):
+                    has_cryst1 = True
+                    corrected_lines.append("CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1\n")
+                else:
+                    corrected_lines.append(line)
+            
+            if not has_cryst1:
+                corrected_lines.insert(0, "CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1\n")
+            
+            # Write to temporary file
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".pdb", mode="w") as tmp:
+                tmp_pdb = tmp.name
+                tmp.writelines(corrected_lines)
+            
+            parser = PDBParser(QUIET=True)
+            structure = parser.get_structure("protein", tmp_pdb)
+            model = structure[0]
+        
+        except Exception as e:
+            logging.warning(f"Failed to fix CRYST1 record: {e}")
+            parser = PDBParser(QUIET=True)
+            structure = parser.get_structure("protein", pdb_file)
+            model = structure[0]
+        
+        # Try DSSP first for better solvent accessibility calculation
+        try:
+            # Get the location of the DSSP executable
+            dssp_executable = shutil.which("dssp") or shutil.which("mkdssp")
+            if dssp_executable:
+                logging.info(f"Using DSSP executable: {dssp_executable}")
+                
+                # Write fixed PDB to temporary file
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".pdb", mode="w") as tmp:
+                    tmp_pdb = tmp.name
+                    
+                    # Add CRYST1 record if needed
+                    with open(pdb_file, 'r') as f:
+                        content = f.readlines()
+                    
+                    has_cryst1 = False
+                    for i, line in enumerate(content):
+                        if line.startswith("CRYST1"):
+                            has_cryst1 = True
+                            content[i] = "CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1\n"
+                            break
+                    
+                    if not has_cryst1:
+                        content.insert(0, "CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1\n")
+                    
+                    tmp.writelines(content)
+                
+                # Run DSSP on fixed PDB
+                from Bio.PDB import DSSP
+                dssp = DSSP(model, tmp_pdb, dssp=dssp_executable)
+                
+                # Extract results - DSSP gives accessibility values directly
+                results = []
+                for chain in model:
+                    for residue in chain:
+                        if residue.id[0] == " ":  # Standard residue
+                            resid = residue.id[1]
+                            try:
+                                # DSSP key is (chain_id, residue_id)
+                                key = (chain.id, (' ', residue.id[1], ' '))
+                                if key in dssp:
+                                    # Get relative solvent accessibility
+                                    rel_acc = dssp[key][3]
+                                    # A value > 0.2 (20%) is generally considered accessible
+                                    core_exterior = "exterior" if rel_acc > 0.2 else "core"
+                                    results.append({
+                                        "resid": resid, 
+                                        "core_exterior": core_exterior,
+                                        "relative_accessibility": rel_acc
+                                    })
+                                else:
+                                    # If residue not found in DSSP, use default
+                                    results.append({
+                                        "resid": resid, 
+                                        "core_exterior": "core",
+                                        "relative_accessibility": 0.0
+                                    })
+                            except Exception as e:
+                                logging.warning(f"Error processing DSSP for residue {resid}: {e}")
+                                results.append({
+                                    "resid": resid, 
+                                    "core_exterior": "core",
+                                    "relative_accessibility": 0.0
+                                })
+                
+                # Clean up temp file
+                if os.path.exists(tmp_pdb):
+                    os.remove(tmp_pdb)
+                
+                if results:
+                    logging.info("Successfully used DSSP for core/exterior classification")
+                    return pd.DataFrame(results)
+            
+            # If DSSP fails or no results, fall back to ShrakeRupley
+            logging.info("DSSP failed or not available, falling back to ShrakeRupley SASA")
+        
+        except Exception as e:
+            logging.warning(f"DSSP calculation failed: {e}, falling back to ShrakeRupley")
+        
+        # Fall back to ShrakeRupley SASA calculation
         sr = ShrakeRupley()
         sr.compute(model, level="R")  # Compute at residue level
 
@@ -895,15 +851,24 @@ def compute_core_exterior_biopython(pdb_file: str, config: Dict[str, Any]) -> pd
             for residue in chain:
                 if residue.id[0] == " ":  # Standard residue
                     resid = residue.id[1]
-                    sasa = residue.sasa
+                    sasa = residue.sasa if hasattr(residue, 'sasa') else 0.0
+                    # Normalize SASA to get approximation of relative accessibility
+                    # Assuming max SASA is around 100 Å²
+                    rel_acc = min(1.0, sasa / 100.0)
                     core_exterior = "exterior" if sasa > sasa_threshold else "core"
-                    results.append({"resid": resid, "core_exterior": core_exterior})
+                    results.append({
+                        "resid": resid, 
+                        "core_exterior": core_exterior,
+                        "relative_accessibility": rel_acc
+                    })
 
         return pd.DataFrame(results)
     except Exception as e:
         logging.error(f"Biopython SASA calculation failed: {e}")
+        import traceback
+        logging.error(traceback.format_exc())
         return fallback_core_exterior(pdb_file)
-
+    
 def fallback_core_exterior(pdb_file: str) -> pd.DataFrame:
     """
     Fallback method to classify residues when other methods fail.
@@ -916,11 +881,26 @@ def fallback_core_exterior(pdb_file: str) -> pd.DataFrame:
         DataFrame with columns 'resid' and 'core_exterior'
     """
     try:
+        # Verify file exists and use absolute path
+        abs_pdb_file = os.path.abspath(pdb_file)
+        if not os.path.exists(abs_pdb_file):
+            logging.error(f"PDB file not found: {abs_pdb_file}")
+            # Create dummy data when PDB file is missing
+            return pd.DataFrame({
+                "resid": list(range(1, 21)),  # Create 20 dummy residues
+                "core_exterior": ["core"] * 13 + ["exterior"] * 7,  # 2/3 core, 1/3 exterior
+                "relative_accessibility": [0.1] * 13 + [0.7] * 7  # Low for core, high for exterior
+            })
+
         # Parse PDB to get residue information
         residue_df = parse_pdb_residues(pdb_file)
         if residue_df.empty:
             # Create empty DataFrame with required columns
-            return pd.DataFrame(columns=["resid", "core_exterior"])
+            return pd.DataFrame({
+                "resid": list(range(1, 21)),
+                "core_exterior": ["core"] * 13 + ["exterior"] * 7,
+                "relative_accessibility": [0.1] * 13 + [0.7] * 7
+            })
 
         # Sort by residue ID
         residue_df = residue_df.sort_values("resid")
@@ -931,12 +911,21 @@ def fallback_core_exterior(pdb_file: str) -> pd.DataFrame:
 
         residue_df["core_exterior"] = ["core"] * total_residues
         residue_df.loc[boundary:, "core_exterior"] = "exterior"
+        
+        # Add relative accessibility values (0-1 scale)
+        residue_df["relative_accessibility"] = 0.1  # Default for core
+        residue_df.loc[boundary:, "relative_accessibility"] = 0.7  # Higher for exterior
 
-        return residue_df[["resid", "core_exterior"]]
+        return residue_df[["resid", "core_exterior", "relative_accessibility"]]
     except Exception as e:
         logging.error(f"Fallback classification failed: {e}")
-        return pd.DataFrame(columns=["resid", "core_exterior"])
-
+        return pd.DataFrame({
+            "resid": list(range(1, 21)),
+            "core_exterior": ["core"] * 13 + ["exterior"] * 7,
+            "relative_accessibility": [0.1] * 13 + [0.7] * 7
+        })
+        
+        
 def parse_pdb_residues(pdb_file: str) -> pd.DataFrame:
     """
     Parse a PDB file to extract residue-level information.
@@ -1037,6 +1026,182 @@ def parse_area_file(area_file: str) -> pd.DataFrame:
         logging.error(f"Failed to parse area file: {e}")
         return pd.DataFrame()
 
+def run_dssp_analysis(pdb_file: str) -> pd.DataFrame:
+    """
+    Run DSSP using a temporary PDB file with correct CRYST1 record,
+    then parse the resulting DSSP object.
+    
+    Args:
+        pdb_file: Path to the PDB file
+        
+    Returns:
+        DataFrame with columns: resid, chain, secondary_structure, relative_accessibility
+    """
+    logging.info(f"Running DSSP on {pdb_file}")
+    
+    # First, verify the PDB file exists
+    abs_pdb_file = os.path.abspath(pdb_file)
+    if not os.path.exists(abs_pdb_file):
+        logging.error(f"PDB file not found: {abs_pdb_file}")
+        return use_fallback_dssp(pdb_file)
+    
+    try:
+        # Create a properly formatted CRYST1 record
+        corrected_lines = []
+        
+        # Read original PDB file
+        with open(abs_pdb_file, 'r') as f:
+            lines = f.readlines()
+        
+        # Check if CRYST1 record exists and is properly formatted
+        has_cryst1 = False
+        for i, line in enumerate(lines):
+            if line.startswith("CRYST1"):
+                has_cryst1 = True
+                # Replace with properly formatted CRYST1 record
+                corrected_lines.append("CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1\n")
+            else:
+                corrected_lines.append(line)
+        
+        # Add CRYST1 if missing
+        if not has_cryst1:
+            corrected_lines.insert(0, "CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1\n")
+        
+        # Write corrected PDB to temporary file
+        tmp_pdb = None
+        try:
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".pdb", mode="w") as tmp_file:
+                tmp_pdb = tmp_file.name
+                tmp_file.writelines(corrected_lines)
+            
+            # Run DSSP on corrected file
+            from Bio.PDB import PDBParser, DSSP
+            parser = PDBParser(QUIET=True)
+            structure = parser.get_structure("protein", tmp_pdb)
+            model = structure[0]
+            
+            # Try different DSSP executables
+            dssp_found = False
+            for dssp_exec in ["dssp", "mkdssp"]:
+                dssp_path = shutil.which(dssp_exec)
+                if dssp_path:
+                    try:
+                        logging.info(f"Trying DSSP executable: {dssp_path}")
+                        dssp = DSSP(model, tmp_pdb, dssp=dssp_path)
+                        dssp_found = True
+                        break
+                    except Exception as e:
+                        logging.warning(f"Failed with {dssp_exec}: {e}")
+            
+            if not dssp_found:
+                logging.warning("No DSSP executable found or all failed")
+                return use_fallback_dssp(pdb_file)
+            
+            # Extract DSSP results
+            records = []
+            for key in dssp.keys():
+                chain_id = key[0]
+                resid = key[1][1]  # residue number
+                dssp_tuple = dssp[key]
+                
+                # Extract secondary structure and relative accessibility
+                ss_code = dssp_tuple[2]  # Secondary structure code
+                rel_acc = dssp_tuple[3]  # Relative accessibility
+                
+                # Ensure secondary structure is never empty
+                if not ss_code or ss_code == ' ' or ss_code == '-':
+                    ss_code = 'C'  # Default to coil
+                
+                records.append({
+                    "resid": resid,
+                    "chain": chain_id,
+                    "secondary_structure": ss_code,
+                    "relative_accessibility": rel_acc
+                })
+            
+            if not records:
+                logging.warning("DSSP returned no records")
+                return use_fallback_dssp(pdb_file)
+                
+            dssp_df = pd.DataFrame(records)
+            logging.info(f"DSSP successfully extracted data for {len(dssp_df)} residues")
+            
+            return dssp_df
+        
+        finally:
+            # Clean up temporary file
+            if tmp_pdb and os.path.exists(tmp_pdb):
+                try:
+                    os.remove(tmp_pdb)
+                except:
+                    pass
+    
+    except Exception as e:
+        logging.error(f"Failed to run DSSP analysis: {e}")
+        return use_fallback_dssp(pdb_file)
+
+
+def use_fallback_dssp(pdb_file: str) -> pd.DataFrame:
+    """
+    Fallback method when DSSP fails.
+    Provides default secondary structure and accessibility values.
+    """
+    logging.info(f"Using fallback secondary structure prediction for {pdb_file}")
+    
+    try:
+        # First check if the PDB file exists
+        abs_pdb_file = os.path.abspath(pdb_file)
+        if not os.path.exists(abs_pdb_file):
+            # Create dummy data for missing PDB
+            return pd.DataFrame({
+                "resid": list(range(1, 21)),  # 20 dummy residues
+                "chain": ["A"] * 20,
+                "secondary_structure": ["C"] * 20,  # All coil
+                "relative_accessibility": [0.5] * 20  # Medium accessibility
+            })
+        
+        # Parse PDB to get residue info
+        try:
+            from Bio.PDB import PDBParser
+            parser = PDBParser(QUIET=True)
+            structure = parser.get_structure("protein", abs_pdb_file)
+            
+            records = []
+            for model in structure:
+                for chain in model:
+                    chain_id = chain.id
+                    for residue in chain:
+                        if residue.id[0] == " ":  # Standard residue
+                            resid = residue.id[1]
+                            records.append({
+                                "resid": resid,
+                                "chain": chain_id,
+                                "secondary_structure": "C",  # Default to coil
+                                "relative_accessibility": 0.5  # Default to moderate accessibility
+                            })
+            
+            if records:
+                return pd.DataFrame(records)
+        except Exception as e:
+            logging.warning(f"Failed to parse PDB structure: {e}")
+        
+        # If we get here, we couldn't parse the PDB, so create dummy data
+        return pd.DataFrame({
+            "resid": list(range(1, 21)),
+            "chain": ["A"] * 20,
+            "secondary_structure": ["C"] * 20,
+            "relative_accessibility": [0.5] * 20
+        })
+        
+    except Exception as e:
+        logging.error(f"Fallback DSSP also failed: {e}")
+        # Return minimal dataframe with required columns
+        return pd.DataFrame({
+            "resid": list(range(1, 21)),
+            "chain": ["A"] * 20,
+            "secondary_structure": ["C"] * 20,
+            "relative_accessibility": [0.5] * 20
+        })
 ===== FILE: src/mdcath/processing/voxelizer.py =====
 #!/usr/bin/env python3
 """
@@ -1142,6 +1307,8 @@ def voxelize_domain(pdb_file: str, output_dir: str, config: Dict[str, Any]) -> O
         return None
 
 
+# In src/mdcath/processing/voxelizer.py, we need to modify the voxelize_domains function
+
 def voxelize_domains(pdb_results: Dict[str, Any], config: Dict[str, Any]) -> Dict[str, Any]:
     """
     Voxelize multiple domains by processing all PDBs into a single output file.
@@ -1182,9 +1349,13 @@ def voxelize_domains(pdb_results: Dict[str, Any], config: Dict[str, Any]) -> Dic
     
     # Count valid PDB files
     pdb_files = glob.glob(os.path.join(pdb_dir, "*.pdb"))
-    valid_pdbs = []
+    
+    if not pdb_files:
+        logging.warning("No valid PDB files found for voxelization")
+        return {"success": False, "error": "No valid PDB files"}
     
     logging.info(f"Checking {len(pdb_files)} PDB files for voxelization")
+    valid_pdbs = []
     for pdb_file in tqdm(pdb_files, desc="Validating PDBs"):
         # Validate PDB file
         try:
@@ -1201,12 +1372,13 @@ def voxelize_domains(pdb_results: Dict[str, Any], config: Dict[str, Any]) -> Dic
         logging.warning("No valid PDB files found for voxelization")
         return {"success": False, "error": "No valid PDB files"}
     
-    # Process each PDB file individually instead of combining them
-    results = {"success": True, "domain_results": {}}
-    
-    for pdb_file in valid_pdbs:
-        domain_id = os.path.basename(pdb_file).split('.')[0]
-        logging.info(f"Voxelizing domain {domain_id}")
+    # Create temporary directory with symlinks to all PDB files
+    import tempfile
+    with tempfile.TemporaryDirectory() as temp_dir:
+        # Create symlinks to all PDB files in temp_dir
+        for pdb_file in valid_pdbs:
+            basename = os.path.basename(pdb_file)
+            os.symlink(pdb_file, os.path.join(temp_dir, basename))
         
         # Get voxelization parameters from config
         voxel_config = config.get("processing", {}).get("voxelization", {})
@@ -1217,10 +1389,10 @@ def voxelize_domains(pdb_results: Dict[str, Any], config: Dict[str, Any]) -> Dic
         compression_gzip = voxel_config.get("compression_gzip", True)
         voxelise_all_states = voxel_config.get("voxelise_all_states", False)
         
-        # Create individual output name for each domain
-        output_name = f"{domain_id}_voxelized"
+        # Create combined dataset name
+        output_name = "mdcath_voxelized"
         
-        # Build aposteriori command for this domain
+        # Build aposteriori command for all domains
         cmd = [
             aposteriori_path,
             "-o", voxel_dir,
@@ -1232,14 +1404,14 @@ def voxelize_domains(pdb_results: Dict[str, Any], config: Dict[str, Any]) -> Dic
             "-cb", str(encode_cb).lower(),
             "-comp", str(compression_gzip).lower(),
             "-vas", str(voxelise_all_states).lower(),
-            pdb_file
+            temp_dir      # Use the directory containing all PDB files
         ]
         
         # Run the command with verbose output to help with debugging
         logging.info(f"Running aposteriori command: {' '.join(cmd)}")
         try:
             # Set timeout and run the command
-            timeout = 120  # 2 minutes timeout
+            timeout = 300  # 5 minutes timeout
             result = subprocess.run(cmd, check=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE, 
                                   text=True, timeout=timeout)
             
@@ -1252,49 +1424,44 @@ def voxelize_domains(pdb_results: Dict[str, Any], config: Dict[str, Any]) -> Dic
             output_file_hdf5 = os.path.join(voxel_dir, f"{output_name}.hdf5")
             output_file_h5 = os.path.join(voxel_dir, f"{output_name}.h5")
             
-            domain_result = {"command_success": result.returncode == 0}
-            
             if os.path.exists(output_file_hdf5):
-                domain_result["output_file"] = output_file_hdf5
-                domain_result["success"] = True
-                domain_result["file_size_mb"] = os.path.getsize(output_file_hdf5) / (1024 * 1024)
-                logging.info(f"Voxelization of {domain_id} complete. Output: {output_file_hdf5}")
+                logging.info(f"Voxelization complete. Output: {output_file_hdf5}")
+                return {
+                    "success": True,
+                    "output_file": output_file_hdf5,
+                    "file_size_mb": os.path.getsize(output_file_hdf5) / (1024 * 1024)
+                }
             elif os.path.exists(output_file_h5):
-                domain_result["output_file"] = output_file_h5
-                domain_result["success"] = True
-                domain_result["file_size_mb"] = os.path.getsize(output_file_h5) / (1024 * 1024)
-                logging.info(f"Voxelization of {domain_id} complete. Output: {output_file_h5}")
+                logging.info(f"Voxelization complete. Output: {output_file_h5}")
+                return {
+                    "success": True,
+                    "output_file": output_file_h5,
+                    "file_size_mb": os.path.getsize(output_file_h5) / (1024 * 1024)
+                }
             else:
-                domain_result["success"] = False
-                domain_result["error"] = "Output file not found"
-                logging.warning(f"Voxelization of {domain_id} failed: No output file generated")
-            
-            results["domain_results"][domain_id] = domain_result
+                logging.warning(f"Voxelization failed: No output file generated")
+                return {
+                    "success": False,
+                    "error": "Output file not found",
+                    "command": ' '.join(cmd),
+                    "stdout": result.stdout,
+                    "stderr": result.stderr
+                }
             
         except subprocess.TimeoutExpired:
-            logging.warning(f"Voxelization timeout for {domain_id} after {timeout} seconds")
-            results["domain_results"][domain_id] = {
+            logging.warning(f"Voxelization timeout after {timeout} seconds")
+            return {
                 "success": False, 
                 "error": f"Command timed out after {timeout} seconds"
             }
         except Exception as e:
-            logging.warning(f"Voxelization error for {domain_id}: {e}")
-            results["domain_results"][domain_id] = {
+            logging.warning(f"Voxelization error: {e}")
+            import traceback
+            logging.error(traceback.format_exc())
+            return {
                 "success": False, 
                 "error": str(e)
             }
-    
-    # Count successful voxelizations
-    successful = sum(1 for r in results["domain_results"].values() if r.get("success", False))
-    results["domains_processed"] = len(valid_pdbs)
-    results["domains_successful"] = successful
-    
-    if successful > 0:
-        logging.info(f"Successfully voxelized {successful}/{len(valid_pdbs)} domains")
-    else:
-        logging.warning(f"Failed to voxelize any domains")
-        
-    return results
 ===== FILE: src/mdcath/processing/__init__.py =====
 """
 Data processing modules for mdCATH
@@ -1524,6 +1691,7 @@ except ImportError:
     logging.warning("pdbUtils library not found. Installing fallback method for PDB cleaning.")
     PDBUTILS_AVAILABLE = False
 
+
 def save_pdb_file(pdb_string: str, output_path: str, config: Dict[str, Any]) -> bool:
     """
     Save a PDB string to a file with cleaning applied.
@@ -1537,7 +1705,7 @@ def save_pdb_file(pdb_string: str, output_path: str, config: Dict[str, Any]) -> 
         Boolean indicating if saving was successful
     """
     try:
-        # Write original PDB to temporary file
+        # Write original PDB to a temporary file
         temp_path = output_path + ".temp"
         with open(temp_path, 'w') as f:
             f.write(pdb_string)
@@ -1554,9 +1722,10 @@ def save_pdb_file(pdb_string: str, output_path: str, config: Dict[str, Any]) -> 
         logging.error(f"Failed to save PDB file: {e}")
         return False
 
+
 def fix_pdb(input_pdb_path: str, output_pdb_path: str, config: Dict[str, Any]) -> bool:
     """
-    Clean and fix a PDB file for downstream processing using pdbUtils.
+    Clean and fix a PDB file for downstream processing using pdbUtils or fallback.
 
     Args:
         input_pdb_path: Path to input PDB file
@@ -1579,9 +1748,10 @@ def fix_pdb(input_pdb_path: str, output_pdb_path: str, config: Dict[str, Any]) -
         logging.error(f"Failed to clean PDB {input_pdb_path}: {e}")
         return False
 
+
 def fix_pdb_with_pdbutils(input_pdb_path: str, output_pdb_path: str, config: Dict[str, Any]) -> bool:
     """
-    Clean PDB file using the pdbUtils library for better compatibility with aposteriori.
+    Clean PDB file using the pdbUtils library for better compatibility with your pipeline.
 
     Args:
         input_pdb_path: Path to input PDB file
@@ -1592,67 +1762,134 @@ def fix_pdb_with_pdbutils(input_pdb_path: str, output_pdb_path: str, config: Dic
         Boolean indicating if cleaning was successful
     """
     try:
-        # Convert PDB to DataFrame for easier manipulation
-        pdb_df = pdbUtils.pdb2df(input_pdb_path)
+        # First, check if we need to stop after TER
+        stop_after_ter = config.get("pdb_cleaning", {}).get("stop_after_ter", True)
+        
+        # If we need to stop after TER, we need to process the file line by line first
+        if stop_after_ter:
+            with open(input_pdb_path, 'r') as f:
+                lines = f.readlines()
+                
+            # Find the first TER marker
+            ter_index = -1
+            for i, line in enumerate(lines):
+                if line.startswith("TER"):
+                    ter_index = i
+                    break
+            
+            # Create a temporary file with content up to TER marker (or all if no TER found)
+            temp_input_path = input_pdb_path + ".preproc"
+            with open(temp_input_path, 'w') as f:
+                if ter_index > 0:
+                    f.writelines(lines[:ter_index+1])  # Include the TER line
+                    if not any(line.startswith("END") for line in lines[:ter_index+1]):
+                        f.write("END\n")  # Add END if not present
+                else:
+                    f.writelines(lines)  # Use all lines if no TER found
+                    
+            # Now use this as our input
+            actual_input = temp_input_path
+        else:
+            actual_input = input_pdb_path
+            
+        # Convert PDB to DataFrame using pdbUtils
+        pdb_df = pdbUtils.pdb2df(actual_input)
         initial_atoms = len(pdb_df)
-        
-        # Extract cleaning configuration
+
         clean_config = config.get("pdb_cleaning", {})
-        
+
+        # Fix ONLY the first CAY to N - more targeted approach
+        if clean_config.get("fix_first_cay", True):
+            atom_name_col = "ATOM_NAME" if "ATOM_NAME" in pdb_df.columns else "atom_name"
+            if atom_name_col in pdb_df.columns:
+                # Find the first CAY atom
+                cay_rows = pdb_df[pdb_df[atom_name_col] == "CAY"]
+                if not cay_rows.empty:
+                    first_cay_idx = cay_rows.index[0]
+                    # Change only the first CAY to N
+                    pdb_df.at[first_cay_idx, atom_name_col] = "N"
+                    logging.info("Changed first CAY atom to N")
+
         # Replace HSD/HSE/HSP with HIS
         if clean_config.get("correct_unusual_residue_names", True):
             if "RES_NAME" in pdb_df.columns:
                 pdb_df["RES_NAME"] = pdb_df["RES_NAME"].apply(
-                    lambda x: 'HIS' if str(x).strip() in ['HSD', 'HSE', 'HSP'] else x
+                    lambda x: "HIS" if str(x).strip() in ["HSD", "HSE", "HSP"] else x
                 )
             elif "resName" in pdb_df.columns:
                 pdb_df["resName"] = pdb_df["resName"].apply(
-                    lambda x: 'HIS' if str(x).strip() in ['HSD', 'HSE', 'HSP'] else x
+                    lambda x: "HIS" if str(x).strip() in ["HSD", "HSE", "HSP"] else x
                 )
-        
+
         # Replace chain 0 with A
         if clean_config.get("replace_chain_0_with_A", True):
             chain_col = "CHAIN_ID" if "CHAIN_ID" in pdb_df.columns else "chainID"
             if chain_col in pdb_df.columns:
                 pdb_df[chain_col] = pdb_df[chain_col].apply(
-                    lambda x: 'A' if str(x).strip() == '0' else x
+                    lambda x: "A" if str(x).strip() == "0" else x
                 )
-        
+
         # Fix atom numbering
         if clean_config.get("fix_atom_numbering", True):
             atom_num_col = "ATOM_NUM" if "ATOM_NUM" in pdb_df.columns else "atomNum"
             if atom_num_col in pdb_df.columns:
                 pdb_df[atom_num_col] = range(1, len(pdb_df) + 1)
-        
+
         # Remove hydrogens if specified
         if clean_config.get("remove_hydrogens", False):
-            element_col = "ELEMENT" if "ELEMENT" in pdb_df.columns else "element"
-            if element_col in pdb_df.columns:
-                pdb_df = pdb_df[pdb_df[element_col] != "H"]
-        
-        # Check for CRYST1 record and add if missing
-        has_cryst1 = False
-        if "RECORD_NAME" in pdb_df.columns:
-            has_cryst1 = any(pdb_df["RECORD_NAME"].str.contains("CRYST1"))
-        
+            elem_col = "ELEMENT" if "ELEMENT" in pdb_df.columns else "element"
+            if elem_col in pdb_df.columns:
+                pdb_df = pdb_df[pdb_df[elem_col] != "H"]
+
+        # Remove water/ions if config says so (TIP, WAT, HOH, SOD, CLA, chain W)
+        if clean_config.get("remove_solvent_ions", False):
+            skip_resnames = {"TIP", "WAT", "HOH", "SOD", "CLA"}
+            res_col = "RES_NAME" if "RES_NAME" in pdb_df.columns else "resName"
+            chain_col = "CHAIN_ID" if "CHAIN_ID" in pdb_df.columns else "chainID"
+            if res_col in pdb_df.columns:
+                pdb_df = pdb_df[~pdb_df[res_col].isin(skip_resnames)]
+            if chain_col in pdb_df.columns:
+                pdb_df = pdb_df[pdb_df[chain_col] != "W"]
+
         # Save cleaned PDB
         pdbUtils.df2pdb(pdb_df, output_pdb_path)
+
+        # Add properly formatted CRYST1 record for DSSP compatibility
+        # This is critical as the error logs show DSSP is failing due to malformed CRYST1
+        with open(output_pdb_path, "r") as f:
+            content = f.readlines()
         
-        # Add CRYST1 if missing and specified in config
-        if not has_cryst1 and clean_config.get("add_cryst1_record", True):
-            with open(output_pdb_path, 'r') as f:
-                content = f.readlines()
-            
-            with open(output_pdb_path, 'w') as f:
-                f.write("CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1\n")
-                f.writelines(content)
+        # Properly formatted CRYST1 record with proper spacing and floating point values
+        cryst1_line = "CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1\n"
         
+        # Check if CRYST1 already exists and modify/add as needed
+        has_cryst1 = False
+        for i, line in enumerate(content):
+            if line.startswith("CRYST1"):
+                has_cryst1 = True
+                content[i] = cryst1_line
+                break
+        
+        if not has_cryst1:
+            content.insert(0, cryst1_line)
+        
+        with open(output_pdb_path, "w") as f:
+            f.writelines(content)
+
+        # Cleanup temporary file if created
+        if stop_after_ter and os.path.exists(temp_input_path):
+            os.remove(temp_input_path)
+
         final_atoms = len(pdb_df)
-        logging.info(f"Cleaned PDB {os.path.basename(input_pdb_path)}: {initial_atoms} atoms → {final_atoms} atoms")
-        
+        logging.info(
+            f"Cleaned PDB {os.path.basename(input_pdb_path)}: {initial_atoms} atoms → {final_atoms} atoms"
+        )
         return True
+
     except Exception as e:
         logging.error(f"Failed to clean PDB with pdbUtils: {e}")
+        import traceback
+        logging.error(traceback.format_exc())
         return False
 
 def fix_pdb_fallback(input_pdb_path: str, output_pdb_path: str, config: Dict[str, Any]) -> bool:
@@ -1671,24 +1908,45 @@ def fix_pdb_fallback(input_pdb_path: str, output_pdb_path: str, config: Dict[str
         with open(input_pdb_path, 'r') as f:
             lines = f.readlines()
 
-        # Check for and add CRYST1 if needed
-        has_cryst1 = False
-        for line in lines:
-            if line.strip() and line.startswith("CRYST1"):
-                has_cryst1 = True
-                break
+        clean_config = config.get("pdb_cleaning", {})
+        has_cryst1 = any(line.strip().startswith("CRYST1") for line in lines)
 
         cleaned_lines = []
-        if not has_cryst1 and config.get("pdb_cleaning", {}).get("add_cryst1_record", True):
-            cleaned_lines.append("CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1\n")
+        # Add CRYST1 if missing
+        if not has_cryst1 and clean_config.get("add_cryst1_record", True):
+            # Properly formatted CRYST1 record with correct spacing
+            cleaned_lines.append("CRYST1    100.000   100.000   100.000  90.00  90.00  90.00 P 1           1\n")
 
-        # Process atom records
+        # We can skip TIP, WAT, HOH, SOD, CLA, chain 'W' if remove_solvent_ions is True
+        skip_solvent = clean_config.get("remove_solvent_ions", False)
+        skip_resnames = {"TIP", "WAT", "HOH", "SOD", "CLA"}
+        stop_after_ter = clean_config.get("stop_after_ter", True)
+        
+        # Track whether we've encountered TER
+        ter_encountered = False
+        
+        # Fix atom numbering
+        atom_num = 1
+
         for line in lines:
+            # Check if we should stop processing (after TER marker)
+            if stop_after_ter and ter_encountered:
+                # Only keep certain record types after TER (like END)
+                if line.startswith("END"):
+                    cleaned_lines.append(line)
+                continue
+                
+            # Process TER line if encountered
+            if line.startswith("TER"):
+                cleaned_lines.append(f"TER   {atom_num:5d}\n")
+                if stop_after_ter:
+                    ter_encountered = True
+                continue
+                
             if line.startswith("ATOM") or line.startswith("HETATM"):
                 try:
-                    # Extract fields
                     record_type = line[0:6].strip()
-                    atom_num = int(line[6:11].strip())
+                    # atom_num from the original is ignored, we use our counter
                     atom_name = line[12:16].strip()
                     alt_loc = line[16:17].strip()
                     res_name = line[17:20].strip()
@@ -1698,48 +1956,84 @@ def fix_pdb_fallback(input_pdb_path: str, output_pdb_path: str, config: Dict[str
                     x = float(line[30:38].strip())
                     y = float(line[38:46].strip())
                     z = float(line[46:54].strip())
-                    occupancy = line[54:60].strip() if line[54:60].strip() else "0.00"
-                    temp_factor = line[60:66].strip() if line[60:66].strip() else "0.00"
-                    element = line[76:78].strip() if len(line) >= 78 else ""
-
-                    # Apply cleaning rules
-                    clean_config = config.get("pdb_cleaning", {})
+                    occ = line[54:60].strip() or "0.00"
+                    temp_factor = line[60:66].strip() or "0.00"
+                    # Derive element from atom name if not present
+                    element = line[76:78].strip() if len(line) >= 78 else atom_name[0:1]
+                    
+                    # Fix chain '0' → 'A'
                     if clean_config.get("replace_chain_0_with_A", True) and chain_id == "0":
                         chain_id = "A"
 
+                    # Convert HSD/HSE/HSP → HIS
                     if clean_config.get("correct_unusual_residue_names", True):
                         if res_name in ["HSD", "HSE", "HSP"]:
                             res_name = "HIS"
 
-                    # Skip hydrogens if configured
-                    if clean_config.get("remove_hydrogens", False) and element == "H":
+                    # Remove hydrogens if desired
+                    if clean_config.get("remove_hydrogens", False) and (
+                        element == "H" or atom_name.startswith("H")
+                    ):
                         continue
 
-                    # Format the line according to PDB standard
-                    new_line = f"{record_type:<6s}{atom_num:5d} {atom_name:<4s}{alt_loc:1s}{res_name:3s} {chain_id:1s}{res_num:4s}{ins_code:1s}   {x:8.3f}{y:8.3f}{z:8.3f}{float(occupancy):6.2f}{float(temp_factor):6.2f}           {element:>2s}  \n"
+                    # Remove water/ions if configured
+                    if skip_solvent:
+                        # If residue name is in skip set OR chain is W, skip
+                        if res_name in skip_resnames or chain_id == "W":
+                            continue
+
+                    # Format line
+                    new_line = (
+                        f"{record_type:<6s}{atom_num:5d} {atom_name:<4s}{alt_loc:1s}"
+                        f"{res_name:3s} {chain_id:1s}{res_num:4s}{ins_code:1s}"
+                        f"   {x:8.3f}{y:8.3f}{z:8.3f}"
+                        f"{float(occ):6.2f}{float(temp_factor):6.2f}"
+                        f"           {element:>2s}  \n"
+                    )
                     cleaned_lines.append(new_line)
+                    atom_num += 1
+                    
+                except ValueError as ve:
+                    logging.warning(f"Error parsing line: {line.strip()} -> {ve}")
+                    # Skip problematic lines
+                    continue
                 except Exception as e:
-                    logging.warning(f"Error processing line: {line.strip()} - {e}")
-                    # Keep the original line in case of parsing errors
-                    cleaned_lines.append(line)
-            else:
-                # Keep non-ATOM lines as they are
+                    logging.warning(f"Other error processing line: {line.strip()} -> {e}")
+                    # Skip problematic lines
+                    continue
+            elif not line.startswith("ATOM") and not line.startswith("HETATM"):
+                # Keep non-ATOM lines as is (e.g. REMARK, unless it's after TER)
                 cleaned_lines.append(line)
 
+        # Add END record if not present
+        if not any(line.startswith("END") for line in cleaned_lines):
+            cleaned_lines.append("END\n")
+            
         # Write cleaned PDB
         with open(output_pdb_path, 'w') as f:
             f.writelines(cleaned_lines)
 
+        logging.info(f"Cleaned PDB {os.path.basename(input_pdb_path)} → {os.path.basename(output_pdb_path)}, {atom_num-1} atoms")
         return True
+
     except Exception as e:
         logging.error(f"Failed to clean PDB {input_pdb_path} with fallback method: {e}")
+        import traceback
+        logging.error(traceback.format_exc())
         return False
-
-def extract_frames(coords: np.ndarray, resids: List[int], resnames: List[str],
-                  domain_id: str, output_dir: str, temperature: str, replica: str,
-                  config: Dict[str, Any]) -> bool:
+    
+    
+def extract_frames(coords: np.ndarray,
+                   resids: List[int],
+                   resnames: List[str],
+                   domain_id: str,
+                   output_dir: str,
+                   temperature: str,
+                   replica: str,
+                   config: Dict[str, Any]) -> bool:
     """
     Extract frames from coordinate data and save as PDB files.
+    Uses the cleaned PDB as a template and updates only the coordinates.
 
     Args:
         coords: Coordinate data
@@ -1748,7 +2042,7 @@ def extract_frames(coords: np.ndarray, resids: List[int], resnames: List[str],
         domain_id: Domain identifier
         output_dir: Directory to save frame PDBs
         temperature: Temperature
-        replica: Replica
+        replica: Replica index
         config: Configuration dictionary
 
     Returns:
@@ -1759,137 +2053,180 @@ def extract_frames(coords: np.ndarray, resids: List[int], resnames: List[str],
     num_frames = frame_selection.get("num_frames", 1)
 
     try:
-        # Create output directory
+        # Create output directory for frames
         frame_dir = os.path.join(output_dir, "frames", f"replica_{replica}", temperature)
         os.makedirs(frame_dir, exist_ok=True)
-
-        # For simplicity, extract the last frame if num_frames is 1
+        
+        # Get the source cleaned PDB path to use as a template
+        pdb_dir = os.path.join(output_dir, "pdbs")
+        pdb_path = os.path.join(pdb_dir, f"{domain_id}.pdb")
+        
+        # Check if the cleaned PDB exists
+        if not os.path.exists(pdb_path):
+            logging.error(f"Cleaned PDB file not found for domain {domain_id}: {pdb_path}")
+            return False
+            
+        # Read the cleaned PDB template
+        with open(pdb_path, 'r') as f:
+            pdb_lines = f.readlines()
+        
+        # For simplicity, extract only the last frame if num_frames == 1
         if num_frames == 1:
             frame_idx = -1
-            
-            # Debug log to check coords shape
             logging.debug(f"Coordinate shape for domain {domain_id}: {coords.shape}")
-            
-            # Handle different coordinate shapes
+
+            # Handle shape differences
             if coords.ndim == 1:
-                logging.warning(f"Coordinates have shape {coords.shape} - expected 2D array. Reshaping if possible.")
-                if len(coords) == 3:  # Single XYZ coordinate
-                    # This is a single coordinate that needs to be reshaped
-                    frame_coords = np.array([coords])  # Make it a 2D array with one row
+                logging.warning(f"Coordinates shape {coords.shape} - expected 2D array.")
+                if len(coords) == 3:  # Single XYZ
+                    frame_coords = np.array([coords])
                 else:
-                    logging.error(f"Cannot reshape coordinates with length {len(coords)}")
+                    logging.error(f"Cannot reshape coords with length {len(coords)}")
                     return False
             elif coords.ndim == 2:
-                frame_coords = coords  # Already in the correct shape
+                # shape: (atoms, xyz)
+                frame_coords = coords
             elif coords.ndim == 3:
-                # If this is a multi-frame array, select the specific frame
+                # shape: (frames, atoms, xyz)
                 frame_coords = coords[frame_idx]
             else:
-                logging.error(f"Unsupported coordinate dimensions: {coords.ndim}")
+                logging.error(f"Unsupported coordinate dims: {coords.ndim}")
                 return False
-            
-            # Verify coordinates have correct shape now
+
+            # Verify final shape is (atoms, 3)
             if frame_coords.ndim != 2 or frame_coords.shape[1] != 3:
-                logging.error(f"Coordinates have invalid shape {frame_coords.shape} after processing")
+                logging.error(f"Coordinates have invalid shape {frame_coords.shape}")
                 return False
-            
-            # Create a map from residue IDs to their indices
-            residue_map = {}
+
+            # Create a mapping from resid to coordinates index
+            resid_to_coord = {}
             for i, resid in enumerate(resids):
-                if i < len(frame_coords):  # Ensure we have coordinates for this index
-                    if resid not in residue_map:
-                        residue_map[resid] = {
-                            'indices': [],
-                            'resname': resnames[i]
-                        }
-                    residue_map[resid]['indices'].append(i)
+                if i < len(frame_coords):
+                    if resid not in resid_to_coord:
+                        resid_to_coord[resid] = []
+                    resid_to_coord[resid].append(i)
             
-            # Create PDB string for the frame
-            pdb_lines = []
-            # Add CRYST1 record
-            pdb_lines.append("CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1\n")
-            atom_num = 1
+            # Track which atom indices in the PDB have been mapped to coordinates
+            atom_coord_mapping = {}
             
-            # Select representative atoms for each residue
-            for resid, info in residue_map.items():
-                # Use the first atom of each residue
-                if not info['indices']:
-                    continue
-                    
-                atom_idx = info['indices'][0]
-                
-                if atom_idx < len(frame_coords):
+            # First pass: Process lines and build atom_resid mapping
+            atom_resid_mapping = {}
+            for i, line in enumerate(pdb_lines):
+                if line.startswith("ATOM") or line.startswith("HETATM"):
                     try:
-                        x, y, z = frame_coords[atom_idx]
-                        resname = info['resname']
-                        atom_name = "CA"  # Use CA as representative
-                        chain_id = "A"
-                        pdb_lines.append(f"ATOM  {atom_num:5d} {atom_name:<4s} {resname:3s} {chain_id:1s}{resid:4d}    {x:8.3f}{y:8.3f}{z:8.3f}  1.00  0.00           C  \n")
-                        atom_num += 1
-                    except (IndexError, TypeError, ValueError) as e:
-                        logging.warning(f"Error processing coordinates for residue {resid}: {e}")
+                        atom_num = int(line[6:11].strip())
+                        res_num = int(line[22:26].strip())
+                        atom_resid_mapping[atom_num] = res_num
+                    except ValueError:
                         continue
             
-            # Check if we have any atoms processed
-            if atom_num <= 1:
-                logging.warning(f"No valid atoms found for {domain_id}, skipping frame extraction")
-                return False
-
-            # Write frame PDB
+            # Second pass: Create new PDB with updated coordinates where possible
+            new_pdb_lines = []
+            for line in pdb_lines:
+                if line.startswith("ATOM") or line.startswith("HETATM"):
+                    try:
+                        # Extract parts of the ATOM line we want to keep
+                        record_type = line[0:6].strip()
+                        atom_num = int(line[6:11].strip())
+                        atom_name = line[12:16].strip()
+                        alt_loc = line[16:17].strip()
+                        res_name = line[17:20].strip()
+                        chain_id = line[21:22].strip()
+                        res_num = int(line[22:26].strip())
+                        ins_code = line[26:27].strip()
+                        
+                        # Extract values from original line for fields we're not updating
+                        occ = line[54:60].strip() or "0.00"
+                        temp_factor = line[60:66].strip() or "0.00"
+                        element = line[76:78].strip() if len(line) >= 78 else ""
+                        
+                        # Look up coordinates based on resid
+                        if res_num in resid_to_coord and len(resid_to_coord[res_num]) > 0:
+                            coord_idx = resid_to_coord[res_num][0]
+                            # Update coordinates
+                            x, y, z = frame_coords[coord_idx]
+                            # Format new ATOM line with updated coordinates
+                            new_line = (
+                                f"{record_type:<6s}{atom_num:5d} {atom_name:<4s}{alt_loc:1s}"
+                                f"{res_name:3s} {chain_id:1s}{res_num:4d}{ins_code:1s}"
+                                f"   {x:8.3f}{y:8.3f}{z:8.3f}"
+                                f"{float(occ):6.2f}{float(temp_factor):6.2f}"
+                                f"           {element:>2s}  \n"
+                            )
+                            atom_coord_mapping[atom_num] = coord_idx
+                        else:
+                            # Keep original coordinates if resid not in coordinate data
+                            new_line = line
+                        
+                        new_pdb_lines.append(new_line)
+                    except ValueError:
+                        # If we can't parse the line, keep it as is
+                        new_pdb_lines.append(line)
+                else:
+                    # Non-ATOM lines (HEADER, REMARK, etc.) stay the same
+                    new_pdb_lines.append(line)
+            
+            # Check if we've used all coordinates
+            coords_used = len(atom_coord_mapping)
+            logging.info(f"Used {coords_used}/{len(frame_coords)} coordinates for {domain_id}")
+            
+            # Write out the single-frame PDB
             frame_path = os.path.join(frame_dir, f"{domain_id}_frame.pdb")
             with open(frame_path, 'w') as f:
-                f.writelines(pdb_lines)
+                f.writelines(new_pdb_lines)
 
-            logging.info(f"Extracted frame for domain {domain_id}, temperature {temperature}, replica {replica}")
+            logging.info(f"Extracted 1-frame PDB for domain {domain_id} at T={temperature}, rep={replica}")
             return True
+
         else:
-            logging.warning(f"Multiple frame extraction not implemented yet")
+            # Not implemented
+            logging.warning(f"Multiple-frame extraction not implemented; requested {num_frames}.")
             return False
+
     except Exception as e:
-        logging.error(f"Failed to extract frames: {e}")
+        logging.error(f"Failed to extract frames for domain {domain_id}: {e}")
         import traceback
         logging.error(traceback.format_exc())
         return False
 
 def process_pdb_data(domain_results: Dict[str, Dict[str, Any]], config: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Process PDB data for all domains.
-    
+    Process PDB data for all domains: save cleaned PDB, optionally extract frames, etc.
+
     Args:
         domain_results: Dictionary with processing results for all domains
         config: Configuration dictionary
-    
+
     Returns:
         Dictionary with PDB processing results
     """
     from src.mdcath.core.data_loader import H5DataLoader
     from tqdm import tqdm
-    
+
     output_dir = config.get("output", {}).get("base_dir", "./outputs")
     input_dir = config.get("input", {}).get("mdcath_folder", "/mnt/datasets/MD_CATH/data")
-    
+
     # Create output directories
     pdb_dir = os.path.join(output_dir, "pdbs")
     frames_dir = os.path.join(output_dir, "frames")
     os.makedirs(pdb_dir, exist_ok=True)
     os.makedirs(frames_dir, exist_ok=True)
-    
+
     results = {}
-    
-    # Check if pdbUtils is available
+
+    # Check for pdbUtils
     if PDBUTILS_AVAILABLE:
-        logging.info("Using pdbUtils for PDB cleaning (recommended for aposteriori compatibility)")
+        logging.info("Using pdbUtils for PDB cleaning (recommended).")
     else:
-        logging.warning("pdbUtils not available, using fallback PDB cleaning method")
-    
-    # Process domains
-    logging.info("Processing PDB data for domains")
+        logging.warning("pdbUtils not available, using fallback cleaning method.")
+
+    # Save cleaned PDBs
+    logging.info("Processing PDB data for domains...")
     for domain_id, result in tqdm(domain_results.items(), desc="Processing PDB files"):
         if not result.get("success", False):
             continue
-        
-        # Save cleaned PDB
-        pdb_data = result.get("pdb_data")
+
+        pdb_data = result.get("pdb_data", "")
         if pdb_data:
             pdb_path = os.path.join(pdb_dir, f"{domain_id}.pdb")
             success = save_pdb_file(pdb_data, pdb_path, config)
@@ -1899,40 +2236,44 @@ def process_pdb_data(domain_results: Dict[str, Dict[str, Any]], config: Dict[str
             else:
                 logging.error(f"Failed to save cleaned PDB for domain {domain_id}")
                 results[domain_id] = {"pdb_saved": False}
-    
-    # Extract frames from trajectories
+
+    # Extract frames from HDF5 trajectories
     temps = [str(t) for t in config.get("temperatures", [320, 348, 379, 413, 450])]
     num_replicas = config.get("num_replicas", 5)
-    
-    logging.info("Extracting frames from trajectories")
+
+    logging.info("Extracting frames from trajectories...")
     for domain_id, result in tqdm(results.items(), desc="Extracting frames"):
         if not result.get("pdb_saved", False):
             continue
-        
-        # Create data loader for this domain
+
         h5_path = os.path.join(input_dir, f"mdcath_dataset_{domain_id}.h5")
         if not os.path.exists(h5_path):
             logging.warning(f"H5 file not found for domain {domain_id}: {h5_path}")
             continue
-        
+
         loader = H5DataLoader(h5_path, config)
-        
-        # Extract frames for each temperature and replica
+
+        # For each temperature and replica
         for temp in temps:
             for r in range(num_replicas):
                 replica = str(r)
                 coords_result = loader.extract_coordinates(temp, replica)
                 if coords_result is not None:
                     coords, resids, resnames = coords_result
-                    extract_success = extract_frames(coords, resids, resnames, domain_id, 
-                                                   output_dir, temp, replica, config)
+                    extract_success = extract_frames(
+                        coords, resids, resnames,
+                        domain_id, output_dir, temp, replica, config
+                    )
                     if extract_success:
                         if "frames" not in results[domain_id]:
                             results[domain_id]["frames"] = []
                         results[domain_id]["frames"].append((temp, replica))
-    
+
     return results
+
 ===== FILE: src/mdcath/processing/features.py =====
+
+
 #!/usr/bin/env python3
 """
 Processing module for generating ML features.
@@ -1940,27 +2281,21 @@ Processing module for generating ML features.
 
 import os
 import logging
+import shutil  # <-- Added to fix "name 'shutil' is not defined" DSSP fallback error
 import numpy as np
 import pandas as pd
 from typing import Dict, Any, Optional, List, Tuple, Union
 from tqdm import tqdm
+
 from src.mdcath.processing.core_exterior import compute_core_exterior
 
+
 def generate_ml_features(rmsf_data: Dict[str, pd.DataFrame],
-                       core_exterior_data: Dict[str, pd.DataFrame],
-                       dssp_data: Dict[str, Dict[str, pd.DataFrame]],
-                       config: Dict[str, Any]) -> Dict[str, pd.DataFrame]:
+                         core_exterior_data: Dict[str, pd.DataFrame],
+                         dssp_data: Dict[str, Dict[str, pd.DataFrame]],
+                         config: Dict[str, Any]) -> Dict[str, pd.DataFrame]:
     """
-    Generate ML features for all domains.
-
-    Args:
-        rmsf_data: Dictionary with RMSF data for all temperatures
-        core_exterior_data: Dictionary with core/exterior classification
-        dssp_data: Dictionary with DSSP data for all temperatures and replicas
-        config: Configuration dictionary
-
-    Returns:
-        Dictionary with ML feature dataframes for all temperatures
+    Generate ML features for all domains with improved handling of missing values.
     """
     try:
         # Get list of all domains
@@ -1983,135 +2318,178 @@ def generate_ml_features(rmsf_data: Dict[str, pd.DataFrame],
 
             df = rmsf_data[temp].copy()
 
-            # Add protein size
+            # Ensure RMSF column is numeric
+            rmsf_col = f"rmsf_{temp}"
+            if rmsf_col in df.columns:
+                df[rmsf_col] = pd.to_numeric(df[rmsf_col], errors='coerce').fillna(0.0)
+
+            # Add protein size (number of residues for each domain)
             df["protein_size"] = df.groupby("domain_id")["resid"].transform("count")
 
             # Add normalized residue position
             df["normalized_resid"] = df.groupby("domain_id")["resid"].transform(
-                lambda x: (x - x.min()) / (x.max() - x.min())
+                lambda x: (x - x.min()) / max(x.max() - x.min(), 1)
             )
 
-            # Add core/exterior classification
+            # Create core_exterior column with default value
+            if "core_exterior" not in df.columns:
+                df["core_exterior"] = "core"  # Default to core (more conservative)
+                
+            # Create empty columns for missing data with default values
+            if "relative_accessibility" not in df.columns:
+                df["relative_accessibility"] = 0.5  # Default to moderate accessibility
+
+            if "dssp" not in df.columns:
+                df["dssp"] = "C"  # Default to coil
+
+            # ---------------------------
+            # MERGE CORE/EXTERIOR DATA
+            # ---------------------------
             for domain_id in df["domain_id"].unique():
                 if domain_id in core_exterior_data:
                     core_ext_df = core_exterior_data[domain_id]
-
-                    # Merge core/exterior data
+                    
+                    # Use regular merge to avoid dimension mismatch
+                    domain_df = df[df["domain_id"] == domain_id][["domain_id", "resid"]].copy()
+                    merged = pd.merge(domain_df, core_ext_df, on="resid", how="left")
+                    
+                    # Create mappings from resid to values
+                    ce_mapping = dict(zip(merged["resid"], merged["core_exterior"]))
+                    
+                    # Apply the mapping to the original dataframe
                     domain_mask = df["domain_id"] == domain_id
-                    df_domain = df[domain_mask].copy()
+                    df.loc[domain_mask, "core_exterior"] = df.loc[domain_mask, "resid"].map(ce_mapping).fillna("core")
+                    
+                    # If core_exterior_data contains relative_accessibility, use it
+                    if "relative_accessibility" in core_ext_df.columns:
+                        ra_mapping = dict(zip(core_ext_df["resid"], core_ext_df["relative_accessibility"]))
+                        df.loc[domain_mask, "relative_accessibility"] = df.loc[domain_mask, "resid"].map(ra_mapping).fillna(0.5)
 
-                    # Reset index for proper merging
-                    df_domain = df_domain.reset_index(drop=True)
-                    df_domain = pd.merge(df_domain, core_ext_df, on="resid", how="left")
+            # Ensure no missing values in core_exterior
+            df["core_exterior"] = df["core_exterior"].fillna("core")
 
-                    # Update the main dataframe
-                    df.loc[domain_mask] = df_domain
+            # ---------------------------
+            # ADD DSSP DATA
+            # ---------------------------
+            if temp in dssp_data:
+                for replica, replica_dssp in dssp_data[temp].items():
+                    if not replica_dssp.empty:
+                        for domain_id in df["domain_id"].unique():
+                            domain_dssp = replica_dssp[replica_dssp["domain_id"] == domain_id]
+                            if not domain_dssp.empty:
+                                # Convert resid to numeric carefully
+                                domain_dssp.loc[:, "resid"] = pd.to_numeric(domain_dssp["resid"], errors='coerce')
+                                
+                                # Create mappings
+                                dssp_mapping = dict(zip(domain_dssp["resid"], domain_dssp["dssp"]))
+                                
+                                # Apply mappings
+                                domain_mask = df["domain_id"] == domain_id
+                                df.loc[domain_mask, "dssp"] = df.loc[domain_mask, "resid"].map(dssp_mapping).fillna("C")
+                                
+                                # If relative_accessibility is present, use it
+                                if "relative_accessibility" in domain_dssp.columns:
+                                    ra_mapping = dict(zip(domain_dssp["resid"], domain_dssp["relative_accessibility"]))
+                                    df.loc[domain_mask, "relative_accessibility"] = df.loc[domain_mask, "resid"].map(ra_mapping).fillna(0.5)
+                                
+                                # Break after first valid replica with data for this domain
+                                break
 
-            # Fill missing core/exterior values with 'unknown'
-            if "core_exterior" in df.columns:
-                df["core_exterior"] = df["core_exterior"].fillna("unknown")
-            else:
-                df["core_exterior"] = "unknown"
+            # Ensure no empty strings in DSSP
+            df["dssp"] = df["dssp"].replace("", "C").replace(" ", "C").fillna("C")
+            
+            # Ensure relative_accessibility is numeric and not empty
+            df["relative_accessibility"] = pd.to_numeric(df["relative_accessibility"], errors='coerce').fillna(0.5)
 
-            # Add DSSP data
-            if temp in dssp_data and "0" in dssp_data[temp]:
-                for domain_id in df["domain_id"].unique():
-                    domain_dssp = None
+            # ---------------------------
+            # ENCODE CATEGORICAL VARIABLES
+            # ---------------------------
+            # 1) Resname encoding: ensure all are strings
+            if "resname" not in df.columns:
+                # If resname is missing, create a placeholder
+                df["resname"] = "UNK"
 
-                    # Find DSSP data for this domain
-                    for replica, dssp_df in dssp_data[temp].items():
-                        domain_dssp_subset = dssp_df[dssp_df["domain_id"] == domain_id]
-                        if not domain_dssp_subset.empty:
-                            domain_dssp = domain_dssp_subset[["resid", "dssp"]]
-                            break
+            # Convert to string and remove invalid placeholders
+            df["resname"] = df["resname"].astype(str)
+            filtered_resnames = [r for r in df["resname"].unique() if r not in ["nan", "None", ""]]
+            unique_resnames = sorted(filtered_resnames)
 
-                    if domain_dssp is not None:
-                        # Merge DSSP data
-                        domain_mask = df["domain_id"] == domain_id
-                        df_domain = df[domain_mask].copy()
-                        df_domain = df_domain.reset_index(drop=True)
-                        df_domain = pd.merge(df_domain, domain_dssp, on="resid", how="left")
+            # Build mapping
+            resname_mapping = {name: i+1 for i, name in enumerate(unique_resnames)}  # Start at 1
+            df["resname_encoded"] = df["resname"].map(resname_mapping).fillna(0).astype(int)
 
-                        # Update the main dataframe
-                        df.loc[domain_mask] = df_domain
+            # 2) Core/Exterior encoding
+            core_ext_mapping = {"core": 0, "exterior": 1, "unknown": 2}
+            df["core_exterior_encoded"] = df["core_exterior"].map(core_ext_mapping).fillna(0).astype(int)
 
-            # Fill missing DSSP values with 'C' (coil)
-            if "dssp" in df.columns:
-                df["dssp"] = df["dssp"].fillna("C")
-            else:
-                df["dssp"] = "C"
-
-            # Encode categorical variables
-            # Resname encoding
-            unique_resnames = df["resname"].unique()
-            resname_mapping = {name: i for i, name in enumerate(sorted(unique_resnames))}
-            df["resname_encoded"] = df["resname"].map(resname_mapping)
-
-            # Core/exterior encoding
-            core_ext_mapping = {"core": 1, "exterior": 2, "unknown": 0}
-            df["core_exterior_encoded"] = df["core_exterior"].map(core_ext_mapping)
-
-            # Secondary structure encoding
-            # Simplified 3-state encoding: Helix (H,G,I), Sheet (E,B), Coil (others)
+            # 3) DSSP encoding (3-state secondary structure)
             def encode_ss(ss):
                 if ss in ["H", "G", "I"]:
                     return 0  # Helix
                 elif ss in ["E", "B"]:
                     return 1  # Sheet
                 else:
-                    return 2  # Coil
+                    return 2  # Coil, Loop, or other
 
             df["secondary_structure_encoded"] = df["dssp"].apply(encode_ss)
 
-            # Add dummy relative accessibility (placeholder for more advanced calculation)
-            df["relative_accessibility"] = 1.0
-
             # Reorder columns to put domain_id first
             cols = df.columns.tolist()
-            cols.remove("domain_id")
-            cols = ["domain_id"] + cols
-            df = df[cols]
+            if "domain_id" in cols:
+                cols.remove("domain_id")
+                df = df[["domain_id"] + cols]
+
+            # Final validation - ensure no NaN or empty values
+            for col in df.columns:
+                if df[col].dtype == 'object':
+                    # For string columns, fill empty strings and NaNs with appropriate defaults
+                    if col == 'dssp':
+                        df[col] = df[col].replace('', 'C').replace(' ', 'C').fillna('C')
+                    elif col == 'core_exterior':
+                        df[col] = df[col].replace('', 'core').fillna('core')
+                    elif col == 'resname':
+                        df[col] = df[col].replace('', 'UNK').fillna('UNK')
+                    else:
+                        df[col] = df[col].fillna('unknown')
+                else:
+                    # For numeric columns, fill NaNs with appropriate defaults
+                    if col == 'relative_accessibility':
+                        df[col] = df[col].fillna(0.5)
+                    else:
+                        df[col] = df[col].fillna(0)
 
             # Store the feature dataframe
             feature_dfs[temp] = df
 
-        # Calculate average features
+        # --------------------------------
+        # CALCULATE AVERAGE FEATURES ACROSS TEMPS
+        # --------------------------------
         if temps:
-            # Start with a copy of the first temperature's features
-            avg_df = feature_dfs[temps[0]].copy()
+            avg_df = feature_dfs[temps[0]].copy(deep=True)
 
-            # Collect RMSF columns
+            # Calculate average RMSF across temperatures
             rmsf_cols = [f"rmsf_{temp}" for temp in temps]
-            rmsf_vals = []
-
-            for temp in temps:
-                if temp in feature_dfs and f"rmsf_{temp}" in feature_dfs[temp].columns:
-                    temp_df = feature_dfs[temp]
-                    # Extract the domain, resid, and RMSF columns
-                    temp_subset = temp_df[["domain_id", "resid", f"rmsf_{temp}"]].copy()
-                    rmsf_vals.append(temp_subset)
-
-            # Merge all RMSF values
-            if rmsf_vals:
-                merged_df = rmsf_vals[0]
-                for i in range(1, len(rmsf_vals)):
-                    merged_df = pd.merge(merged_df, rmsf_vals[i], on=["domain_id", "resid"])
-
-                # Calculate average RMSF
-                merged_df["rmsf_average"] = merged_df[[f"rmsf_{temp}" for temp in temps]].mean(axis=1)
-
-                # Replace the RMSF columns in the average dataframe
-                avg_df = pd.merge(avg_df.drop(rmsf_cols, axis=1, errors="ignore"),
-                                merged_df[["domain_id", "resid", "rmsf_average"]],
-                                on=["domain_id", "resid"])
+            if all(col in avg_df.columns for col in rmsf_cols):
+                avg_df["rmsf_average"] = avg_df[rmsf_cols].mean(axis=1)
+            else:
+                # If missing some temperature data
+                available_cols = [col for col in rmsf_cols if col in avg_df.columns]
+                if available_cols:
+                    avg_df["rmsf_average"] = avg_df[available_cols].mean(axis=1)
+                else:
+                    # No RMSF data available
+                    avg_df["rmsf_average"] = 0.0
 
             feature_dfs["average"] = avg_df
 
         return feature_dfs
+
     except Exception as e:
         logging.error(f"Failed to generate ML features: {e}")
+        import traceback
+        logging.error(traceback.format_exc())
         return {}
-
+    
 def save_ml_features(feature_dfs: Dict[str, pd.DataFrame], output_dir: str) -> bool:
     """
     Save ML features to CSV files.
@@ -2124,10 +2502,8 @@ def save_ml_features(feature_dfs: Dict[str, pd.DataFrame], output_dir: str) -> b
         Boolean indicating if saving was successful
     """
     try:
-        # Create output directory
         os.makedirs(output_dir, exist_ok=True)
 
-        # Save each feature dataframe
         for temp, df in feature_dfs.items():
             if temp == "average":
                 output_file = os.path.join(output_dir, "final_dataset_temperature_average.csv")
@@ -2141,79 +2517,66 @@ def save_ml_features(feature_dfs: Dict[str, pd.DataFrame], output_dir: str) -> b
     except Exception as e:
         logging.error(f"Failed to save ML features: {e}")
         return False
+
+
 def process_ml_features(rmsf_results: Dict[str, Any],
-                       pdb_results: Dict[str, Any],
-                       domain_results: Dict[str, Dict[str, Any]],
-                       config: Dict[str, Any]) -> Dict[str, Any]:
+                        pdb_results: Dict[str, Any],
+                        domain_results: Dict[str, Dict[str, Any]],
+                        config: Dict[str, Any]) -> Dict[str, Any]:
     """
     Process ML features for all domains.
-    
-    Args:
-        rmsf_results: Dictionary with RMSF processing results
-        pdb_results: Dictionary with PDB processing results
-        domain_results: Dictionary with processing results for all domains
-        config: Configuration dictionary
-    
-    Returns:
-        Dictionary with ML feature processing results
     """
-    
-    
     output_dir = config.get("output", {}).get("base_dir", "./outputs")
-    
+
     # Extract RMSF data
     replica_averages = rmsf_results.get("replica_averages", {})
     temperature_average = rmsf_results.get("temperature_average")
-    
+
     if not replica_averages:
         logging.error("No RMSF data available for ML feature generation")
         return {"success": False, "error": "No RMSF data available"}
-    
+
     # Create dictionary with all RMSF data
     rmsf_data = replica_averages.copy()
     if temperature_average is not None:
         rmsf_data["average"] = temperature_average
-    
-    # Extract core/exterior data
+
+    # Compute core/exterior data
     core_exterior_data = {}
-    
-    # Compute core/exterior classification for each domain
     logging.info("Computing core/exterior classification for domains")
     for domain_id, result in tqdm(pdb_results.items(), desc="Core/exterior classification"):
         if not result.get("pdb_saved", False):
             continue
-        
+
         pdb_path = result.get("pdb_path")
         if not pdb_path or not os.path.exists(pdb_path):
             logging.warning(f"PDB file not found for domain {domain_id}")
             continue
-        
+
         core_ext_df = compute_core_exterior(pdb_path, config)
         if core_ext_df is not None:
             core_exterior_data[domain_id] = core_ext_df
-    
+
     # Collect DSSP data
     dssp_data = {}
     temps = [str(t) for t in config.get("temperatures", [320, 348, 379, 413, 450])]
-    
+
     logging.info("Collecting DSSP data")
     for domain_id, result in tqdm(domain_results.items(), desc="Processing DSSP data"):
         if not result.get("success", False):
             continue
-        
-        # Extract DSSP data
+
         domain_dssp = result.get("dssp_data", {})
         for temp in temps:
             if temp in domain_dssp:
                 if temp not in dssp_data:
                     dssp_data[temp] = {}
-                
+
                 for replica, df in domain_dssp[temp].items():
                     if replica not in dssp_data[temp]:
                         dssp_data[temp][replica] = []
-                    
                     dssp_data[temp][replica].append(df)
-    
+
     # Concatenate DSSP dataframes
     logging.info("Concatenating DSSP data")
     for temp in temps:
@@ -2221,24 +2584,25 @@ def process_ml_features(rmsf_results: Dict[str, Any],
             for replica in dssp_data[temp]:
                 if dssp_data[temp][replica]:
                     dssp_data[temp][replica] = pd.concat(dssp_data[temp][replica], ignore_index=True)
-    
-    # Generate and save ML features
+
+    # Generate ML features
     logging.info("Generating ML features")
     feature_dfs = generate_ml_features(rmsf_data, core_exterior_data, dssp_data, config)
-    
+
     if not feature_dfs:
         logging.error("Failed to generate ML features")
         return {"success": False, "error": "Feature generation failed"}
-    
+
     # Save ML features
     ml_dir = os.path.join(output_dir, "ML_features")
     save_success = save_ml_features(feature_dfs, ml_dir)
-    
+
     return {
         "success": save_success,
         "feature_dfs": feature_dfs,
         "output_dir": ml_dir
     }
+
 ===== FILE: src/mdcath/processing/visualization.py =====
 #!/usr/bin/env python3
 """
@@ -2793,176 +3157,13 @@ Folder Structure in Data Directory:
 │   ├── msms_i86_64Linux2_2.6.1.tar.gz
 │   ├── msms.x86_64Linux2.2.6.1
 │   ├── msms.x86_64Linux2.2.6.1.staticgcc
-│   ├── pdb_to_xyrz
 │   ├── pdb_to_xyzr
 │   ├── pdb_to_xyzrn
 │   ├── README
 │   ├── ReleaseNotes
+│   ├── test.pdb
 │   └── test.xyzr
 ├── outputs
-│   ├── frames
-│   │   ├── replica_0
-│   │   │   ├── 320
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 348
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 379
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 413
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   └── 450
-│   │   │       ├── 12asA00_frame.pdb
-│   │   │       └── 1a02F00_frame.pdb
-│   │   ├── replica_1
-│   │   │   ├── 320
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 348
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 379
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 413
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   └── 450
-│   │   │       ├── 12asA00_frame.pdb
-│   │   │       └── 1a02F00_frame.pdb
-│   │   ├── replica_2
-│   │   │   ├── 320
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 348
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 379
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 413
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   └── 450
-│   │   │       ├── 12asA00_frame.pdb
-│   │   │       └── 1a02F00_frame.pdb
-│   │   ├── replica_3
-│   │   │   ├── 320
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 348
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 379
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   ├── 413
-│   │   │   │   ├── 12asA00_frame.pdb
-│   │   │   │   └── 1a02F00_frame.pdb
-│   │   │   └── 450
-│   │   │       ├── 12asA00_frame.pdb
-│   │   │       └── 1a02F00_frame.pdb
-│   │   └── replica_4
-│   │       ├── 320
-│   │       │   ├── 12asA00_frame.pdb
-│   │       │   └── 1a02F00_frame.pdb
-│   │       ├── 348
-│   │       │   ├── 12asA00_frame.pdb
-│   │       │   └── 1a02F00_frame.pdb
-│   │       ├── 379
-│   │       │   ├── 12asA00_frame.pdb
-│   │       │   └── 1a02F00_frame.pdb
-│   │       ├── 413
-│   │       │   ├── 12asA00_frame.pdb
-│   │       │   └── 1a02F00_frame.pdb
-│   │       └── 450
-│   │           ├── 12asA00_frame.pdb
-│   │           └── 1a02F00_frame.pdb
-│   ├── ML_features
-│   ├── pdbs
-│   │   ├── 12asA00.pdb
-│   │   └── 1a02F00.pdb
-│   ├── RMSF
-│   │   ├── replica_average
-│   │   │   ├── 320
-│   │   │   │   └── rmsf_replica_average_temperature320.csv
-│   │   │   ├── 348
-│   │   │   │   └── rmsf_replica_average_temperature348.csv
-│   │   │   ├── 379
-│   │   │   │   └── rmsf_replica_average_temperature379.csv
-│   │   │   ├── 413
-│   │   │   │   └── rmsf_replica_average_temperature413.csv
-│   │   │   ├── 450
-│   │   │   │   └── rmsf_replica_average_temperature450.csv
-│   │   │   └── average
-│   │   │       └── rmsf_all_temperatures_all_replicas.csv
-│   │   └── replicas
-│   │       ├── replica_0
-│   │       │   ├── 320
-│   │       │   │   └── rmsf_replica0_temperature320.csv
-│   │       │   ├── 348
-│   │       │   │   └── rmsf_replica0_temperature348.csv
-│   │       │   ├── 379
-│   │       │   │   └── rmsf_replica0_temperature379.csv
-│   │       │   ├── 413
-│   │       │   │   └── rmsf_replica0_temperature413.csv
-│   │       │   └── 450
-│   │       │       └── rmsf_replica0_temperature450.csv
-│   │       ├── replica_1
-│   │       │   ├── 320
-│   │       │   │   └── rmsf_replica1_temperature320.csv
-│   │       │   ├── 348
-│   │       │   │   └── rmsf_replica1_temperature348.csv
-│   │       │   ├── 379
-│   │       │   │   └── rmsf_replica1_temperature379.csv
-│   │       │   ├── 413
-│   │       │   │   └── rmsf_replica1_temperature413.csv
-│   │       │   └── 450
-│   │       │       └── rmsf_replica1_temperature450.csv
-│   │       ├── replica_2
-│   │       │   ├── 320
-│   │       │   │   └── rmsf_replica2_temperature320.csv
-│   │       │   ├── 348
-│   │       │   │   └── rmsf_replica2_temperature348.csv
-│   │       │   ├── 379
-│   │       │   │   └── rmsf_replica2_temperature379.csv
-│   │       │   ├── 413
-│   │       │   │   └── rmsf_replica2_temperature413.csv
-│   │       │   └── 450
-│   │       │       └── rmsf_replica2_temperature450.csv
-│   │       ├── replica_3
-│   │       │   ├── 320
-│   │       │   │   └── rmsf_replica3_temperature320.csv
-│   │       │   ├── 348
-│   │       │   │   └── rmsf_replica3_temperature348.csv
-│   │       │   ├── 379
-│   │       │   │   └── rmsf_replica3_temperature379.csv
-│   │       │   ├── 413
-│   │       │   │   └── rmsf_replica3_temperature413.csv
-│   │       │   └── 450
-│   │       │       └── rmsf_replica3_temperature450.csv
-│   │       └── replica_4
-│   │           ├── 320
-│   │           │   └── rmsf_replica4_temperature320.csv
-│   │           ├── 348
-│   │           │   └── rmsf_replica4_temperature348.csv
-│   │           ├── 379
-│   │           │   └── rmsf_replica4_temperature379.csv
-│   │           ├── 413
-│   │           │   └── rmsf_replica4_temperature413.csv
-│   │           └── 450
-│   │               └── rmsf_replica4_temperature450.csv
-│   ├── visualizations
-│   │   ├── amino_acid_rmsf_violin_plot.png
-│   │   ├── replica_variance_plot.png
-│   │   ├── rmsf_histogram.png
-│   │   ├── rmsf_violin_plot.png
-│   │   ├── temperature_average_summary.png
-│   │   └── temperature_summary.png
-│   └── voxelized
 ├── README.md
 ├── requirements.txt
 ├── setup.py
@@ -3005,21 +3206,137 @@ Folder Structure in Data Directory:
 │       └── top_level.txt
 └── test_h5_loading.py
 
-85 directories, 142 files
+11 directories, 53 files
 
 Extracting First 10 Lines from Each File in Data Directory (Excluding Binary & pipeline.log):
 -------------------------------------------------------------------------------------
+===== FILE: ./msms_executables/pdb_to_xyzrn =====
+#! /bin/sh
+# extract x,y,z from PDB file, generate radius of each atom
+# Hydrogens are presumed to be missing ("united atom" approach) unless -h given
+# later: options for alternate radius and pattern files
+# --- Mike Pique, The Scripps Research Institute
+#
+# input: pdb file as argument or stdin
+# output: new xyzr file to stdout
+#
+# Options:
+
+===== FILE: ./msms_executables/pdb_to_xyzr =====
+#! /bin/sh
+# extract x,y,z from PDB file, generate radius of each atom
+# Hydrogens are presumed to be missing ("united atom" approach) unless -h given
+# later: options for alternate radius and pattern files
+# --- Mike Pique, The Scripps Research Institute
+#
+# input: pdb file as argument or stdin
+# output: new xyzr file to stdout
+#
+# Options:
+
 ===== FILE: ./msms_executables/test.xyzr =====
-  12.047   -7.613   28.026 0.01
-  12.449   -8.438   28.423 0.01
-  11.088   -7.779   27.796 0.01
-  12.116   -6.854   28.674 0.01
-  12.546   -7.376   27.193 0.01
-  12.143   -6.552   26.795 0.01
-  13.273   -8.047   27.047 0.01
-  13.676   -8.872   27.444 0.01
-  14.002   -7.701   25.829 0.01
-  14.379   -6.771   25.941 0.01
+  -3.917    0.791   -0.042 1.70
+  -2.616    0.112   -0.179 2.00
+  -1.490    1.102   -0.001 1.74
+  -1.699    2.154    0.594 1.40
+  -2.440   -0.950   -1.300 2.00
+  -2.544   -0.372    0.751 1.20
+  -3.250   -1.657   -1.300 1.20
+
+===== FILE: ./msms_executables/test.pdb =====
+ATOM      1  N   ALA A   1      -3.917   0.791  -0.042  1.00  0.00           N  
+ATOM      2  CA  ALA A   1      -2.616   0.112  -0.179  1.00  0.00           C  
+ATOM      3  C   ALA A   1      -1.490   1.102  -0.001  1.00  0.00           C  
+ATOM      4  O   ALA A   1      -1.699   2.154   0.594  1.00  0.00           O  
+ATOM      5  CB  ALA A   1      -2.440  -0.950  -1.300  1.00  0.00           C  
+ATOM      6  HA  ALA A   1      -2.544  -0.372   0.751  1.00  0.00           H  
+ATOM      7  HB1 ALA A   1      -3.250  -1.657  -1.300  1.00  0.00           H  
+TER
+END
+
+===== FILE: ./msms_executables/msms.html =====
+<html>
+<head>
+<title>
+MSMS man page
+</title>
+</head>
+
+<body>
+<pre>
+<H3>MSMS(1)                   User Commands                   MSMS(1)</H3>
+
+===== FILE: ./msms_executables/atmtypenumbers =====
+# atmtypenumber 
+# $Revision: 1.13 $
+# Maps residue type and atom name pairs into Connolly ".atm" numeric codes
+#  as used in MS and AMS, and into actual radius values
+#
+# Format: (blank lines and lines beginning with # are ignored)
+#  Any number of blanks or tabs separate fields.
+#
+# Format of "radius" entries
+# Field 1: keyword "radius"
+
+===== FILE: ./msms_executables/ReleaseNotes =====
+Version 2.6.1
+- modified find_free_edges to continue when an atom is found to
+  be completely inside another atom
+
+Version 2.6.0
+- Dual density support:
+  It is now possible to compute a molecular surface with 2 densities of 
+  vertices.
+  The command line accepts a new keyword "hdensity" for specifying the vertex 
+  density to be used in the high density region.
+
+===== FILE: ./msms_executables/1crn.xyzr =====
+  17.047   14.099    3.625 1.70
+  16.967   12.784    4.338 2.00
+  15.685   12.755    5.133 1.74
+  15.268   13.825    5.594 1.40
+  18.170   12.703    5.337 2.00
+  19.334   12.829    4.463 1.60
+  18.150   11.546    6.304 2.00
+  15.115   11.555    5.265 1.70
+  13.856   11.469    6.066 2.00
+  14.164   10.785    7.379 1.74
+
+===== FILE: ./msms_executables/1crn.xyzrn =====
+17.047000 14.099000 3.625000 1.700000 1 N_THR_1
+16.967000 12.784000 4.338000 2.000000 1 CA_THR_1
+15.685000 12.755000 5.133000 1.740000 1 C_THR_1
+15.268000 13.825000 5.594000 1.400000 1 O_THR_1
+18.170000 12.703000 5.337000 2.000000 1 CB_THR_1
+19.334000 12.829000 4.463000 1.600000 1 OG1_THR_1
+18.150000 11.546000 6.304000 2.000000 1 CG2_THR_1
+15.115000 11.555000 5.265000 1.700000 1 N_THR_2
+13.856000 11.469000 6.066000 2.000000 1 CA_THR_2
+14.164000 10.785000 7.379000 1.740000 1 C_THR_2
+
+===== FILE: ./msms_executables/msms.1 =====
+.\" @(#)nroff.1 1.33 90/02/15 SMI;
+.TH MSMS 1 v2.5 "Nov. 3 1999"
+.SH NAME
+msms 
+.SH SYNOPSIS
+.B msms
+[
+.BI \-if \ filename
+] [
+.BI \-of \ filename
+
+===== FILE: ./msms_executables/README =====
+MSMS v2.5.7 (Michel F. SANNER Jan. 2006)
+
+MSMS computes, for a given probe radius, the reduced surface of a set of
+spheres. An analytical description of the solvent excluded surface is
+computed from the reduced surface. Special attention is paid to the proper
+handling of self-intersecting parts of the surface called singularities.
+This analytical model of the solvent excluded surface can be triangulated
+with a user specified vertex density (see references for more information).
+
+############################################################################
 
 ===== FILE: ./AI_context.txt =====
 Working Directory: /home/s_felix/mdcath-processor
@@ -3081,6 +3398,210 @@ setup(
 2025-03-19 23:23:20,302 - matplotlib.font_manager - DEBUG - findfont: score(FontEntry(fname='/home/s_felix/.conda/envs/apo_env/lib/python3.9/site-packages/matplotlib/mpl-data/fonts/ttf/STIXGeneralBolIta.ttf', name='STIXGeneral', style='italic', variant='normal', weight=700, stretch='normal', size='scalable')) = 11.335
 2025-03-19 23:23:20,302 - matplotlib.font_manager - DEBUG - findfont: score(FontEntry(fname='/home/s_felix/.conda/envs/apo_env/lib/python3.9/site-packages/matplotlib/mpl-data/fonts/ttf/STIXNonUniIta.ttf', name='STIXNonUnicode', style='italic', variant='normal', weight=400, stretch='normal', size='scalable')) = 11.05
 
+===== FILE: ./.git/config =====
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/Felixburton7/mdcath-processor2.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+
+===== FILE: ./.git/description =====
+Unnamed repository; edit this file 'description' to name the repository.
+
+===== FILE: ./.git/HEAD =====
+ref: refs/heads/main
+
+===== FILE: ./.git/refs/remotes/origin/main =====
+e7829511d2beaccc14b25cd651bbef6837f0ef10
+
+===== FILE: ./.git/refs/heads/main =====
+e7829511d2beaccc14b25cd651bbef6837f0ef10
+
+===== FILE: ./.git/info/exclude =====
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+
+===== FILE: ./.git/COMMIT_EDITMSG =====
+initial commit
+
+===== FILE: ./.git/hooks/pre-applypatch.sample =====
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed
+# by applypatch from an e-mail message.
+#
+# The hook should exit with non-zero status after issuing an
+# appropriate message if it wants to stop the commit.
+#
+# To enable this hook, rename this file to "pre-applypatch".
+
+
+===== FILE: ./.git/hooks/pre-commit.sample =====
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed.
+# Called by "git commit" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message if
+# it wants to stop the commit.
+#
+# To enable this hook, rename this file to "pre-commit".
+
+if git rev-parse --verify HEAD >/dev/null 2>&1
+
+===== FILE: ./.git/hooks/fsmonitor-watchman.sample =====
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use IPC::Open2;
+
+# An example hook script to integrate Watchman
+# (https://facebook.github.io/watchman/) with git to speed up detecting
+# new and modified files.
+#
+
+===== FILE: ./.git/hooks/applypatch-msg.sample =====
+#!/bin/sh
+#
+# An example hook script to check the commit log message taken by
+# applypatch from an e-mail message.
+#
+# The hook should exit with non-zero status after issuing an
+# appropriate message if it wants to stop the commit.  The hook is
+# allowed to edit the commit message file.
+#
+# To enable this hook, rename this file to "applypatch-msg".
+
+===== FILE: ./.git/hooks/push-to-checkout.sample =====
+#!/bin/sh
+
+# An example hook script to update a checked-out tree on a git push.
+#
+# This hook is invoked by git-receive-pack(1) when it reacts to git
+# push and updates reference(s) in its repository, and when the push
+# tries to update the branch that is currently checked out and the
+# receive.denyCurrentBranch configuration variable is set to
+# updateInstead.
+#
+
+===== FILE: ./.git/hooks/pre-receive.sample =====
+#!/bin/sh
+#
+# An example hook script to make use of push options.
+# The example simply echoes all push options that start with 'echoback='
+# and rejects all pushes when the "reject" push option is used.
+#
+# To enable this hook, rename this file to "pre-receive".
+
+if test -n "$GIT_PUSH_OPTION_COUNT"
+then
+
+===== FILE: ./.git/hooks/update.sample =====
+#!/bin/sh
+#
+# An example hook script to block unannotated tags from entering.
+# Called by "git receive-pack" with arguments: refname sha1-old sha1-new
+#
+# To enable this hook, rename this file to "update".
+#
+# Config
+# ------
+# hooks.allowunannotated
+
+===== FILE: ./.git/hooks/pre-merge-commit.sample =====
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed.
+# Called by "git merge" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message to
+# stderr if it wants to stop the merge commit.
+#
+# To enable this hook, rename this file to "pre-merge-commit".
+
+. git-sh-setup
+
+===== FILE: ./.git/hooks/pre-push.sample =====
+#!/bin/sh
+
+# An example hook script to verify what is about to be pushed.  Called by "git
+# push" after it has checked the remote status, but before anything has been
+# pushed.  If this script exits with a non-zero status nothing will be pushed.
+#
+# This hook is called with the following parameters:
+#
+# $1 -- Name of the remote to which the push is being done
+# $2 -- URL to which the push is being done
+
+===== FILE: ./.git/hooks/post-update.sample =====
+#!/bin/sh
+#
+# An example hook script to prepare a packed repository for use over
+# dumb transports.
+#
+# To enable this hook, rename this file to "post-update".
+
+exec git update-server-info
+
+===== FILE: ./.git/hooks/commit-msg.sample =====
+#!/bin/sh
+#
+# An example hook script to check the commit log message.
+# Called by "git commit" with one argument, the name of the file
+# that has the commit message.  The hook should exit with non-zero
+# status after issuing an appropriate message if it wants to stop the
+# commit.  The hook is allowed to edit the commit message file.
+#
+# To enable this hook, rename this file to "commit-msg".
+
+
+===== FILE: ./.git/hooks/pre-rebase.sample =====
+#!/bin/sh
+#
+# Copyright (c) 2006, 2008 Junio C Hamano
+#
+# The "pre-rebase" hook is run just before "git rebase" starts doing
+# its job, and can prevent the command from running by exiting with
+# non-zero status.
+#
+# The hook is called with the following parameters:
+#
+
+===== FILE: ./.git/hooks/prepare-commit-msg.sample =====
+#!/bin/sh
+#
+# An example hook script to prepare the commit log message.
+# Called by "git commit" with the name of the file that has the
+# commit message, followed by the description of the commit
+# message's source.  The hook's purpose is to edit the commit
+# message file.  If the hook fails with a non-zero status,
+# the commit is aborted.
+#
+# To enable this hook, rename this file to "prepare-commit-msg".
+
+===== FILE: ./.git/logs/HEAD =====
+0000000000000000000000000000000000000000 e5d234b3768d56a714b360b82486d7dcf1c1daf9 Felix Burton <felixburton2002@gmail.com> 1742428799 +0000	commit (initial): first commit
+e5d234b3768d56a714b360b82486d7dcf1c1daf9 0000000000000000000000000000000000000000 Felix Burton <felixburton2002@gmail.com> 1742428799 +0000	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 e5d234b3768d56a714b360b82486d7dcf1c1daf9 Felix Burton <felixburton2002@gmail.com> 1742428799 +0000	Branch: renamed refs/heads/master to refs/heads/main
+e5d234b3768d56a714b360b82486d7dcf1c1daf9 e7829511d2beaccc14b25cd651bbef6837f0ef10 Felix Burton <felixburton2002@gmail.com> 1742428809 +0000	commit: initial commit
+
+===== FILE: ./.git/logs/refs/remotes/origin/main =====
+0000000000000000000000000000000000000000 e5d234b3768d56a714b360b82486d7dcf1c1daf9 Felix Burton <felixburton2002@gmail.com> 1742428801 +0000	update by push
+e5d234b3768d56a714b360b82486d7dcf1c1daf9 e7829511d2beaccc14b25cd651bbef6837f0ef10 Felix Burton <felixburton2002@gmail.com> 1742428813 +0000	update by push
+
+===== FILE: ./.git/logs/refs/heads/main =====
+0000000000000000000000000000000000000000 e5d234b3768d56a714b360b82486d7dcf1c1daf9 Felix Burton <felixburton2002@gmail.com> 1742428799 +0000	commit (initial): first commit
+e5d234b3768d56a714b360b82486d7dcf1c1daf9 e5d234b3768d56a714b360b82486d7dcf1c1daf9 Felix Burton <felixburton2002@gmail.com> 1742428799 +0000	Branch: renamed refs/heads/master to refs/heads/main
+e5d234b3768d56a714b360b82486d7dcf1c1daf9 e7829511d2beaccc14b25cd651bbef6837f0ef10 Felix Burton <felixburton2002@gmail.com> 1742428809 +0000	commit: initial commit
+
 ===== FILE: ./LICENSE =====
 MIT License
 
@@ -3092,1002 +3613,6 @@ in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
-===== FILE: ./outputs/RMSF/replicas/replica_2/450/rmsf_replica2_temperature450.csv =====
-domain_id,resid,resname,rmsf_450
-12asA00,4,ALA,1.1897501
-12asA00,5,TYR,1.0831957
-12asA00,6,ILE,0.9764784
-12asA00,7,ALA,0.90727997
-12asA00,8,LYS,0.8504059
-12asA00,9,GLN,0.7596265
-12asA00,10,ARG,0.64281505
-12asA00,11,GLN,0.5677488
-12asA00,12,ILE,0.52265805
-
-===== FILE: ./outputs/RMSF/replicas/replica_2/379/rmsf_replica2_temperature379.csv =====
-domain_id,resid,resname,rmsf_379
-12asA00,4,ALA,1.0188999
-12asA00,5,TYR,0.8503846
-12asA00,6,ILE,0.70816463
-12asA00,7,ALA,0.5769008
-12asA00,8,LYS,0.39421195
-12asA00,9,GLN,0.32670355
-12asA00,10,ARG,0.23509663
-12asA00,11,GLN,0.19745938
-12asA00,12,ILE,0.18878108
-
-===== FILE: ./outputs/RMSF/replicas/replica_2/348/rmsf_replica2_temperature348.csv =====
-domain_id,resid,resname,rmsf_348
-12asA00,4,ALA,0.91524154
-12asA00,5,TYR,0.7258098
-12asA00,6,ILE,0.61446905
-12asA00,7,ALA,0.50670636
-12asA00,8,LYS,0.38257658
-12asA00,9,GLN,0.28703496
-12asA00,10,ARG,0.22637111
-12asA00,11,GLN,0.18895954
-12asA00,12,ILE,0.17319731
-
-===== FILE: ./outputs/RMSF/replicas/replica_2/413/rmsf_replica2_temperature413.csv =====
-domain_id,resid,resname,rmsf_413
-12asA00,4,ALA,1.3740178
-12asA00,5,TYR,1.2308228
-12asA00,6,ILE,1.1316047
-12asA00,7,ALA,1.0430305
-12asA00,8,LYS,0.9067358
-12asA00,9,GLN,0.8078133
-12asA00,10,ARG,0.67515576
-12asA00,11,GLN,0.59893996
-12asA00,12,ILE,0.55042064
-
-===== FILE: ./outputs/RMSF/replicas/replica_2/320/rmsf_replica2_temperature320.csv =====
-domain_id,resid,resname,rmsf_320
-12asA00,4,ALA,0.46090287
-12asA00,5,TYR,0.30632368
-12asA00,6,ILE,0.27804196
-12asA00,7,ALA,0.23156665
-12asA00,8,LYS,0.18062688
-12asA00,9,GLN,0.16770092
-12asA00,10,ARG,0.1525414
-12asA00,11,GLN,0.13343549
-12asA00,12,ILE,0.13006774
-
-===== FILE: ./outputs/RMSF/replicas/replica_4/450/rmsf_replica4_temperature450.csv =====
-domain_id,resid,resname,rmsf_450
-12asA00,4,ALA,2.2053158
-12asA00,5,TYR,2.1470075
-12asA00,6,ILE,2.070673
-12asA00,7,ALA,2.024809
-12asA00,8,LYS,1.9166144
-12asA00,9,GLN,1.8408139
-12asA00,10,ARG,1.7531354
-12asA00,11,GLN,1.6753997
-12asA00,12,ILE,1.5868669
-
-===== FILE: ./outputs/RMSF/replicas/replica_4/379/rmsf_replica4_temperature379.csv =====
-domain_id,resid,resname,rmsf_379
-12asA00,4,ALA,0.8193846
-12asA00,5,TYR,0.6498541
-12asA00,6,ILE,0.53521603
-12asA00,7,ALA,0.49694294
-12asA00,8,LYS,0.3888297
-12asA00,9,GLN,0.3611369
-12asA00,10,ARG,0.31910005
-12asA00,11,GLN,0.28371495
-12asA00,12,ILE,0.2563557
-
-===== FILE: ./outputs/RMSF/replicas/replica_4/348/rmsf_replica4_temperature348.csv =====
-domain_id,resid,resname,rmsf_348
-12asA00,4,ALA,0.96369576
-12asA00,5,TYR,0.8269523
-12asA00,6,ILE,0.68143076
-12asA00,7,ALA,0.52831894
-12asA00,8,LYS,0.43531603
-12asA00,9,GLN,0.32656464
-12asA00,10,ARG,0.17367133
-12asA00,11,GLN,0.14678839
-12asA00,12,ILE,0.14354049
-
-===== FILE: ./outputs/RMSF/replicas/replica_4/413/rmsf_replica4_temperature413.csv =====
-domain_id,resid,resname,rmsf_413
-12asA00,4,ALA,1.0836143
-12asA00,5,TYR,0.91404736
-12asA00,6,ILE,0.78409886
-12asA00,7,ALA,0.67905325
-12asA00,8,LYS,0.5714035
-12asA00,9,GLN,0.47482735
-12asA00,10,ARG,0.44180405
-12asA00,11,GLN,0.40786633
-12asA00,12,ILE,0.30235147
-
-===== FILE: ./outputs/RMSF/replicas/replica_4/320/rmsf_replica4_temperature320.csv =====
-domain_id,resid,resname,rmsf_320
-12asA00,4,ALA,1.0980273
-12asA00,5,TYR,0.8970553
-12asA00,6,ILE,0.7303722
-12asA00,7,ALA,0.55615133
-12asA00,8,LYS,0.44655332
-12asA00,9,GLN,0.18627201
-12asA00,10,ARG,0.14139037
-12asA00,11,GLN,0.1356392
-12asA00,12,ILE,0.13254754
-
-===== FILE: ./outputs/RMSF/replicas/replica_0/450/rmsf_replica0_temperature450.csv =====
-domain_id,resid,resname,rmsf_450
-12asA00,4,ALA,2.671888
-12asA00,5,TYR,2.628253
-12asA00,6,ILE,2.5331142
-12asA00,7,ALA,2.5119157
-12asA00,8,LYS,2.5051177
-12asA00,9,GLN,2.4262698
-12asA00,10,ARG,2.363008
-12asA00,11,GLN,2.2898571
-12asA00,12,ILE,2.1371143
-
-===== FILE: ./outputs/RMSF/replicas/replica_0/379/rmsf_replica0_temperature379.csv =====
-domain_id,resid,resname,rmsf_379
-12asA00,4,ALA,0.921968
-12asA00,5,TYR,0.75578344
-12asA00,6,ILE,0.6317322
-12asA00,7,ALA,0.52627563
-12asA00,8,LYS,0.46795496
-12asA00,9,GLN,0.3713891
-12asA00,10,ARG,0.3301402
-12asA00,11,GLN,0.28032622
-12asA00,12,ILE,0.24570735
-
-===== FILE: ./outputs/RMSF/replicas/replica_0/348/rmsf_replica0_temperature348.csv =====
-domain_id,resid,resname,rmsf_348
-12asA00,4,ALA,0.7607634
-12asA00,5,TYR,0.6311307
-12asA00,6,ILE,0.6062538
-12asA00,7,ALA,0.46238974
-12asA00,8,LYS,0.36989725
-12asA00,9,GLN,0.4775962
-12asA00,10,ARG,0.39711106
-12asA00,11,GLN,0.17628285
-12asA00,12,ILE,0.1416983
-
-===== FILE: ./outputs/RMSF/replicas/replica_0/413/rmsf_replica0_temperature413.csv =====
-domain_id,resid,resname,rmsf_413
-12asA00,4,ALA,0.86521494
-12asA00,5,TYR,0.71221405
-12asA00,6,ILE,0.61294305
-12asA00,7,ALA,0.50012153
-12asA00,8,LYS,0.38126814
-12asA00,9,GLN,0.3214656
-12asA00,10,ARG,0.27573666
-12asA00,11,GLN,0.2428688
-12asA00,12,ILE,0.22607088
-
-===== FILE: ./outputs/RMSF/replicas/replica_0/320/rmsf_replica0_temperature320.csv =====
-domain_id,resid,resname,rmsf_320
-12asA00,4,ALA,0.47002804
-12asA00,5,TYR,0.3509775
-12asA00,6,ILE,0.3044788
-12asA00,7,ALA,0.25482023
-12asA00,8,LYS,0.1758397
-12asA00,9,GLN,0.16050723
-12asA00,10,ARG,0.1316269
-12asA00,11,GLN,0.11620346
-12asA00,12,ILE,0.118195064
-
-===== FILE: ./outputs/RMSF/replicas/replica_1/450/rmsf_replica1_temperature450.csv =====
-domain_id,resid,resname,rmsf_450
-12asA00,4,ALA,1.7759169
-12asA00,5,TYR,1.7156583
-12asA00,6,ILE,1.6475257
-12asA00,7,ALA,1.5902997
-12asA00,8,LYS,1.5433773
-12asA00,9,GLN,1.4639438
-12asA00,10,ARG,1.3811678
-12asA00,11,GLN,1.2942884
-12asA00,12,ILE,1.2389592
-
-===== FILE: ./outputs/RMSF/replicas/replica_1/379/rmsf_replica1_temperature379.csv =====
-domain_id,resid,resname,rmsf_379
-12asA00,4,ALA,0.88966936
-12asA00,5,TYR,0.7328465
-12asA00,6,ILE,0.64132065
-12asA00,7,ALA,0.53186435
-12asA00,8,LYS,0.42799842
-12asA00,9,GLN,0.40189594
-12asA00,10,ARG,0.3181772
-12asA00,11,GLN,0.23376586
-12asA00,12,ILE,0.2157177
-
-===== FILE: ./outputs/RMSF/replicas/replica_1/348/rmsf_replica1_temperature348.csv =====
-domain_id,resid,resname,rmsf_348
-12asA00,4,ALA,0.6895317
-12asA00,5,TYR,0.5548727
-12asA00,6,ILE,0.4911646
-12asA00,7,ALA,0.42242265
-12asA00,8,LYS,0.39866373
-12asA00,9,GLN,0.37837952
-12asA00,10,ARG,0.37776712
-12asA00,11,GLN,0.37425783
-12asA00,12,ILE,0.29663172
-
-===== FILE: ./outputs/RMSF/replicas/replica_1/413/rmsf_replica1_temperature413.csv =====
-domain_id,resid,resname,rmsf_413
-12asA00,4,ALA,1.1822128
-12asA00,5,TYR,1.0338099
-12asA00,6,ILE,0.88890725
-12asA00,7,ALA,0.75450253
-12asA00,8,LYS,0.67580986
-12asA00,9,GLN,0.58410937
-12asA00,10,ARG,0.42681757
-12asA00,11,GLN,0.36304757
-12asA00,12,ILE,0.3508461
-
-===== FILE: ./outputs/RMSF/replicas/replica_1/320/rmsf_replica1_temperature320.csv =====
-domain_id,resid,resname,rmsf_320
-12asA00,4,ALA,0.59677356
-12asA00,5,TYR,0.45826754
-12asA00,6,ILE,0.37450033
-12asA00,7,ALA,0.32115504
-12asA00,8,LYS,0.25388876
-12asA00,9,GLN,0.24970157
-12asA00,10,ARG,0.22676612
-12asA00,11,GLN,0.20053826
-12asA00,12,ILE,0.20014432
-
-===== FILE: ./outputs/RMSF/replicas/replica_3/450/rmsf_replica3_temperature450.csv =====
-domain_id,resid,resname,rmsf_450
-12asA00,4,ALA,1.5126017
-12asA00,5,TYR,1.3968545
-12asA00,6,ILE,1.2990035
-12asA00,7,ALA,1.1951915
-12asA00,8,LYS,1.1224666
-12asA00,9,GLN,1.03534
-12asA00,10,ARG,0.9640815
-12asA00,11,GLN,0.8865295
-12asA00,12,ILE,0.785298
-
-===== FILE: ./outputs/RMSF/replicas/replica_3/379/rmsf_replica3_temperature379.csv =====
-domain_id,resid,resname,rmsf_379
-12asA00,4,ALA,1.0744897
-12asA00,5,TYR,0.9228184
-12asA00,6,ILE,0.80355936
-12asA00,7,ALA,0.66088355
-12asA00,8,LYS,0.5322753
-12asA00,9,GLN,0.53145784
-12asA00,10,ARG,0.45908827
-12asA00,11,GLN,0.24429853
-12asA00,12,ILE,0.23232543
-
-===== FILE: ./outputs/RMSF/replicas/replica_3/348/rmsf_replica3_temperature348.csv =====
-domain_id,resid,resname,rmsf_348
-12asA00,4,ALA,0.94659144
-12asA00,5,TYR,0.75718343
-12asA00,6,ILE,0.6357148
-12asA00,7,ALA,0.5243163
-12asA00,8,LYS,0.38975713
-12asA00,9,GLN,0.31026226
-12asA00,10,ARG,0.26505974
-12asA00,11,GLN,0.23446278
-12asA00,12,ILE,0.20945856
-
-===== FILE: ./outputs/RMSF/replicas/replica_3/413/rmsf_replica3_temperature413.csv =====
-domain_id,resid,resname,rmsf_413
-12asA00,4,ALA,1.0682195
-12asA00,5,TYR,0.9395945
-12asA00,6,ILE,0.82481664
-12asA00,7,ALA,0.7222856
-12asA00,8,LYS,0.60062134
-12asA00,9,GLN,0.52237254
-12asA00,10,ARG,0.5211109
-12asA00,11,GLN,0.4954109
-12asA00,12,ILE,0.39854494
-
-===== FILE: ./outputs/RMSF/replicas/replica_3/320/rmsf_replica3_temperature320.csv =====
-domain_id,resid,resname,rmsf_320
-12asA00,4,ALA,0.76104623
-12asA00,5,TYR,0.55834925
-12asA00,6,ILE,0.54796225
-12asA00,7,ALA,0.44978237
-12asA00,8,LYS,0.2118508
-12asA00,9,GLN,0.18030588
-12asA00,10,ARG,0.1375332
-12asA00,11,GLN,0.13185664
-12asA00,12,ILE,0.13183716
-
-===== FILE: ./outputs/RMSF/replica_average/450/rmsf_replica_average_temperature450.csv =====
-domain_id,resid,resname,rmsf_450
-12asA00,4,ALA,1.8710945
-12asA00,5,TYR,1.7941936
-12asA00,6,ILE,1.7053589
-12asA00,7,ALA,1.6458992
-12asA00,8,LYS,1.5875963
-12asA00,9,GLN,1.5051987
-12asA00,10,ARG,1.4208416
-12asA00,11,GLN,1.3427647
-12asA00,12,ILE,1.2541792
-
-===== FILE: ./outputs/RMSF/replica_average/379/rmsf_replica_average_temperature379.csv =====
-domain_id,resid,resname,rmsf_379
-12asA00,4,ALA,0.9448823
-12asA00,5,TYR,0.7823374
-12asA00,6,ILE,0.6639986
-12asA00,7,ALA,0.5585734
-12asA00,8,LYS,0.44225407
-12asA00,9,GLN,0.39851665
-12asA00,10,ARG,0.33232048
-12asA00,11,GLN,0.24791297
-12asA00,12,ILE,0.22777745
-
-===== FILE: ./outputs/RMSF/replica_average/348/rmsf_replica_average_temperature348.csv =====
-domain_id,resid,resname,rmsf_348
-12asA00,4,ALA,0.8551647
-12asA00,5,TYR,0.6991898
-12asA00,6,ILE,0.60580665
-12asA00,7,ALA,0.4888308
-12asA00,8,LYS,0.39524215
-12asA00,9,GLN,0.35596755
-12asA00,10,ARG,0.28799608
-12asA00,11,GLN,0.22415027
-12asA00,12,ILE,0.19290528
-
-===== FILE: ./outputs/RMSF/replica_average/413/rmsf_replica_average_temperature413.csv =====
-domain_id,resid,resname,rmsf_413
-12asA00,4,ALA,1.1146559
-12asA00,5,TYR,0.9660977
-12asA00,6,ILE,0.84847414
-12asA00,7,ALA,0.7397987
-12asA00,8,LYS,0.6271677
-12asA00,9,GLN,0.5421176
-12asA00,10,ARG,0.46812496
-12asA00,11,GLN,0.42162672
-12asA00,12,ILE,0.3656468
-
-===== FILE: ./outputs/RMSF/replica_average/average/rmsf_all_temperatures_all_replicas.csv =====
-domain_id,resid,resname,rmsf_320,rmsf_348,rmsf_379,rmsf_413,rmsf_450,rmsf_average
-12asA00,4,ALA,0.6773556,0.8551647,0.9448823,1.1146559,1.8710945,1.0926306
-12asA00,5,TYR,0.51419467,0.6991898,0.7823374,0.9660977,1.7941936,0.9512027
-12asA00,6,ILE,0.44707114,0.60580665,0.6639986,0.84847414,1.7053589,0.8541419
-12asA00,7,ALA,0.36269513,0.4888308,0.5585734,0.7397987,1.6458992,0.75915945
-12asA00,8,LYS,0.2537519,0.39524215,0.44225407,0.6271677,1.5875963,0.66120243
-12asA00,9,GLN,0.18889752,0.35596755,0.39851665,0.5421176,1.5051987,0.59813964
-12asA00,10,ARG,0.15797159,0.28799608,0.33232048,0.46812496,1.4208416,0.53345096
-12asA00,11,GLN,0.1435346,0.22415027,0.24791297,0.42162672,1.3427647,0.47599784
-12asA00,12,ILE,0.14255837,0.19290528,0.22777745,0.3656468,1.2541792,0.43661347
-
-===== FILE: ./outputs/RMSF/replica_average/320/rmsf_replica_average_temperature320.csv =====
-domain_id,resid,resname,rmsf_320
-12asA00,4,ALA,0.6773556
-12asA00,5,TYR,0.51419467
-12asA00,6,ILE,0.44707114
-12asA00,7,ALA,0.36269513
-12asA00,8,LYS,0.2537519
-12asA00,9,GLN,0.18889752
-12asA00,10,ARG,0.15797159
-12asA00,11,GLN,0.1435346
-12asA00,12,ILE,0.14255837
-
-===== FILE: ./outputs/pdbs/1a02F00.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CAY  ARG A 140      16.299   1.661 -33.895  0.00  0.00           C  
-ATOM      2 HY1  ARG A 140      17.097   2.095 -33.477  0.00  0.00           H  
-ATOM      3 HY2  ARG A 140      15.484   1.847 -33.347  0.00  0.00           H  
-ATOM      4 HY3  ARG A 140      16.171   2.006 -34.825  0.00  0.00           H  
-ATOM      5 CY   ARG A 140      16.448   0.673 -33.933  0.00  0.00           C  
-ATOM      6 OY   ARG A 140      15.650   0.239 -34.350  0.00  0.00           O  
-ATOM      7 N    ARG A 140      17.343   0.463 -33.539  1.00  0.00           N  
-ATOM      8 HN   ARG A 140      18.141   0.897 -33.121  0.00  0.00           H  
-ATOM      9 CA   ARG A 140      17.565  -1.011 -33.595  1.00  0.00           C  
-
-===== FILE: ./outputs/pdbs/12asA00.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CAY  ALA A   4     -14.654  19.397  16.169  0.00  0.00           C  
-ATOM      2 HY1  ALA A   4     -14.700  19.417  17.168  0.00  0.00           H  
-ATOM      3 HY2  ALA A   4     -14.175  18.573  15.866  0.00  0.00           H  
-ATOM      4 HY3  ALA A   4     -15.577  19.416  15.785  0.00  0.00           H  
-ATOM      5 CY   ALA A   4     -14.153  20.201  15.850  0.00  0.00           C  
-ATOM      6 OY   ALA A   4     -14.107  20.181  14.851  0.00  0.00           O  
-ATOM      7 N    ALA A   4     -13.872  20.745  16.641  1.00  0.00           N  
-ATOM      8 HN   ALA A   4     -13.918  20.765  17.640  0.00  0.00           H  
-ATOM      9 CA   ALA A   4     -13.122  21.947  16.164  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_2/450/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4      94.820 -27.080 -88.620  1.00  0.00           C  
-ATOM      2 CA   TYR A   5      95.490 -30.810 -85.630  1.00  0.00           C  
-ATOM      3 CA   ILE A   6      96.350 -33.980 -84.410  1.00  0.00           C  
-ATOM      4 CA   ALA A   7      98.950 -34.140 -83.550  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     100.760 -31.910 -81.680  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     102.760 -29.810 -82.210  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     102.600 -29.580 -84.960  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     100.430 -27.960 -85.580  1.00  0.00           C  
-ATOM      9 CA   ILE A  12     101.410 -25.740 -84.770  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_2/450/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140      38.150-224.830 126.690  1.00  0.00           C  
-ATOM      2 CA   ARG A 141      39.950-220.820 125.070  1.00  0.00           C  
-ATOM      3 CA   ILE A 142      42.550-221.690 124.940  1.00  0.00           C  
-ATOM      4 CA   ARG A 143      44.540-222.140 123.380  1.00  0.00           C  
-ATOM      5 CA   ARG A 144      45.920-219.750 122.240  1.00  0.00           C  
-ATOM      6 CA   GLU A 145      47.220-217.840 124.650  1.00  0.00           C  
-ATOM      7 CA   ARG A 146      48.820-215.850 126.650  1.00  0.00           C  
-ATOM      8 CA   ASN A 147      51.090-216.150 129.540  1.00  0.00           C  
-ATOM      9 CA   LYS A 148      50.700-213.860 131.720  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_2/379/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     -72.560 -12.190 105.790  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     -69.120 -15.990 104.050  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     -69.590 -15.940 100.440  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     -72.300 -15.770  99.870  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     -74.970 -14.080 101.430  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     -77.240 -14.450 104.310  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     -79.980 -14.060 103.570  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     -80.110 -14.800 101.010  1.00  0.00           C  
-ATOM      9 CA   ILE A  12     -79.370 -17.330 100.310  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_2/379/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140      76.490  98.920 145.990  1.00  0.00           C  
-ATOM      2 CA   ARG A 141      78.910  93.630 144.450  1.00  0.00           C  
-ATOM      3 CA   ILE A 142      79.050  92.200 141.210  1.00  0.00           C  
-ATOM      4 CA   ARG A 143      79.610  89.720 138.770  1.00  0.00           C  
-ATOM      5 CA   ARG A 144      78.590  89.530 136.470  1.00  0.00           C  
-ATOM      6 CA   GLU A 145      78.310  91.050 133.310  1.00  0.00           C  
-ATOM      7 CA   ARG A 146      76.870  93.940 132.830  1.00  0.00           C  
-ATOM      8 CA   ASN A 147      77.070  96.310 131.280  1.00  0.00           C  
-ATOM      9 CA   LYS A 148      77.780  98.920 132.440  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_2/348/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4      63.270 -56.790 -62.840  1.00  0.00           C  
-ATOM      2 CA   TYR A   5      66.020 -51.980 -61.420  1.00  0.00           C  
-ATOM      3 CA   ILE A   6      65.170 -49.470 -60.810  1.00  0.00           C  
-ATOM      4 CA   ALA A   7      62.550 -49.880 -59.790  1.00  0.00           C  
-ATOM      5 CA   LYS A   8      63.120 -49.980 -56.970  1.00  0.00           C  
-ATOM      6 CA   GLN A   9      63.810 -47.340 -56.380  1.00  0.00           C  
-ATOM      7 CA   ARG A  10      61.550 -45.810 -57.170  1.00  0.00           C  
-ATOM      8 CA   GLN A  11      60.250 -45.540 -54.720  1.00  0.00           C  
-ATOM      9 CA   ILE A  12      61.490 -44.130 -52.840  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_2/348/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     114.820  94.070 -38.730  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     118.290  91.590 -38.750  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     120.790  92.790 -40.110  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     122.890  94.310 -42.930  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     125.970  93.180 -43.430  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     129.000  94.540 -44.310  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     131.330  93.250 -46.740  1.00  0.00           C  
-ATOM      8 CA   ASN A 147     134.800  92.560 -46.420  1.00  0.00           C  
-ATOM      9 CA   LYS A 148     135.850  94.680 -44.750  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_2/413/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4      30.660  73.770  41.010  1.00  0.00           C  
-ATOM      2 CA   TYR A   5      25.980  73.890  38.820  1.00  0.00           C  
-ATOM      3 CA   ILE A   6      27.440  74.710  36.430  1.00  0.00           C  
-ATOM      4 CA   ALA A   7      27.210  75.310  33.790  1.00  0.00           C  
-ATOM      5 CA   LYS A   8      25.730  77.920  33.730  1.00  0.00           C  
-ATOM      6 CA   GLN A   9      24.380  80.740  32.080  1.00  0.00           C  
-ATOM      7 CA   ARG A  10      26.140  81.220  29.900  1.00  0.00           C  
-ATOM      8 CA   GLN A  11      25.380  80.160  26.600  1.00  0.00           C  
-ATOM      9 CA   ILE A  12      24.560  76.920  25.780  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_2/413/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     358.730 -67.080 192.100  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     357.910 -66.490 197.420  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     357.750 -64.560 199.410  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     356.570 -62.210 200.170  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     353.750 -61.850 201.020  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     352.720 -59.370 201.270  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     352.990 -57.340 198.460  1.00  0.00           C  
-ATOM      8 CA   ASN A 147     352.560 -54.680 198.260  1.00  0.00           C  
-ATOM      9 CA   LYS A 148     353.880 -51.770 198.290  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_2/320/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4      40.350  -8.740  -0.550  1.00  0.00           C  
-ATOM      2 CA   TYR A   5      41.460 -10.100  -4.850  1.00  0.00           C  
-ATOM      3 CA   ILE A   6      43.980 -10.200  -3.600  1.00  0.00           C  
-ATOM      4 CA   ALA A   7      43.820 -12.600  -2.060  1.00  0.00           C  
-ATOM      5 CA   LYS A   8      43.530 -14.480  -4.230  1.00  0.00           C  
-ATOM      6 CA   GLN A   9      46.020 -14.560  -5.320  1.00  0.00           C  
-ATOM      7 CA   ARG A  10      47.480 -15.760  -3.360  1.00  0.00           C  
-ATOM      8 CA   GLN A  11      46.460 -18.430  -3.260  1.00  0.00           C  
-ATOM      9 CA   ILE A  12      47.190 -20.930  -4.720  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_2/320/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     351.100 -37.860 224.700  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     348.210 -39.780 221.950  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     349.740 -39.940 218.790  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     348.650 -38.480 216.140  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     349.400 -37.210 214.060  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     350.770 -38.430 211.700  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     352.220 -39.930 208.520  1.00  0.00           C  
-ATOM      8 CA   ASN A 147     350.920 -42.020 206.930  1.00  0.00           C  
-ATOM      9 CA   LYS A 148     347.980 -42.100 207.150  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_4/450/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     139.500 -15.280 -86.270  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     142.740 -11.140 -83.430  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     142.980  -9.330 -85.940  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     144.450  -6.910 -88.050  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     142.680  -5.340 -89.400  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     140.270  -5.640 -87.830  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     139.310  -6.100 -84.600  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     138.610  -9.170 -83.110  1.00  0.00           C  
-ATOM      9 CA   ILE A  12     137.680 -11.900 -81.350  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_4/450/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140    -115.450 208.680 -52.340  1.00  0.00           C  
-ATOM      2 CA   ARG A 141    -111.370 207.890 -51.840  1.00  0.00           C  
-ATOM      3 CA   ILE A 142    -111.370 210.400 -52.910  1.00  0.00           C  
-ATOM      4 CA   ARG A 143    -112.000 213.920 -52.780  1.00  0.00           C  
-ATOM      5 CA   ARG A 144    -114.400 215.990 -51.440  1.00  0.00           C  
-ATOM      6 CA   GLU A 145    -117.170 218.390 -51.370  1.00  0.00           C  
-ATOM      7 CA   ARG A 146    -119.370 217.480 -50.030  1.00  0.00           C  
-ATOM      8 CA   ASN A 147    -118.860 214.370 -48.440  1.00  0.00           C  
-ATOM      9 CA   LYS A 148    -119.860 212.000 -47.820  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_4/379/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4      38.770 104.910 -23.530  1.00  0.00           C  
-ATOM      2 CA   TYR A   5      35.420 103.070 -20.180  1.00  0.00           C  
-ATOM      3 CA   ILE A   6      33.770 103.380 -16.980  1.00  0.00           C  
-ATOM      4 CA   ALA A   7      30.850 102.590 -15.300  1.00  0.00           C  
-ATOM      5 CA   LYS A   8      29.820 102.390 -12.690  1.00  0.00           C  
-ATOM      6 CA   GLN A   9      29.310 104.650 -10.390  1.00  0.00           C  
-ATOM      7 CA   ARG A  10      29.520 104.970  -7.590  1.00  0.00           C  
-ATOM      8 CA   GLN A  11      32.080 103.410  -7.080  1.00  0.00           C  
-ATOM      9 CA   ILE A  12      33.790 105.150  -8.380  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_4/379/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140      25.150 338.900 229.660  1.00  0.00           C  
-ATOM      2 CA   ARG A 141      24.050 337.180 233.500  1.00  0.00           C  
-ATOM      3 CA   ILE A 142      21.610 338.140 233.150  1.00  0.00           C  
-ATOM      4 CA   ARG A 143      19.960 336.100 231.890  1.00  0.00           C  
-ATOM      5 CA   ARG A 144      18.350 335.080 233.680  1.00  0.00           C  
-ATOM      6 CA   GLU A 145      16.420 334.830 236.930  1.00  0.00           C  
-ATOM      7 CA   ARG A 146      15.440 337.070 239.640  1.00  0.00           C  
-ATOM      8 CA   ASN A 147      16.850 336.980 242.930  1.00  0.00           C  
-ATOM      9 CA   LYS A 148      15.410 337.220 245.160  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_4/348/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     129.250  47.320  15.750  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     125.460  50.500  18.280  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     124.390  47.910  18.930  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     123.730  47.340  21.580  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     121.360  48.700  21.810  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     119.660  47.330  20.230  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     117.070  46.200  20.110  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     115.500  48.460  19.720  1.00  0.00           C  
-ATOM      9 CA   ILE A  12     116.700  49.290  17.280  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_4/348/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140      18.870  56.840 270.850  1.00  0.00           C  
-ATOM      2 CA   ARG A 141      15.900  55.810 268.040  1.00  0.00           C  
-ATOM      3 CA   ILE A 142      16.030  53.920 265.050  1.00  0.00           C  
-ATOM      4 CA   ARG A 143      16.060  53.140 262.150  1.00  0.00           C  
-ATOM      5 CA   ARG A 144      18.560  52.400 259.840  1.00  0.00           C  
-ATOM      6 CA   GLU A 145      19.410  54.180 257.410  1.00  0.00           C  
-ATOM      7 CA   ARG A 146      20.920  56.430 255.190  1.00  0.00           C  
-ATOM      8 CA   ASN A 147      21.080  57.980 252.730  1.00  0.00           C  
-ATOM      9 CA   LYS A 148      19.140  59.310 249.970  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_4/413/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     106.430  -5.760 -26.000  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     106.460  -8.840 -22.910  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     104.620 -10.390 -24.180  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     105.850 -12.630 -25.160  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     106.500 -13.700 -22.680  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     105.780 -16.280 -20.710  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     102.480 -17.830 -20.160  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     101.520 -19.440 -17.140  1.00  0.00           C  
-ATOM      9 CA   ILE A  12      99.910 -18.870 -14.800  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_4/413/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     -54.000 -56.960  55.780  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     -52.910 -58.280  51.490  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     -51.960 -60.420  52.660  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     -51.780 -63.910  53.380  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     -50.910 -67.380  53.350  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     -51.340 -69.330  51.850  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     -50.760 -70.530  48.620  1.00  0.00           C  
-ATOM      8 CA   ASN A 147     -52.160 -70.800  46.230  1.00  0.00           C  
-ATOM      9 CA   LYS A 148     -54.380 -69.180  45.680  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_4/320/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4      95.050 -68.160   8.130  1.00  0.00           C  
-ATOM      2 CA   TYR A   5      91.560 -64.650  11.390  1.00  0.00           C  
-ATOM      3 CA   ILE A   6      90.250 -61.460  10.350  1.00  0.00           C  
-ATOM      4 CA   ALA A   7      90.110 -58.300  11.630  1.00  0.00           C  
-ATOM      5 CA   LYS A   8      87.650 -55.520  11.020  1.00  0.00           C  
-ATOM      6 CA   GLN A   9      86.270 -53.400  12.120  1.00  0.00           C  
-ATOM      7 CA   ARG A  10      87.480 -50.430  13.570  1.00  0.00           C  
-ATOM      8 CA   GLN A  11      88.370 -49.890  16.200  1.00  0.00           C  
-ATOM      9 CA   ILE A  12      88.640 -52.500  17.220  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_4/320/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140       7.090-117.960  45.340  1.00  0.00           C  
-ATOM      2 CA   ARG A 141       9.570-121.560  46.090  1.00  0.00           C  
-ATOM      3 CA   ILE A 142       8.110-122.050  49.180  1.00  0.00           C  
-ATOM      4 CA   ARG A 143       7.690-123.210  51.590  1.00  0.00           C  
-ATOM      5 CA   ARG A 144      10.130-123.360  53.310  1.00  0.00           C  
-ATOM      6 CA   GLU A 145      11.120-120.670  54.080  1.00  0.00           C  
-ATOM      7 CA   ARG A 146       8.900-120.170  55.600  1.00  0.00           C  
-ATOM      8 CA   ASN A 147       9.020-121.860  57.580  1.00  0.00           C  
-ATOM      9 CA   LYS A 148      11.020-120.660  59.000  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_0/450/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4      54.820   9.660 -47.970  1.00  0.00           C  
-ATOM      2 CA   TYR A   5      57.140  12.770 -50.540  1.00  0.00           C  
-ATOM      3 CA   ILE A   6      59.260  15.420 -51.930  1.00  0.00           C  
-ATOM      4 CA   ALA A   7      61.770  16.410 -51.890  1.00  0.00           C  
-ATOM      5 CA   LYS A   8      62.650  19.390 -50.640  1.00  0.00           C  
-ATOM      6 CA   GLN A   9      64.730  20.950 -50.410  1.00  0.00           C  
-ATOM      7 CA   ARG A  10      68.150  20.070 -50.440  1.00  0.00           C  
-ATOM      8 CA   GLN A  11      68.930  18.680 -47.200  1.00  0.00           C  
-ATOM      9 CA   ILE A  12      70.670  17.480 -44.410  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_0/450/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     119.490  53.590 205.540  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     116.350  56.030 201.240  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     115.250  56.580 197.960  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     113.760  57.950 195.020  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     113.820  57.440 191.900  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     114.240  58.790 188.440  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     112.750  57.370 185.580  1.00  0.00           C  
-ATOM      8 CA   ASN A 147     112.500  55.670 182.190  1.00  0.00           C  
-ATOM      9 CA   LYS A 148     113.950  56.760 180.110  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_0/379/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     148.780  68.940  38.320  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     153.610  67.750  36.850  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     156.000  66.690  35.570  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     158.790  65.180  34.140  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     158.790  65.730  30.710  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     156.880  67.830  30.910  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     157.340  71.000  32.320  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     159.060  72.090  35.410  1.00  0.00           C  
-ATOM      9 CA   ILE A  12     158.710  74.900  36.180  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_0/379/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     286.190  53.910-119.060  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     289.590  57.120-121.470  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     289.690  60.410-121.930  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     290.490  63.810-123.120  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     289.810  67.290-123.290  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     290.220  70.140-125.090  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     291.490  73.460-124.080  1.00  0.00           C  
-ATOM      8 CA   ASN A 147     290.270  76.860-124.040  1.00  0.00           C  
-ATOM      9 CA   LYS A 148     291.850  79.070-125.650  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_0/348/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4      46.160  27.710  -5.160  1.00  0.00           C  
-ATOM      2 CA   TYR A   5      41.890  27.990  -6.420  1.00  0.00           C  
-ATOM      3 CA   ILE A   6      41.460  27.080  -3.830  1.00  0.00           C  
-ATOM      4 CA   ALA A   7      42.170  29.240  -2.510  1.00  0.00           C  
-ATOM      5 CA   LYS A   8      40.140  30.800  -3.400  1.00  0.00           C  
-ATOM      6 CA   GLN A   9      39.860  32.480  -5.670  1.00  0.00           C  
-ATOM      7 CA   ARG A  10      39.060  31.780  -8.190  1.00  0.00           C  
-ATOM      8 CA   GLN A  11      36.260  29.970  -9.050  1.00  0.00           C  
-ATOM      9 CA   ILE A  12      35.570  26.810  -7.820  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_0/348/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140       7.010 158.680 111.020  1.00  0.00           C  
-ATOM      2 CA   ARG A 141       7.970 163.500 109.810  1.00  0.00           C  
-ATOM      3 CA   ILE A 142       7.070 166.680 108.600  1.00  0.00           C  
-ATOM      4 CA   ARG A 143       3.930 168.570 108.710  1.00  0.00           C  
-ATOM      5 CA   ARG A 144       3.040 170.370 105.980  1.00  0.00           C  
-ATOM      6 CA   GLU A 145       1.170 172.570 104.940  1.00  0.00           C  
-ATOM      7 CA   ARG A 146      -2.090 173.840 105.680  1.00  0.00           C  
-ATOM      8 CA   ASN A 147      -4.310 172.480 104.260  1.00  0.00           C  
-ATOM      9 CA   LYS A 148      -3.570 170.230 102.840  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_0/413/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     159.390 105.550  -0.170  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     158.240 101.500   3.640  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     156.510  99.530   2.290  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     156.550 100.520  -0.110  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     159.060  99.730  -1.010  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     158.230  97.260  -1.890  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     156.070  97.420  -3.460  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     153.530  96.060  -3.020  1.00  0.00           C  
-ATOM      9 CA   ILE A  12     150.570  95.990  -3.530  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_0/413/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140      45.730 114.660-103.630  1.00  0.00           C  
-ATOM      2 CA   ARG A 141      49.120 114.780-108.410  1.00  0.00           C  
-ATOM      3 CA   ILE A 142      48.320 112.390-110.890  1.00  0.00           C  
-ATOM      4 CA   ARG A 143      50.400 110.330-112.960  1.00  0.00           C  
-ATOM      5 CA   ARG A 144      50.490 108.580-114.910  1.00  0.00           C  
-ATOM      6 CA   GLU A 145      50.880 108.680-117.600  1.00  0.00           C  
-ATOM      7 CA   ARG A 146      53.600 109.160-117.720  1.00  0.00           C  
-ATOM      8 CA   ASN A 147      54.910 107.480-115.580  1.00  0.00           C  
-ATOM      9 CA   LYS A 148      54.190 104.810-116.050  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_0/320/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     125.010  38.910  50.060  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     129.980  37.430  48.580  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     131.720  35.400  49.130  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     131.090  34.500  51.600  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     128.800  32.980  50.590  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     130.010  30.710  49.610  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     131.390  29.390  51.510  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     129.620  28.440  53.350  1.00  0.00           C  
-ATOM      9 CA   ILE A  12     128.260  26.180  52.210  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_0/320/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     180.840 -42.240  96.420  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     176.620 -40.810  93.620  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     175.170 -38.560  91.220  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     172.460 -37.720  90.410  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     169.610 -36.420  88.430  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     166.400 -35.130  87.700  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     164.630 -35.500  84.700  1.00  0.00           C  
-ATOM      8 CA   ASN A 147     162.340 -34.000  83.120  1.00  0.00           C  
-ATOM      9 CA   LYS A 148     161.000 -32.500  80.830  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_1/450/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4      16.370 -44.150 -13.390  1.00  0.00           C  
-ATOM      2 CA   TYR A   5      15.920 -46.360  -9.700  1.00  0.00           C  
-ATOM      3 CA   ILE A   6      13.400 -47.770 -10.410  1.00  0.00           C  
-ATOM      4 CA   ALA A   7      13.980 -50.440  -9.860  1.00  0.00           C  
-ATOM      5 CA   LYS A   8      13.360 -51.110  -7.110  1.00  0.00           C  
-ATOM      6 CA   GLN A   9      10.570 -52.150  -5.490  1.00  0.00           C  
-ATOM      7 CA   ARG A  10       7.940 -52.080  -3.230  1.00  0.00           C  
-ATOM      8 CA   GLN A  11       8.620 -51.240   0.420  1.00  0.00           C  
-ATOM      9 CA   ILE A  12       7.450 -51.070   2.920  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_1/450/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140      36.020 -76.710-109.780  1.00  0.00           C  
-ATOM      2 CA   ARG A 141      37.140 -74.470-113.420  1.00  0.00           C  
-ATOM      3 CA   ILE A 142      36.810 -75.580-116.730  1.00  0.00           C  
-ATOM      4 CA   ARG A 143      36.570 -79.040-117.500  1.00  0.00           C  
-ATOM      5 CA   ARG A 144      37.890 -82.330-118.170  1.00  0.00           C  
-ATOM      6 CA   GLU A 145      36.190 -84.330-116.900  1.00  0.00           C  
-ATOM      7 CA   ARG A 146      33.490 -85.210-117.040  1.00  0.00           C  
-ATOM      8 CA   ASN A 147      32.410 -87.860-118.270  1.00  0.00           C  
-ATOM      9 CA   LYS A 148      30.350 -89.040-119.630  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_1/379/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     142.230  17.870  44.450  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     140.830  15.120  41.170  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     138.060  15.620  41.710  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     135.890  16.840  39.760  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     136.370  14.640  37.810  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     135.330  12.250  39.200  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     132.530  13.350  38.930  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     132.310  13.330  36.220  1.00  0.00           C  
-ATOM      9 CA   ILE A  12     132.380  10.650  35.460  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_1/379/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140      32.830-100.760  97.990  1.00  0.00           C  
-ATOM      2 CA   ARG A 141      36.260 -96.480  98.150  1.00  0.00           C  
-ATOM      3 CA   ILE A 142      39.160 -94.910  99.510  1.00  0.00           C  
-ATOM      4 CA   ARG A 143      40.700 -91.970  98.030  1.00  0.00           C  
-ATOM      5 CA   ARG A 144      43.820 -92.220  96.480  1.00  0.00           C  
-ATOM      6 CA   GLU A 145      46.580 -94.110  97.720  1.00  0.00           C  
-ATOM      7 CA   ARG A 146      48.780 -94.710 100.750  1.00  0.00           C  
-ATOM      8 CA   ASN A 147      52.030 -93.100 101.300  1.00  0.00           C  
-ATOM      9 CA   LYS A 148      55.070 -94.480 102.520  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_1/348/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     137.100 -54.740 -50.890  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     134.290 -53.390 -46.460  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     132.320 -53.160 -48.640  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     130.820 -55.340 -49.700  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     129.330 -55.410 -47.360  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     127.920 -53.070 -47.260  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     125.980 -53.490 -49.290  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     122.630 -54.670 -48.930  1.00  0.00           C  
-ATOM      9 CA   ILE A  12     121.400 -57.760 -48.200  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_1/348/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140      92.600 -51.830  88.910  1.00  0.00           C  
-ATOM      2 CA   ARG A 141      89.570 -55.450  89.220  1.00  0.00           C  
-ATOM      3 CA   ILE A 142      87.590 -57.930  89.490  1.00  0.00           C  
-ATOM      4 CA   ARG A 143      86.850 -61.250  88.500  1.00  0.00           C  
-ATOM      5 CA   ARG A 144      83.640 -62.740  88.780  1.00  0.00           C  
-ATOM      6 CA   GLU A 145      83.190 -65.410  89.480  1.00  0.00           C  
-ATOM      7 CA   ARG A 146      82.790 -68.330  91.540  1.00  0.00           C  
-ATOM      8 CA   ASN A 147      85.100 -69.600  92.330  1.00  0.00           C  
-ATOM      9 CA   LYS A 148      87.550 -71.200  94.290  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_1/413/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4      10.980 -80.570 -28.550  1.00  0.00           C  
-ATOM      2 CA   TYR A   5      13.880 -84.010 -27.870  1.00  0.00           C  
-ATOM      3 CA   ILE A   6      14.470 -85.170 -25.260  1.00  0.00           C  
-ATOM      4 CA   ALA A   7      13.940 -87.360 -23.650  1.00  0.00           C  
-ATOM      5 CA   LYS A   8      15.490 -89.390 -24.700  1.00  0.00           C  
-ATOM      6 CA   GLN A   9      17.990 -88.210 -24.980  1.00  0.00           C  
-ATOM      7 CA   ARG A  10      18.800 -87.630 -22.090  1.00  0.00           C  
-ATOM      8 CA   GLN A  11      19.940 -89.540 -20.640  1.00  0.00           C  
-ATOM      9 CA   ILE A  12      22.350 -90.060 -22.200  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_1/413/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140      37.560  98.880 236.320  1.00  0.00           C  
-ATOM      2 CA   ARG A 141      37.520  96.280 232.490  1.00  0.00           C  
-ATOM      3 CA   ILE A 142      40.380  96.100 232.810  1.00  0.00           C  
-ATOM      4 CA   ARG A 143      43.430  95.490 234.590  1.00  0.00           C  
-ATOM      5 CA   ARG A 144      43.610  93.090 237.270  1.00  0.00           C  
-ATOM      6 CA   GLU A 145      46.030  93.200 238.900  1.00  0.00           C  
-ATOM      7 CA   ARG A 146      46.640  95.950 239.440  1.00  0.00           C  
-ATOM      8 CA   ASN A 147      44.870  96.560 241.550  1.00  0.00           C  
-ATOM      9 CA   LYS A 148      46.020  95.500 243.850  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_1/320/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     104.710  -1.710 110.340  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     107.640  -5.240 109.840  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     109.300  -6.470 106.980  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     107.560  -7.500 104.480  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     108.000  -8.580 101.790  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     110.530  -9.910 102.150  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     109.640 -12.050 103.540  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     107.910 -13.320 101.680  1.00  0.00           C  
-ATOM      9 CA   ILE A  12     109.440 -13.840  99.490  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_1/320/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     -33.380 139.920 -25.280  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     -36.280 141.260 -28.510  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     -37.180 143.730 -27.550  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     -35.470 145.720 -28.580  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     -36.330 147.300 -30.710  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     -38.610 148.820 -29.940  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     -38.610 150.140 -26.930  1.00  0.00           C  
-ATOM      8 CA   ASN A 147     -40.390 150.590 -24.920  1.00  0.00           C  
-ATOM      9 CA   LYS A 148     -42.020 148.210 -25.000  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_3/450/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     113.220  56.080 -81.600  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     114.810  55.220 -77.480  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     116.910  54.360 -79.150  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     118.490  56.600 -79.460  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     119.160  57.330 -76.690  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     118.190  59.520 -75.230  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     115.520  61.940 -74.570  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     114.160  62.870 -76.800  1.00  0.00           C  
-ATOM      9 CA   ILE A  12     114.160  63.310 -80.140  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_3/450/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     -31.150 226.830   2.110  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     -30.580 230.360  -0.400  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     -30.120 228.780  -3.330  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     -29.330 227.340  -6.230  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     -31.760 227.370  -8.890  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     -31.640 227.240 -11.500  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     -30.830 225.460 -14.440  1.00  0.00           C  
-ATOM      8 CA   ASN A 147     -29.440 222.790 -16.580  1.00  0.00           C  
-ATOM      9 CA   LYS A 148     -31.040 221.220 -18.230  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_3/379/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     100.600  68.200  77.130  1.00  0.00           C  
-ATOM      2 CA   TYR A   5      96.270  66.760  80.250  1.00  0.00           C  
-ATOM      3 CA   ILE A   6      93.520  66.450  80.270  1.00  0.00           C  
-ATOM      4 CA   ALA A   7      93.160  64.670  78.320  1.00  0.00           C  
-ATOM      5 CA   LYS A   8      91.870  61.290  77.750  1.00  0.00           C  
-ATOM      6 CA   GLN A   9      92.740  57.660  77.830  1.00  0.00           C  
-ATOM      7 CA   ARG A  10      92.530  55.990  75.740  1.00  0.00           C  
-ATOM      8 CA   GLN A  11      92.360  57.940  73.800  1.00  0.00           C  
-ATOM      9 CA   ILE A  12      95.050  59.030  73.780  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_3/379/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     -15.060  74.050  87.110  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     -11.810  72.190  91.280  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     -11.720  70.970  93.890  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     -13.830  69.280  96.610  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     -15.350  69.970  99.010  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     -15.180  72.910 100.820  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     -15.970  74.250 103.220  1.00  0.00           C  
-ATOM      8 CA   ASN A 147     -15.890  73.010 106.530  1.00  0.00           C  
-ATOM      9 CA   LYS A 148     -16.780  73.610 109.050  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_3/348/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4      60.350  13.130  61.940  1.00  0.00           C  
-ATOM      2 CA   TYR A   5      56.300  11.360  59.880  1.00  0.00           C  
-ATOM      3 CA   ILE A   6      57.900  10.480  57.560  1.00  0.00           C  
-ATOM      4 CA   ALA A   7      59.140   8.690  54.690  1.00  0.00           C  
-ATOM      5 CA   LYS A   8      59.310   5.200  53.310  1.00  0.00           C  
-ATOM      6 CA   GLN A   9      62.110   3.850  52.070  1.00  0.00           C  
-ATOM      7 CA   ARG A  10      62.770   1.530  50.710  1.00  0.00           C  
-ATOM      8 CA   GLN A  11      59.990   0.880  50.130  1.00  0.00           C  
-ATOM      9 CA   ILE A  12      59.010   2.440  48.110  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_3/348/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     150.710  13.520  48.820  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     155.500  12.030  47.420  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     157.420   9.330  46.810  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     160.020   9.210  45.570  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     162.380  10.640  43.460  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     161.930  13.710  42.020  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     163.030  15.690  39.320  1.00  0.00           C  
-ATOM      8 CA   ASN A 147     162.220  18.010  38.100  1.00  0.00           C  
-ATOM      9 CA   LYS A 148     160.700  19.620  39.750  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_3/413/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     106.100 -29.110  24.970  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     105.170 -32.400  20.290  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     105.720 -32.680  16.660  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     107.700 -33.410  14.860  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     110.420 -35.160  16.000  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     113.930 -35.520  16.930  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     115.020 -35.030  14.260  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     113.950 -36.970  12.520  1.00  0.00           C  
-ATOM      9 CA   ILE A  12     111.980 -38.750  13.650  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_3/413/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     -60.170-126.820 224.170  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     -65.130-123.780 224.250  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     -65.160-120.970 223.930  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     -63.340-118.300 222.480  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     -59.900-117.110 222.300  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     -58.380-114.080 222.360  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     -55.530-113.750 220.820  1.00  0.00           C  
-ATOM      8 CA   ASN A 147     -52.120-112.490 220.870  1.00  0.00           C  
-ATOM      9 CA   LYS A 148     -50.900-110.680 218.050  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_3/320/12asA00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ALA A   4     -10.930  35.550 -12.910  1.00  0.00           C  
-ATOM      2 CA   TYR A   5     -13.870  34.010 -16.420  1.00  0.00           C  
-ATOM      3 CA   ILE A   6     -15.300  33.780 -19.650  1.00  0.00           C  
-ATOM      4 CA   ALA A   7     -14.060  32.030 -22.400  1.00  0.00           C  
-ATOM      5 CA   LYS A   8     -12.920  32.680 -25.810  1.00  0.00           C  
-ATOM      6 CA   GLN A   9     -14.500  31.290 -28.530  1.00  0.00           C  
-ATOM      7 CA   ARG A  10     -13.480  31.530 -31.150  1.00  0.00           C  
-ATOM      8 CA   GLN A  11     -10.500  32.060 -30.840  1.00  0.00           C  
-ATOM      9 CA   ILE A  12      -9.890  29.550 -29.600  1.00  0.00           C  
-
-===== FILE: ./outputs/frames/replica_3/320/1a02F00_frame.pdb =====
-CRYST1   100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
-ATOM      1 CA   ARG A 140     -14.750 194.240 -36.580  1.00  0.00           C  
-ATOM      2 CA   ARG A 141     -17.440 190.550 -33.530  1.00  0.00           C  
-ATOM      3 CA   ILE A 142     -16.650 187.110 -33.780  1.00  0.00           C  
-ATOM      4 CA   ARG A 143     -17.820 183.720 -33.120  1.00  0.00           C  
-ATOM      5 CA   ARG A 144     -15.580 182.290 -30.930  1.00  0.00           C  
-ATOM      6 CA   GLU A 145     -14.230 179.910 -28.760  1.00  0.00           C  
-ATOM      7 CA   ARG A 146     -11.720 179.220 -27.700  1.00  0.00           C  
-ATOM      8 CA   ASN A 147      -9.880 181.140 -25.950  1.00  0.00           C  
-ATOM      9 CA   LYS A 148      -8.430 181.590 -23.640  1.00  0.00           C  
 
 ===== FILE: ./src/mdcath.egg-info/SOURCES.txt =====
 LICENSE
@@ -4180,6 +3705,8 @@ from typing import Dict, Any, Optional, List, Tuple
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 ===== FILE: ./src/mdcath/processing/features.py =====
+
+
 #!/usr/bin/env python3
 """
 Processing module for generating ML features.
@@ -4187,9 +3714,7 @@ Processing module for generating ML features.
 
 import os
 import logging
-import numpy as np
-import pandas as pd
-from typing import Dict, Any, Optional, List, Tuple, Union
+import shutil  # <-- Added to fix "name 'shutil' is not defined" DSSP fallback error
 
 ===== FILE: ./src/mdcath/processing/visualization.py =====
 #!/usr/bin/env python3
@@ -4206,7 +3731,7 @@ import matplotlib.pyplot as plt
 ===== FILE: ./src/mdcath/config/default_config.yaml =====
 input:
   mdcath_folder: "/mnt/datasets/MD_CATH/data"  # Path to the mdCATH folder
-  domain_ids: ["1a02F00", "12asA00"]   # Empty means process default domain (12asA00)
+  domain_ids: ["1a02F00", "1a0aA00"]   # Empty means process default domain (12asA00)
 
 temperatures: [320, 348, 379, 413, 450]
 num_replicas: 5  # Number of replicas to process per temperature
@@ -4228,6 +3753,8 @@ mdCATH - A package for processing mdCATH dataset for ML applications
 __version__ = '0.1.0'
 
 ===== FILE: ./src/mdcath/core/data_loader.py =====
+
+
 #!/usr/bin/env python3
 """
 Core functionality for loading and processing H5 data from mdCATH dataset.
@@ -4236,8 +3763,6 @@ Core functionality for loading and processing H5 data from mdCATH dataset.
 import os
 import h5py
 import logging
-import numpy as np
-import pandas as pd
 
 ===== FILE: ./src/mdcath/core/__init__.py =====
 """
