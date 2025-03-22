@@ -25,6 +25,178 @@ File Structure:
 │   ├── test.pdb
 │   └── test.xyzr
 ├── outputs
+│   ├── frames
+│   │   ├── replica_0
+│   │   │   ├── 320
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 348
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 379
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 413
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   └── 450
+│   │   │       ├── 1a02F00_frame.pdb
+│   │   │       └── 1a0aA00_frame.pdb
+│   │   ├── replica_1
+│   │   │   ├── 320
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 348
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 379
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 413
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   └── 450
+│   │   │       ├── 1a02F00_frame.pdb
+│   │   │       └── 1a0aA00_frame.pdb
+│   │   ├── replica_2
+│   │   │   ├── 320
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 348
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 379
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 413
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   └── 450
+│   │   │       ├── 1a02F00_frame.pdb
+│   │   │       └── 1a0aA00_frame.pdb
+│   │   ├── replica_3
+│   │   │   ├── 320
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 348
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 379
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 413
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   └── 450
+│   │   │       ├── 1a02F00_frame.pdb
+│   │   │       └── 1a0aA00_frame.pdb
+│   │   └── replica_4
+│   │       ├── 320
+│   │       │   ├── 1a02F00_frame.pdb
+│   │       │   └── 1a0aA00_frame.pdb
+│   │       ├── 348
+│   │       │   ├── 1a02F00_frame.pdb
+│   │       │   └── 1a0aA00_frame.pdb
+│   │       ├── 379
+│   │       │   ├── 1a02F00_frame.pdb
+│   │       │   └── 1a0aA00_frame.pdb
+│   │       ├── 413
+│   │       │   ├── 1a02F00_frame.pdb
+│   │       │   └── 1a0aA00_frame.pdb
+│   │       └── 450
+│   │           ├── 1a02F00_frame.pdb
+│   │           └── 1a0aA00_frame.pdb
+│   ├── ML_features
+│   │   ├── final_dataset_temperature_320.csv
+│   │   ├── final_dataset_temperature_348.csv
+│   │   ├── final_dataset_temperature_379.csv
+│   │   ├── final_dataset_temperature_413.csv
+│   │   ├── final_dataset_temperature_450.csv
+│   │   └── final_dataset_temperature_average.csv
+│   ├── pdbs
+│   │   ├── 1a02F00.pdb
+│   │   └── 1a0aA00.pdb
+│   ├── RMSF
+│   │   ├── replica_average
+│   │   │   ├── 320
+│   │   │   │   └── rmsf_replica_average_temperature320.csv
+│   │   │   ├── 348
+│   │   │   │   └── rmsf_replica_average_temperature348.csv
+│   │   │   ├── 379
+│   │   │   │   └── rmsf_replica_average_temperature379.csv
+│   │   │   ├── 413
+│   │   │   │   └── rmsf_replica_average_temperature413.csv
+│   │   │   ├── 450
+│   │   │   │   └── rmsf_replica_average_temperature450.csv
+│   │   │   └── average
+│   │   │       └── rmsf_all_temperatures_all_replicas.csv
+│   │   └── replicas
+│   │       ├── replica_0
+│   │       │   ├── 320
+│   │       │   │   └── rmsf_replica0_temperature320.csv
+│   │       │   ├── 348
+│   │       │   │   └── rmsf_replica0_temperature348.csv
+│   │       │   ├── 379
+│   │       │   │   └── rmsf_replica0_temperature379.csv
+│   │       │   ├── 413
+│   │       │   │   └── rmsf_replica0_temperature413.csv
+│   │       │   └── 450
+│   │       │       └── rmsf_replica0_temperature450.csv
+│   │       ├── replica_1
+│   │       │   ├── 320
+│   │       │   │   └── rmsf_replica1_temperature320.csv
+│   │       │   ├── 348
+│   │       │   │   └── rmsf_replica1_temperature348.csv
+│   │       │   ├── 379
+│   │       │   │   └── rmsf_replica1_temperature379.csv
+│   │       │   ├── 413
+│   │       │   │   └── rmsf_replica1_temperature413.csv
+│   │       │   └── 450
+│   │       │       └── rmsf_replica1_temperature450.csv
+│   │       ├── replica_2
+│   │       │   ├── 320
+│   │       │   │   └── rmsf_replica2_temperature320.csv
+│   │       │   ├── 348
+│   │       │   │   └── rmsf_replica2_temperature348.csv
+│   │       │   ├── 379
+│   │       │   │   └── rmsf_replica2_temperature379.csv
+│   │       │   ├── 413
+│   │       │   │   └── rmsf_replica2_temperature413.csv
+│   │       │   └── 450
+│   │       │       └── rmsf_replica2_temperature450.csv
+│   │       ├── replica_3
+│   │       │   ├── 320
+│   │       │   │   └── rmsf_replica3_temperature320.csv
+│   │       │   ├── 348
+│   │       │   │   └── rmsf_replica3_temperature348.csv
+│   │       │   ├── 379
+│   │       │   │   └── rmsf_replica3_temperature379.csv
+│   │       │   ├── 413
+│   │       │   │   └── rmsf_replica3_temperature413.csv
+│   │       │   └── 450
+│   │       │       └── rmsf_replica3_temperature450.csv
+│   │       └── replica_4
+│   │           ├── 320
+│   │           │   └── rmsf_replica4_temperature320.csv
+│   │           ├── 348
+│   │           │   └── rmsf_replica4_temperature348.csv
+│   │           ├── 379
+│   │           │   └── rmsf_replica4_temperature379.csv
+│   │           ├── 413
+│   │           │   └── rmsf_replica4_temperature413.csv
+│   │           └── 450
+│   │               └── rmsf_replica4_temperature450.csv
+│   ├── visualizations
+│   │   ├── amino_acid_rmsf_violin_plot.png
+│   │   ├── dssp_rmsf_correlation_plot.png
+│   │   ├── feature_correlation_plot.png
+│   │   ├── replica_variance_plot.png
+│   │   ├── rmsf_histogram.png
+│   │   ├── rmsf_violin_plot.png
+│   │   ├── temperature_average_summary.png
+│   │   └── temperature_summary.png
+│   └── voxelized
+│       └── mdcath_voxelized.hdf5
 ├── README.md
 ├── requirements.txt
 ├── setup.py
@@ -67,7 +239,7 @@ File Structure:
 │       └── top_level.txt
 └── test_h5_loading.py
 
-11 directories, 53 files
+85 directories, 151 files
 
 Contents of Relevant Files Below (Ignoring Binary Files):
 ---------------------------------------------------------
@@ -1211,107 +1383,15 @@ Processing module for voxelizing protein structures using aposteriori.
 import os
 import logging
 import subprocess
+import traceback
+import sys
 from typing import Dict, Any, Optional, List, Tuple
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
-def voxelize_domain(pdb_file: str, output_dir: str, config: Dict[str, Any]) -> Optional[str]:
-    """
-    Voxelize a cleaned PDB file using aposteriori's make-frame-dataset command.
-    
-    Args:
-        pdb_file: Path to the cleaned PDB file
-        output_dir: Directory to save voxelized output
-        config: Configuration dictionary with voxelization parameters
-    
-    Returns:
-        Path to the output file if successful, None otherwise
-    """
-    try:
-        # Check if aposteriori is installed
-        aposteriori_path = subprocess.run(["which", "make-frame-dataset"], 
-                          check=False,
-                          stdout=subprocess.PIPE, 
-                          stderr=subprocess.PIPE,
-                          text=True).stdout.strip()
-                          
-        aposteriori_installed = aposteriori_path != ""
-        
-        if not aposteriori_installed:
-            aposteriori_installed = False
-            logging.warning("make-frame-dataset command not found, but proceeding as requested.")
-        
-        if not aposteriori_installed:
-            # Skip voxelization but return success to keep pipeline running
-            return {"success": True, "skipped": True, "message": "aposteriori check skipped"}
-        
-        # Get voxelization parameters from config
-        voxel_config = config.get("processing", {}).get("voxelization", {})
-        frame_edge_length = voxel_config.get("frame_edge_length", 12.0)
-        voxels_per_side = voxel_config.get("voxels_per_side", 21)
-        atom_encoder = voxel_config.get("atom_encoder", "CNOCBCA")
-        encode_cb = voxel_config.get("encode_cb", True)
-        compression_gzip = voxel_config.get("compression_gzip", True)
-        voxelise_all_states = voxel_config.get("voxelise_all_states", False)
-        
-        # Create output directory
-        os.makedirs(output_dir, exist_ok=True)
-        
-        # Create output name
-        domain_name = os.path.basename(pdb_file).split('.')[0]
-        output_name = f"{domain_name}_voxelized"
-        
-        # Build aposteriori command
-        cmd = [
-            aposteriori_path,
-            "-o", output_dir,
-            "-n", output_name,
-            "-v",
-            "--frame-edge-length", str(frame_edge_length),
-            "--voxels-per-side", str(voxels_per_side),
-            "-ae", atom_encoder,
-            "-cb", str(encode_cb).lower(),
-            "-comp", str(compression_gzip).lower(),
-            "-vas", str(voxelise_all_states).lower(),
-            pdb_file
-        ]
-        
-        # Run the command
-        logging.info(f"Running aposteriori voxelization for {pdb_file}")
-        result = subprocess.run(cmd, check=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        
-        if result.returncode != 0:
-            logging.warning(f"Voxelization command returned non-zero status {result.returncode}")
-            logging.debug(f"Command output: {result.stdout}")
-            logging.debug(f"Command error: {result.stderr}")
-        
-        # Check for expected output files (try both .hdf5 and .h5 extensions)
-        output_file_hdf5 = os.path.join(output_dir, f"{output_name}.hdf5")
-        output_file_h5 = os.path.join(output_dir, f"{output_name}.h5")
-        
-        if os.path.exists(output_file_hdf5):
-            logging.info(f"Voxelization completed: {output_file_hdf5}")
-            return output_file_hdf5
-        elif os.path.exists(output_file_h5):
-            logging.info(f"Voxelization completed: {output_file_h5}")
-            return output_file_h5
-        else:
-            logging.error(f"Voxelization failed: output file not found")
-            logging.debug(f"Command output: {result.stdout}")
-            logging.debug(f"Command error: {result.stderr}")
-            return None
-    except subprocess.CalledProcessError as e:
-        logging.error(f"Voxelization failed: {e.stderr}")
-        return None
-    except Exception as e:
-        logging.error(f"Voxelization failed with unexpected error: {e}")
-        return None
-
-
-# In src/mdcath/processing/voxelizer.py, we need to modify the voxelize_domains function
-
 def voxelize_domains(pdb_results: Dict[str, Any], config: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Voxelize multiple domains by processing all PDBs into a single output file.
+    Voxelize multiple domains by processing the PDB directory directly.
+    Handles the interactive confirmation prompt automatically.
     
     Args:
         pdb_results: Dictionary with PDB processing results
@@ -1335,133 +1415,140 @@ def voxelize_domains(pdb_results: Dict[str, Any], config: Dict[str, Any]) -> Dic
     aposteriori_available = aposteriori_path is not None
     
     if not aposteriori_available:
-        try:
-            import aposteriori
-            aposteriori_available = True
-        except ImportError:
-            aposteriori_available = False
-            
-    if not aposteriori_available:
-        logging.warning("make-frame-dataset command not found, skipping voxelization")
-        return {"success": True, "skipped": True, "message": "aposteriori not available"}
-    else:
-        logging.info(f"Using aposteriori's make-frame-dataset from: {aposteriori_path}")
+        logging.error("make-frame-dataset command not found. Please install aposteriori with: pip install aposteriori")
+        return {"success": False, "error": "aposteriori not available"}
+    
+    logging.info(f"Using aposteriori's make-frame-dataset from: {aposteriori_path}")
     
     # Count valid PDB files
     pdb_files = glob.glob(os.path.join(pdb_dir, "*.pdb"))
     
     if not pdb_files:
-        logging.warning("No valid PDB files found for voxelization")
-        return {"success": False, "error": "No valid PDB files"}
+        logging.error(f"No PDB files found for voxelization in directory: {pdb_dir}")
+        return {"success": False, "error": "No PDB files found"}
     
-    logging.info(f"Checking {len(pdb_files)} PDB files for voxelization")
-    valid_pdbs = []
-    for pdb_file in tqdm(pdb_files, desc="Validating PDBs"):
-        # Validate PDB file
-        try:
-            with open(pdb_file, 'r') as f:
-                content = f.read(1000)  # Read first 1000 chars to check for ATOM records
-                if "ATOM" in content and os.path.getsize(pdb_file) > 0:
-                    valid_pdbs.append(pdb_file)
-                else:
-                    logging.warning(f"PDB file {pdb_file} does not contain valid ATOM records, skipping")
-        except Exception as e:
-            logging.warning(f"Error validating PDB file {pdb_file}: {e}")
+    logging.info(f"Found {len(pdb_files)} PDB files for voxelization in {pdb_dir}")
     
-    if not valid_pdbs:
-        logging.warning("No valid PDB files found for voxelization")
-        return {"success": False, "error": "No valid PDB files"}
+    # Get voxelization parameters from config
+    voxel_config = config.get("processing", {}).get("voxelization", {})
+    frame_edge_length = voxel_config.get("frame_edge_length", 12.0)
+    voxels_per_side = voxel_config.get("voxels_per_side", 21)
+    atom_encoder = voxel_config.get("atom_encoder", "CNOCBCA")
+    encode_cb = voxel_config.get("encode_cb", True)
+    compression_gzip = voxel_config.get("compression_gzip", True)
+    voxelise_all_states = voxel_config.get("voxelise_all_states", False)
     
-    # Create temporary directory with symlinks to all PDB files
-    import tempfile
-    with tempfile.TemporaryDirectory() as temp_dir:
-        # Create symlinks to all PDB files in temp_dir
-        for pdb_file in valid_pdbs:
-            basename = os.path.basename(pdb_file)
-            os.symlink(pdb_file, os.path.join(temp_dir, basename))
+    # Create output name
+    output_name = "mdcath_voxelized"
+    
+    # Build aposteriori command to process the PDB directory
+    cmd = [
+        aposteriori_path,
+        "-o", voxel_dir,  # Output directory
+        "-n", output_name,  # Output filename
+        "-v",  # Enable verbose output
+        "-e", ".pdb",  # File extension to look for
+        "--frame-edge-length", str(frame_edge_length),
+        "--voxels-per-side", str(voxels_per_side),
+        "-ae", atom_encoder,
+        "-cb", str(encode_cb).lower(),
+        "-comp", str(compression_gzip).lower(),
+        "-vas", str(voxelise_all_states).lower(),
+        pdb_dir  # Directory containing PDB files
+    ]
+    
+    # Log the exact command being run
+    logging.info(f"Running aposteriori command: {' '.join(cmd)}")
+    
+    try:
+        # Use Popen instead of run to handle interactive prompts
+        process = subprocess.Popen(
+            cmd,
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
         
-        # Get voxelization parameters from config
-        voxel_config = config.get("processing", {}).get("voxelization", {})
-        frame_edge_length = voxel_config.get("frame_edge_length", 12.0)
-        voxels_per_side = voxel_config.get("voxels_per_side", 21)
-        atom_encoder = voxel_config.get("atom_encoder", "CNOCBCA")
-        encode_cb = voxel_config.get("encode_cb", True)
-        compression_gzip = voxel_config.get("compression_gzip", True)
-        voxelise_all_states = voxel_config.get("voxelise_all_states", False)
+        # Send 'y' to confirm when prompted, with a newline character
+        stdout, stderr = process.communicate(input='y\n')
         
-        # Create combined dataset name
-        output_name = "mdcath_voxelized"
+        # Log the output
+        logging.info(f"aposteriori stdout:\n{stdout}")
+        if stderr:
+            logging.info(f"aposteriori stderr:\n{stderr}")
         
-        # Build aposteriori command for all domains
-        cmd = [
-            aposteriori_path,
-            "-o", voxel_dir,
-            "-n", output_name,
-            "-v",
-            "--frame-edge-length", str(frame_edge_length),
-            "--voxels-per-side", str(voxels_per_side),
-            "-ae", atom_encoder,
-            "-cb", str(encode_cb).lower(),
-            "-comp", str(compression_gzip).lower(),
-            "-vas", str(voxelise_all_states).lower(),
-            temp_dir      # Use the directory containing all PDB files
-        ]
+        # Check return code
+        if process.returncode != 0:
+            logging.error(f"aposteriori command failed with return code {process.returncode}")
         
-        # Run the command with verbose output to help with debugging
-        logging.info(f"Running aposteriori command: {' '.join(cmd)}")
-        try:
-            # Set timeout and run the command
-            timeout = 300  # 5 minutes timeout
-            result = subprocess.run(cmd, check=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE, 
-                                  text=True, timeout=timeout)
+        # Check for expected output files (try both .hdf5 and .h5 extensions)
+        output_file_hdf5 = os.path.join(voxel_dir, f"{output_name}.hdf5")
+        output_file_h5 = os.path.join(voxel_dir, f"{output_name}.h5")
+        
+        if os.path.exists(output_file_hdf5):
+            logging.info(f"Voxelization complete. Output: {output_file_hdf5}")
+            file_size_mb = os.path.getsize(output_file_hdf5) / (1024 * 1024)
+            logging.info(f"Output file size: {file_size_mb:.2f} MB")
             
-            # Print stdout and stderr for debugging
-            logging.debug(f"Command stdout: {result.stdout}")
-            if result.stderr:
-                logging.warning(f"Command stderr: {result.stderr}")
+            # Count number of residue frames
+            try:
+                import h5py
+                with h5py.File(output_file_hdf5, 'r') as f:
+                    num_frames = 0
+                    for pdb_code in f.keys():
+                        for chain_id in f[pdb_code].keys():
+                            num_frames += len(f[pdb_code][chain_id].keys())
+                logging.info(f"Dataset contains {num_frames} residue frames")
+            except Exception as e:
+                logging.warning(f"Could not count frames in output file: {e}")
             
-            # Check for expected output files (try both .hdf5 and .h5 extensions)
-            output_file_hdf5 = os.path.join(voxel_dir, f"{output_name}.hdf5")
-            output_file_h5 = os.path.join(voxel_dir, f"{output_name}.h5")
-            
-            if os.path.exists(output_file_hdf5):
-                logging.info(f"Voxelization complete. Output: {output_file_hdf5}")
-                return {
-                    "success": True,
-                    "output_file": output_file_hdf5,
-                    "file_size_mb": os.path.getsize(output_file_hdf5) / (1024 * 1024)
-                }
-            elif os.path.exists(output_file_h5):
-                logging.info(f"Voxelization complete. Output: {output_file_h5}")
-                return {
-                    "success": True,
-                    "output_file": output_file_h5,
-                    "file_size_mb": os.path.getsize(output_file_h5) / (1024 * 1024)
-                }
-            else:
-                logging.warning(f"Voxelization failed: No output file generated")
-                return {
-                    "success": False,
-                    "error": "Output file not found",
-                    "command": ' '.join(cmd),
-                    "stdout": result.stdout,
-                    "stderr": result.stderr
-                }
-            
-        except subprocess.TimeoutExpired:
-            logging.warning(f"Voxelization timeout after {timeout} seconds")
             return {
-                "success": False, 
-                "error": f"Command timed out after {timeout} seconds"
+                "success": True,
+                "output_file": output_file_hdf5,
+                "file_size_mb": file_size_mb,
+                "num_frames": num_frames if 'num_frames' in locals() else None
             }
-        except Exception as e:
-            logging.warning(f"Voxelization error: {e}")
-            import traceback
-            logging.error(traceback.format_exc())
+        elif os.path.exists(output_file_h5):
+            logging.info(f"Voxelization complete. Output: {output_file_h5}")
+            file_size_mb = os.path.getsize(output_file_h5) / (1024 * 1024)
+            logging.info(f"Output file size: {file_size_mb:.2f} MB")
+            
+            # Count number of residue frames
+            try:
+                import h5py
+                with h5py.File(output_file_h5, 'r') as f:
+                    num_frames = 0
+                    for pdb_code in f.keys():
+                        for chain_id in f[pdb_code].keys():
+                            num_frames += len(f[pdb_code][chain_id].keys())
+                logging.info(f"Dataset contains {num_frames} residue frames")
+            except Exception as e:
+                logging.warning(f"Could not count frames in output file: {e}")
+            
             return {
-                "success": False, 
-                "error": str(e)
+                "success": True,
+                "output_file": output_file_h5,
+                "file_size_mb": file_size_mb,
+                "num_frames": num_frames if 'num_frames' in locals() else None
             }
+        else:
+            logging.error(f"Voxelization failed: No output file generated")
+            return {
+                "success": False,
+                "error": "Output file not found",
+                "command": ' '.join(cmd),
+                "stdout": stdout,
+                "stderr": stderr
+            }
+        
+    except Exception as e:
+        logging.error(f"Voxelization error: {e}")
+        logging.error(traceback.format_exc())
+        return {
+            "success": False, 
+            "error": str(e)
+        }
 ===== FILE: src/mdcath/processing/__init__.py =====
 """
 Data processing modules for mdCATH
@@ -3164,6 +3251,178 @@ Folder Structure in Data Directory:
 │   ├── test.pdb
 │   └── test.xyzr
 ├── outputs
+│   ├── frames
+│   │   ├── replica_0
+│   │   │   ├── 320
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 348
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 379
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 413
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   └── 450
+│   │   │       ├── 1a02F00_frame.pdb
+│   │   │       └── 1a0aA00_frame.pdb
+│   │   ├── replica_1
+│   │   │   ├── 320
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 348
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 379
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 413
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   └── 450
+│   │   │       ├── 1a02F00_frame.pdb
+│   │   │       └── 1a0aA00_frame.pdb
+│   │   ├── replica_2
+│   │   │   ├── 320
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 348
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 379
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 413
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   └── 450
+│   │   │       ├── 1a02F00_frame.pdb
+│   │   │       └── 1a0aA00_frame.pdb
+│   │   ├── replica_3
+│   │   │   ├── 320
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 348
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 379
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   ├── 413
+│   │   │   │   ├── 1a02F00_frame.pdb
+│   │   │   │   └── 1a0aA00_frame.pdb
+│   │   │   └── 450
+│   │   │       ├── 1a02F00_frame.pdb
+│   │   │       └── 1a0aA00_frame.pdb
+│   │   └── replica_4
+│   │       ├── 320
+│   │       │   ├── 1a02F00_frame.pdb
+│   │       │   └── 1a0aA00_frame.pdb
+│   │       ├── 348
+│   │       │   ├── 1a02F00_frame.pdb
+│   │       │   └── 1a0aA00_frame.pdb
+│   │       ├── 379
+│   │       │   ├── 1a02F00_frame.pdb
+│   │       │   └── 1a0aA00_frame.pdb
+│   │       ├── 413
+│   │       │   ├── 1a02F00_frame.pdb
+│   │       │   └── 1a0aA00_frame.pdb
+│   │       └── 450
+│   │           ├── 1a02F00_frame.pdb
+│   │           └── 1a0aA00_frame.pdb
+│   ├── ML_features
+│   │   ├── final_dataset_temperature_320.csv
+│   │   ├── final_dataset_temperature_348.csv
+│   │   ├── final_dataset_temperature_379.csv
+│   │   ├── final_dataset_temperature_413.csv
+│   │   ├── final_dataset_temperature_450.csv
+│   │   └── final_dataset_temperature_average.csv
+│   ├── pdbs
+│   │   ├── 1a02F00.pdb
+│   │   └── 1a0aA00.pdb
+│   ├── RMSF
+│   │   ├── replica_average
+│   │   │   ├── 320
+│   │   │   │   └── rmsf_replica_average_temperature320.csv
+│   │   │   ├── 348
+│   │   │   │   └── rmsf_replica_average_temperature348.csv
+│   │   │   ├── 379
+│   │   │   │   └── rmsf_replica_average_temperature379.csv
+│   │   │   ├── 413
+│   │   │   │   └── rmsf_replica_average_temperature413.csv
+│   │   │   ├── 450
+│   │   │   │   └── rmsf_replica_average_temperature450.csv
+│   │   │   └── average
+│   │   │       └── rmsf_all_temperatures_all_replicas.csv
+│   │   └── replicas
+│   │       ├── replica_0
+│   │       │   ├── 320
+│   │       │   │   └── rmsf_replica0_temperature320.csv
+│   │       │   ├── 348
+│   │       │   │   └── rmsf_replica0_temperature348.csv
+│   │       │   ├── 379
+│   │       │   │   └── rmsf_replica0_temperature379.csv
+│   │       │   ├── 413
+│   │       │   │   └── rmsf_replica0_temperature413.csv
+│   │       │   └── 450
+│   │       │       └── rmsf_replica0_temperature450.csv
+│   │       ├── replica_1
+│   │       │   ├── 320
+│   │       │   │   └── rmsf_replica1_temperature320.csv
+│   │       │   ├── 348
+│   │       │   │   └── rmsf_replica1_temperature348.csv
+│   │       │   ├── 379
+│   │       │   │   └── rmsf_replica1_temperature379.csv
+│   │       │   ├── 413
+│   │       │   │   └── rmsf_replica1_temperature413.csv
+│   │       │   └── 450
+│   │       │       └── rmsf_replica1_temperature450.csv
+│   │       ├── replica_2
+│   │       │   ├── 320
+│   │       │   │   └── rmsf_replica2_temperature320.csv
+│   │       │   ├── 348
+│   │       │   │   └── rmsf_replica2_temperature348.csv
+│   │       │   ├── 379
+│   │       │   │   └── rmsf_replica2_temperature379.csv
+│   │       │   ├── 413
+│   │       │   │   └── rmsf_replica2_temperature413.csv
+│   │       │   └── 450
+│   │       │       └── rmsf_replica2_temperature450.csv
+│   │       ├── replica_3
+│   │       │   ├── 320
+│   │       │   │   └── rmsf_replica3_temperature320.csv
+│   │       │   ├── 348
+│   │       │   │   └── rmsf_replica3_temperature348.csv
+│   │       │   ├── 379
+│   │       │   │   └── rmsf_replica3_temperature379.csv
+│   │       │   ├── 413
+│   │       │   │   └── rmsf_replica3_temperature413.csv
+│   │       │   └── 450
+│   │       │       └── rmsf_replica3_temperature450.csv
+│   │       └── replica_4
+│   │           ├── 320
+│   │           │   └── rmsf_replica4_temperature320.csv
+│   │           ├── 348
+│   │           │   └── rmsf_replica4_temperature348.csv
+│   │           ├── 379
+│   │           │   └── rmsf_replica4_temperature379.csv
+│   │           ├── 413
+│   │           │   └── rmsf_replica4_temperature413.csv
+│   │           └── 450
+│   │               └── rmsf_replica4_temperature450.csv
+│   ├── visualizations
+│   │   ├── amino_acid_rmsf_violin_plot.png
+│   │   ├── dssp_rmsf_correlation_plot.png
+│   │   ├── feature_correlation_plot.png
+│   │   ├── replica_variance_plot.png
+│   │   ├── rmsf_histogram.png
+│   │   ├── rmsf_violin_plot.png
+│   │   ├── temperature_average_summary.png
+│   │   └── temperature_summary.png
+│   └── voxelized
+│       └── mdcath_voxelized.hdf5
 ├── README.md
 ├── requirements.txt
 ├── setup.py
@@ -3206,7 +3465,7 @@ Folder Structure in Data Directory:
 │       └── top_level.txt
 └── test_h5_loading.py
 
-11 directories, 53 files
+85 directories, 151 files
 
 Extracting First 10 Lines from Each File in Data Directory (Excluding Binary & pipeline.log):
 -------------------------------------------------------------------------------------
@@ -3417,10 +3676,10 @@ Unnamed repository; edit this file 'description' to name the repository.
 ref: refs/heads/main
 
 ===== FILE: ./.git/refs/remotes/origin/main =====
-e7829511d2beaccc14b25cd651bbef6837f0ef10
+16dc0354d39edebbe7342eed9cad9d8e1e2b5ca7
 
 ===== FILE: ./.git/refs/heads/main =====
-e7829511d2beaccc14b25cd651bbef6837f0ef10
+16dc0354d39edebbe7342eed9cad9d8e1e2b5ca7
 
 ===== FILE: ./.git/info/exclude =====
 # git ls-files --others --exclude-from=.git/info/exclude
@@ -3431,7 +3690,7 @@ e7829511d2beaccc14b25cd651bbef6837f0ef10
 # *~
 
 ===== FILE: ./.git/COMMIT_EDITMSG =====
-initial commit
+fixed bugs
 
 ===== FILE: ./.git/hooks/pre-applypatch.sample =====
 #!/bin/sh
@@ -3592,15 +3851,18 @@ exec git update-server-info
 e5d234b3768d56a714b360b82486d7dcf1c1daf9 0000000000000000000000000000000000000000 Felix Burton <felixburton2002@gmail.com> 1742428799 +0000	Branch: renamed refs/heads/master to refs/heads/main
 0000000000000000000000000000000000000000 e5d234b3768d56a714b360b82486d7dcf1c1daf9 Felix Burton <felixburton2002@gmail.com> 1742428799 +0000	Branch: renamed refs/heads/master to refs/heads/main
 e5d234b3768d56a714b360b82486d7dcf1c1daf9 e7829511d2beaccc14b25cd651bbef6837f0ef10 Felix Burton <felixburton2002@gmail.com> 1742428809 +0000	commit: initial commit
+e7829511d2beaccc14b25cd651bbef6837f0ef10 16dc0354d39edebbe7342eed9cad9d8e1e2b5ca7 Felix Burton <felixburton2002@gmail.com> 1742603805 +0000	commit: fixed bugs
 
 ===== FILE: ./.git/logs/refs/remotes/origin/main =====
 0000000000000000000000000000000000000000 e5d234b3768d56a714b360b82486d7dcf1c1daf9 Felix Burton <felixburton2002@gmail.com> 1742428801 +0000	update by push
 e5d234b3768d56a714b360b82486d7dcf1c1daf9 e7829511d2beaccc14b25cd651bbef6837f0ef10 Felix Burton <felixburton2002@gmail.com> 1742428813 +0000	update by push
+e7829511d2beaccc14b25cd651bbef6837f0ef10 16dc0354d39edebbe7342eed9cad9d8e1e2b5ca7 Felix Burton <felixburton2002@gmail.com> 1742603810 +0000	update by push
 
 ===== FILE: ./.git/logs/refs/heads/main =====
 0000000000000000000000000000000000000000 e5d234b3768d56a714b360b82486d7dcf1c1daf9 Felix Burton <felixburton2002@gmail.com> 1742428799 +0000	commit (initial): first commit
 e5d234b3768d56a714b360b82486d7dcf1c1daf9 e5d234b3768d56a714b360b82486d7dcf1c1daf9 Felix Burton <felixburton2002@gmail.com> 1742428799 +0000	Branch: renamed refs/heads/master to refs/heads/main
 e5d234b3768d56a714b360b82486d7dcf1c1daf9 e7829511d2beaccc14b25cd651bbef6837f0ef10 Felix Burton <felixburton2002@gmail.com> 1742428809 +0000	commit: initial commit
+e7829511d2beaccc14b25cd651bbef6837f0ef10 16dc0354d39edebbe7342eed9cad9d8e1e2b5ca7 Felix Burton <felixburton2002@gmail.com> 1742603805 +0000	commit: fixed bugs
 
 ===== FILE: ./LICENSE =====
 MIT License
@@ -3613,6 +3875,1074 @@ in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
+
+===== FILE: ./outputs/ML_features/final_dataset_temperature_320.csv =====
+domain_id,resid,resname,rmsf_320,protein_size,normalized_resid,core_exterior,relative_accessibility,dssp,resname_encoded,core_exterior_encoded,secondary_structure_encoded
+1a0aA00,0,MET,1.3483024,63,0.0,exterior,0.9521276595744681,C,13,1,2
+1a0aA00,1,LYS,1.1942909,63,0.016129032258064516,exterior,0.6341463414634146,T,12,1,2
+1a0aA00,2,ARG,1.0236586,63,0.03225806451612903,exterior,0.7258064516129032,T,2,1,2
+1a0aA00,3,GLU,0.88456726,63,0.04838709677419355,exterior,0.5154639175257731,C,7,1,2
+1a0aA00,4,SER,0.80763894,63,0.06451612903225806,exterior,0.5461538461538461,C,15,1,2
+1a0aA00,5,HSD,0.727569,63,0.08064516129032258,exterior,0.4782608695652174,H,9,1,0
+1a0aA00,6,LYS,0.65099525,63,0.0967741935483871,exterior,0.7073170731707317,H,12,1,0
+1a0aA00,7,HSD,0.57902086,63,0.11290322580645161,exterior,0.7663043478260869,H,9,1,0
+1a0aA00,8,ALA,0.5618905,63,0.12903225806451613,exterior,0.3867924528301887,H,1,1,0
+
+===== FILE: ./outputs/ML_features/final_dataset_temperature_average.csv =====
+domain_id,resid,resname,rmsf_320,protein_size,normalized_resid,core_exterior,relative_accessibility,dssp,resname_encoded,core_exterior_encoded,secondary_structure_encoded,rmsf_average
+1a0aA00,0,MET,1.3483024,63,0.0,exterior,0.9521276595744681,C,13,1,2,1.3483024
+1a0aA00,1,LYS,1.1942909,63,0.016129032258064516,exterior,0.6341463414634146,T,12,1,2,1.1942909
+1a0aA00,2,ARG,1.0236586,63,0.03225806451612903,exterior,0.7258064516129032,T,2,1,2,1.0236586
+1a0aA00,3,GLU,0.88456726,63,0.04838709677419355,exterior,0.5154639175257731,C,7,1,2,0.88456726
+1a0aA00,4,SER,0.80763894,63,0.06451612903225806,exterior,0.5461538461538461,C,15,1,2,0.80763894
+1a0aA00,5,HSD,0.727569,63,0.08064516129032258,exterior,0.4782608695652174,H,9,1,0,0.727569
+1a0aA00,6,LYS,0.65099525,63,0.0967741935483871,exterior,0.7073170731707317,H,12,1,0,0.65099525
+1a0aA00,7,HSD,0.57902086,63,0.11290322580645161,exterior,0.7663043478260869,H,9,1,0,0.57902086
+1a0aA00,8,ALA,0.5618905,63,0.12903225806451613,exterior,0.3867924528301887,H,1,1,0,0.5618905
+
+===== FILE: ./outputs/ML_features/final_dataset_temperature_379.csv =====
+domain_id,resid,resname,rmsf_379,protein_size,normalized_resid,core_exterior,relative_accessibility,dssp,resname_encoded,core_exterior_encoded,secondary_structure_encoded
+1a0aA00,0,MET,1.4772995,63,0.0,exterior,0.9521276595744681,C,13,1,2
+1a0aA00,1,LYS,1.3467977,63,0.016129032258064516,exterior,0.6341463414634146,C,12,1,2
+1a0aA00,2,ARG,1.2123555,63,0.03225806451612903,exterior,0.7258064516129032,C,2,1,2
+1a0aA00,3,GLU,1.0923307,63,0.04838709677419355,exterior,0.5154639175257731,C,7,1,2
+1a0aA00,4,SER,0.9989087,63,0.06451612903225806,exterior,0.5461538461538461,C,15,1,2
+1a0aA00,5,HSD,0.9201416,63,0.08064516129032258,exterior,0.4782608695652174,S,9,1,2
+1a0aA00,6,LYS,0.86415035,63,0.0967741935483871,exterior,0.7073170731707317,C,12,1,2
+1a0aA00,7,HSD,0.8167307,63,0.11290322580645161,exterior,0.7663043478260869,H,9,1,0
+1a0aA00,8,ALA,0.8115508,63,0.12903225806451613,exterior,0.3867924528301887,H,1,1,0
+
+===== FILE: ./outputs/ML_features/final_dataset_temperature_348.csv =====
+domain_id,resid,resname,rmsf_348,protein_size,normalized_resid,core_exterior,relative_accessibility,dssp,resname_encoded,core_exterior_encoded,secondary_structure_encoded
+1a0aA00,0,MET,1.4334629,63,0.0,exterior,0.9521276595744681,C,13,1,2
+1a0aA00,1,LYS,1.2852292,63,0.016129032258064516,exterior,0.6341463414634146,C,12,1,2
+1a0aA00,2,ARG,1.1520655,63,0.03225806451612903,exterior,0.7258064516129032,S,2,1,2
+1a0aA00,3,GLU,1.0097101,63,0.04838709677419355,exterior,0.5154639175257731,S,7,1,2
+1a0aA00,4,SER,0.9123613,63,0.06451612903225806,exterior,0.5461538461538461,S,15,1,2
+1a0aA00,5,HSD,0.83743477,63,0.08064516129032258,exterior,0.4782608695652174,S,9,1,2
+1a0aA00,6,LYS,0.7914341,63,0.0967741935483871,exterior,0.7073170731707317,C,12,1,2
+1a0aA00,7,HSD,0.72878,63,0.11290322580645161,exterior,0.7663043478260869,C,9,1,2
+1a0aA00,8,ALA,0.7131204,63,0.12903225806451613,exterior,0.3867924528301887,C,1,1,2
+
+===== FILE: ./outputs/ML_features/final_dataset_temperature_450.csv =====
+domain_id,resid,resname,rmsf_450,protein_size,normalized_resid,core_exterior,relative_accessibility,dssp,resname_encoded,core_exterior_encoded,secondary_structure_encoded
+1a0aA00,0,MET,1.5951369,63,0.0,exterior,0.9521276595744681,C,13,1,2
+1a0aA00,1,LYS,1.4604483,63,0.016129032258064516,exterior,0.6341463414634146,T,12,1,2
+1a0aA00,2,ARG,1.3335836,63,0.03225806451612903,exterior,0.7258064516129032,T,2,1,2
+1a0aA00,3,GLU,1.2270706,63,0.04838709677419355,exterior,0.5154639175257731,T,7,1,2
+1a0aA00,4,SER,1.1463414,63,0.06451612903225806,exterior,0.5461538461538461,C,15,1,2
+1a0aA00,5,HSD,1.0700214,63,0.08064516129032258,exterior,0.4782608695652174,T,9,1,2
+1a0aA00,6,LYS,1.0232189,63,0.0967741935483871,exterior,0.7073170731707317,T,12,1,2
+1a0aA00,7,HSD,0.9782146,63,0.11290322580645161,exterior,0.7663043478260869,S,9,1,2
+1a0aA00,8,ALA,0.9594307,63,0.12903225806451613,exterior,0.3867924528301887,S,1,1,2
+
+===== FILE: ./outputs/ML_features/final_dataset_temperature_413.csv =====
+domain_id,resid,resname,rmsf_413,protein_size,normalized_resid,core_exterior,relative_accessibility,dssp,resname_encoded,core_exterior_encoded,secondary_structure_encoded
+1a0aA00,0,MET,1.535583,63,0.0,exterior,0.9521276595744681,C,13,1,2
+1a0aA00,1,LYS,1.3957214,63,0.016129032258064516,exterior,0.6341463414634146,C,12,1,2
+1a0aA00,2,ARG,1.2685184,63,0.03225806451612903,exterior,0.7258064516129032,C,2,1,2
+1a0aA00,3,GLU,1.1422019,63,0.04838709677419355,exterior,0.5154639175257731,C,7,1,2
+1a0aA00,4,SER,1.065963,63,0.06451612903225806,exterior,0.5461538461538461,S,15,1,2
+1a0aA00,5,HSD,1.0004411,63,0.08064516129032258,exterior,0.4782608695652174,S,9,1,2
+1a0aA00,6,LYS,0.96211654,63,0.0967741935483871,exterior,0.7073170731707317,C,12,1,2
+1a0aA00,7,HSD,0.92500556,63,0.11290322580645161,exterior,0.7663043478260869,S,9,1,2
+1a0aA00,8,ALA,0.90814066,63,0.12903225806451613,exterior,0.3867924528301887,C,1,1,2
+
+===== FILE: ./outputs/RMSF/replicas/replica_2/450/rmsf_replica2_temperature450.csv =====
+domain_id,resid,resname,rmsf_450
+1a0aA00,0,MET,1.576657
+1a0aA00,1,LYS,1.449326
+1a0aA00,2,ARG,1.3184797
+1a0aA00,3,GLU,1.2020646
+1a0aA00,4,SER,1.1092825
+1a0aA00,5,HSD,1.03165
+1a0aA00,6,LYS,0.9916885
+1a0aA00,7,HSD,0.9476638
+1a0aA00,8,ALA,0.9263482
+
+===== FILE: ./outputs/RMSF/replicas/replica_2/379/rmsf_replica2_temperature379.csv =====
+domain_id,resid,resname,rmsf_379
+1a0aA00,0,MET,1.486446
+1a0aA00,1,LYS,1.3436912
+1a0aA00,2,ARG,1.2161818
+1a0aA00,3,GLU,1.1121883
+1a0aA00,4,SER,1.0212007
+1a0aA00,5,HSD,0.95545167
+1a0aA00,6,LYS,0.93970597
+1a0aA00,7,HSD,0.8710641
+1a0aA00,8,ALA,0.85942423
+
+===== FILE: ./outputs/RMSF/replicas/replica_2/348/rmsf_replica2_temperature348.csv =====
+domain_id,resid,resname,rmsf_348
+1a0aA00,0,MET,1.3438317
+1a0aA00,1,LYS,1.1628337
+1a0aA00,2,ARG,0.98899806
+1a0aA00,3,GLU,0.78073865
+1a0aA00,4,SER,0.66014934
+1a0aA00,5,HSD,0.5683823
+1a0aA00,6,LYS,0.5556865
+1a0aA00,7,HSD,0.54684573
+1a0aA00,8,ALA,0.5087722
+
+===== FILE: ./outputs/RMSF/replicas/replica_2/413/rmsf_replica2_temperature413.csv =====
+domain_id,resid,resname,rmsf_413
+1a0aA00,0,MET,1.5180621
+1a0aA00,1,LYS,1.3557527
+1a0aA00,2,ARG,1.2430704
+1a0aA00,3,GLU,1.084986
+1a0aA00,4,SER,0.9785675
+1a0aA00,5,HSD,0.8939153
+1a0aA00,6,LYS,0.8452332
+1a0aA00,7,HSD,0.82844514
+1a0aA00,8,ALA,0.8422664
+
+===== FILE: ./outputs/RMSF/replicas/replica_2/320/rmsf_replica2_temperature320.csv =====
+domain_id,resid,resname,rmsf_320
+1a0aA00,0,MET,1.1646829
+1a0aA00,1,LYS,1.0131446
+1a0aA00,2,ARG,0.8290087
+1a0aA00,3,GLU,0.72083545
+1a0aA00,4,SER,0.69494045
+1a0aA00,5,HSD,0.6436807
+1a0aA00,6,LYS,0.5260527
+1a0aA00,7,HSD,0.5048531
+1a0aA00,8,ALA,0.57275873
+
+===== FILE: ./outputs/RMSF/replicas/replica_4/450/rmsf_replica4_temperature450.csv =====
+domain_id,resid,resname,rmsf_450
+1a0aA00,0,MET,1.5668608
+1a0aA00,1,LYS,1.4300203
+1a0aA00,2,ARG,1.2976882
+1a0aA00,3,GLU,1.1884801
+1a0aA00,4,SER,1.113481
+1a0aA00,5,HSD,1.037043
+1a0aA00,6,LYS,0.9926844
+1a0aA00,7,HSD,0.95811844
+1a0aA00,8,ALA,0.9481535
+
+===== FILE: ./outputs/RMSF/replicas/replica_4/379/rmsf_replica4_temperature379.csv =====
+domain_id,resid,resname,rmsf_379
+1a0aA00,0,MET,1.7543902
+1a0aA00,1,LYS,1.6238198
+1a0aA00,2,ARG,1.4525822
+1a0aA00,3,GLU,1.333633
+1a0aA00,4,SER,1.2282166
+1a0aA00,5,HSD,1.126744
+1a0aA00,6,LYS,1.0666938
+1a0aA00,7,HSD,1.02929
+1a0aA00,8,ALA,0.97728163
+
+===== FILE: ./outputs/RMSF/replicas/replica_4/348/rmsf_replica4_temperature348.csv =====
+domain_id,resid,resname,rmsf_348
+1a0aA00,0,MET,1.4582078
+1a0aA00,1,LYS,1.3222756
+1a0aA00,2,ARG,1.2127962
+1a0aA00,3,GLU,1.1044127
+1a0aA00,4,SER,1.0218058
+1a0aA00,5,HSD,0.9168606
+1a0aA00,6,LYS,0.873983
+1a0aA00,7,HSD,0.744759
+1a0aA00,8,ALA,0.71165997
+
+===== FILE: ./outputs/RMSF/replicas/replica_4/413/rmsf_replica4_temperature413.csv =====
+domain_id,resid,resname,rmsf_413
+1a0aA00,0,MET,1.5753905
+1a0aA00,1,LYS,1.4575608
+1a0aA00,2,ARG,1.3407844
+1a0aA00,3,GLU,1.2185456
+1a0aA00,4,SER,1.1469868
+1a0aA00,5,HSD,1.0841664
+1a0aA00,6,LYS,1.0452274
+1a0aA00,7,HSD,0.96590567
+1a0aA00,8,ALA,0.9230095
+
+===== FILE: ./outputs/RMSF/replicas/replica_4/320/rmsf_replica4_temperature320.csv =====
+domain_id,resid,resname,rmsf_320
+1a0aA00,0,MET,1.2959518
+1a0aA00,1,LYS,1.1318272
+1a0aA00,2,ARG,0.937099
+1a0aA00,3,GLU,0.78042084
+1a0aA00,4,SER,0.662699
+1a0aA00,5,HSD,0.60237837
+1a0aA00,6,LYS,0.58158493
+1a0aA00,7,HSD,0.52150637
+1a0aA00,8,ALA,0.5021656
+
+===== FILE: ./outputs/RMSF/replicas/replica_0/450/rmsf_replica0_temperature450.csv =====
+domain_id,resid,resname,rmsf_450
+1a0aA00,0,MET,1.6510745
+1a0aA00,1,LYS,1.511354
+1a0aA00,2,ARG,1.3840455
+1a0aA00,3,GLU,1.2687927
+1a0aA00,4,SER,1.1770655
+1a0aA00,5,HSD,1.0775056
+1a0aA00,6,LYS,1.0026208
+1a0aA00,7,HSD,0.92482156
+1a0aA00,8,ALA,0.87528
+
+===== FILE: ./outputs/RMSF/replicas/replica_0/379/rmsf_replica0_temperature379.csv =====
+domain_id,resid,resname,rmsf_379
+1a0aA00,0,MET,1.3748816
+1a0aA00,1,LYS,1.204677
+1a0aA00,2,ARG,1.0503837
+1a0aA00,3,GLU,0.9162814
+1a0aA00,4,SER,0.8170538
+1a0aA00,5,HSD,0.75173515
+1a0aA00,6,LYS,0.7013601
+1a0aA00,7,HSD,0.67923796
+1a0aA00,8,ALA,0.7133326
+
+===== FILE: ./outputs/RMSF/replicas/replica_0/348/rmsf_replica0_temperature348.csv =====
+domain_id,resid,resname,rmsf_348
+1a0aA00,0,MET,1.5692973
+1a0aA00,1,LYS,1.4050725
+1a0aA00,2,ARG,1.2579968
+1a0aA00,3,GLU,1.0861257
+1a0aA00,4,SER,0.95714736
+1a0aA00,5,HSD,0.870287
+1a0aA00,6,LYS,0.7932945
+1a0aA00,7,HSD,0.72311026
+1a0aA00,8,ALA,0.72987825
+
+===== FILE: ./outputs/RMSF/replicas/replica_0/413/rmsf_replica0_temperature413.csv =====
+domain_id,resid,resname,rmsf_413
+1a0aA00,0,MET,1.5348728
+1a0aA00,1,LYS,1.383954
+1a0aA00,2,ARG,1.2424289
+1a0aA00,3,GLU,1.124453
+1a0aA00,4,SER,1.0636528
+1a0aA00,5,HSD,0.9922364
+1a0aA00,6,LYS,0.96015614
+1a0aA00,7,HSD,0.9305036
+1a0aA00,8,ALA,0.93326944
+
+===== FILE: ./outputs/RMSF/replicas/replica_0/320/rmsf_replica0_temperature320.csv =====
+domain_id,resid,resname,rmsf_320
+1a0aA00,0,MET,1.5170379
+1a0aA00,1,LYS,1.3901875
+1a0aA00,2,ARG,1.2544051
+1a0aA00,3,GLU,1.0989321
+1a0aA00,4,SER,1.01632
+1a0aA00,5,HSD,0.873037
+1a0aA00,6,LYS,0.7593873
+1a0aA00,7,HSD,0.6777895
+1a0aA00,8,ALA,0.58092916
+
+===== FILE: ./outputs/RMSF/replicas/replica_1/450/rmsf_replica1_temperature450.csv =====
+domain_id,resid,resname,rmsf_450
+1a0aA00,0,MET,1.5921198
+1a0aA00,1,LYS,1.4617525
+1a0aA00,2,ARG,1.343816
+1a0aA00,3,GLU,1.2477936
+1a0aA00,4,SER,1.1704543
+1a0aA00,5,HSD,1.0975823
+1a0aA00,6,LYS,1.0598528
+1a0aA00,7,HSD,1.0091052
+1a0aA00,8,ALA,1.0253049
+
+===== FILE: ./outputs/RMSF/replicas/replica_1/379/rmsf_replica1_temperature379.csv =====
+domain_id,resid,resname,rmsf_379
+1a0aA00,0,MET,1.4234052
+1a0aA00,1,LYS,1.3028092
+1a0aA00,2,ARG,1.1737462
+1a0aA00,3,GLU,1.0883411
+1a0aA00,4,SER,1.0238752
+1a0aA00,5,HSD,0.9739617
+1a0aA00,6,LYS,0.9107688
+1a0aA00,7,HSD,0.850515
+1a0aA00,8,ALA,0.82572573
+
+===== FILE: ./outputs/RMSF/replicas/replica_1/348/rmsf_replica1_temperature348.csv =====
+domain_id,resid,resname,rmsf_348
+1a0aA00,0,MET,1.4276665
+1a0aA00,1,LYS,1.3018955
+1a0aA00,2,ARG,1.2027749
+1a0aA00,3,GLU,1.0919421
+1a0aA00,4,SER,1.0101075
+1a0aA00,5,HSD,0.94147146
+1a0aA00,6,LYS,0.8805832
+1a0aA00,7,HSD,0.8448707
+1a0aA00,8,ALA,0.83776975
+
+===== FILE: ./outputs/RMSF/replicas/replica_1/413/rmsf_replica1_temperature413.csv =====
+domain_id,resid,resname,rmsf_413
+1a0aA00,0,MET,1.5977552
+1a0aA00,1,LYS,1.4646237
+1a0aA00,2,ARG,1.3380047
+1a0aA00,3,GLU,1.2248296
+1a0aA00,4,SER,1.1503581
+1a0aA00,5,HSD,1.0700762
+1a0aA00,6,LYS,1.0123969
+1a0aA00,7,HSD,0.9607783
+1a0aA00,8,ALA,0.917867
+
+===== FILE: ./outputs/RMSF/replicas/replica_1/320/rmsf_replica1_temperature320.csv =====
+domain_id,resid,resname,rmsf_320
+1a0aA00,0,MET,1.3012784
+1a0aA00,1,LYS,1.114217
+1a0aA00,2,ARG,0.926238
+1a0aA00,3,GLU,0.80870616
+1a0aA00,4,SER,0.7295469
+1a0aA00,5,HSD,0.6783448
+1a0aA00,6,LYS,0.6098052
+1a0aA00,7,HSD,0.502893
+1a0aA00,8,ALA,0.48675847
+
+===== FILE: ./outputs/RMSF/replicas/replica_3/450/rmsf_replica3_temperature450.csv =====
+domain_id,resid,resname,rmsf_450
+1a0aA00,0,MET,1.5889727
+1a0aA00,1,LYS,1.4497886
+1a0aA00,2,ARG,1.3238894
+1a0aA00,3,GLU,1.2282224
+1a0aA00,4,SER,1.1614239
+1a0aA00,5,HSD,1.1063261
+1a0aA00,6,LYS,1.0692474
+1a0aA00,7,HSD,1.051364
+1a0aA00,8,ALA,1.0220671
+
+===== FILE: ./outputs/RMSF/replicas/replica_3/379/rmsf_replica3_temperature379.csv =====
+domain_id,resid,resname,rmsf_379
+1a0aA00,0,MET,1.3473746
+1a0aA00,1,LYS,1.2589906
+1a0aA00,2,ARG,1.1688836
+1a0aA00,3,GLU,1.0112096
+1a0aA00,4,SER,0.90419716
+1a0aA00,5,HSD,0.79281574
+1a0aA00,6,LYS,0.70222276
+1a0aA00,7,HSD,0.65354645
+1a0aA00,8,ALA,0.68198967
+
+===== FILE: ./outputs/RMSF/replicas/replica_3/348/rmsf_replica3_temperature348.csv =====
+domain_id,resid,resname,rmsf_348
+1a0aA00,0,MET,1.3683108
+1a0aA00,1,LYS,1.2340688
+1a0aA00,2,ARG,1.0977619
+1a0aA00,3,GLU,0.985331
+1a0aA00,4,SER,0.9125965
+1a0aA00,5,HSD,0.8901723
+1a0aA00,6,LYS,0.8536232
+1a0aA00,7,HSD,0.78431404
+1a0aA00,8,ALA,0.77752215
+
+===== FILE: ./outputs/RMSF/replicas/replica_3/413/rmsf_replica3_temperature413.csv =====
+domain_id,resid,resname,rmsf_413
+1a0aA00,0,MET,1.4518346
+1a0aA00,1,LYS,1.3167164
+1a0aA00,2,ARG,1.1783038
+1a0aA00,3,GLU,1.0581955
+1a0aA00,4,SER,0.99025
+1a0aA00,5,HSD,0.9618113
+1a0aA00,6,LYS,0.9475691
+1a0aA00,7,HSD,0.9393947
+1a0aA00,8,ALA,0.92429096
+
+===== FILE: ./outputs/RMSF/replicas/replica_3/320/rmsf_replica3_temperature320.csv =====
+domain_id,resid,resname,rmsf_320
+1a0aA00,0,MET,1.462561
+1a0aA00,1,LYS,1.3220783
+1a0aA00,2,ARG,1.1715425
+1a0aA00,3,GLU,1.0139415
+1a0aA00,4,SER,0.93468857
+1a0aA00,5,HSD,0.84040415
+1a0aA00,6,LYS,0.7781459
+1a0aA00,7,HSD,0.68806225
+1a0aA00,8,ALA,0.66684055
+
+===== FILE: ./outputs/RMSF/replica_average/450/rmsf_replica_average_temperature450.csv =====
+domain_id,resid,resname,rmsf_450
+1a0aA00,0,MET,1.5951369
+1a0aA00,1,LYS,1.4604483
+1a0aA00,2,ARG,1.3335836
+1a0aA00,3,GLU,1.2270706
+1a0aA00,4,SER,1.1463414
+1a0aA00,5,HSD,1.0700214
+1a0aA00,6,LYS,1.0232189
+1a0aA00,7,HSD,0.9782146
+1a0aA00,8,ALA,0.9594307
+
+===== FILE: ./outputs/RMSF/replica_average/379/rmsf_replica_average_temperature379.csv =====
+domain_id,resid,resname,rmsf_379
+1a0aA00,0,MET,1.4772995
+1a0aA00,1,LYS,1.3467977
+1a0aA00,2,ARG,1.2123555
+1a0aA00,3,GLU,1.0923307
+1a0aA00,4,SER,0.9989087
+1a0aA00,5,HSD,0.9201416
+1a0aA00,6,LYS,0.86415035
+1a0aA00,7,HSD,0.8167307
+1a0aA00,8,ALA,0.8115508
+
+===== FILE: ./outputs/RMSF/replica_average/348/rmsf_replica_average_temperature348.csv =====
+domain_id,resid,resname,rmsf_348
+1a0aA00,0,MET,1.4334629
+1a0aA00,1,LYS,1.2852292
+1a0aA00,2,ARG,1.1520655
+1a0aA00,3,GLU,1.0097101
+1a0aA00,4,SER,0.9123613
+1a0aA00,5,HSD,0.83743477
+1a0aA00,6,LYS,0.7914341
+1a0aA00,7,HSD,0.72878
+1a0aA00,8,ALA,0.7131204
+
+===== FILE: ./outputs/RMSF/replica_average/413/rmsf_replica_average_temperature413.csv =====
+domain_id,resid,resname,rmsf_413
+1a0aA00,0,MET,1.535583
+1a0aA00,1,LYS,1.3957214
+1a0aA00,2,ARG,1.2685184
+1a0aA00,3,GLU,1.1422019
+1a0aA00,4,SER,1.065963
+1a0aA00,5,HSD,1.0004411
+1a0aA00,6,LYS,0.96211654
+1a0aA00,7,HSD,0.92500556
+1a0aA00,8,ALA,0.90814066
+
+===== FILE: ./outputs/RMSF/replica_average/average/rmsf_all_temperatures_all_replicas.csv =====
+domain_id,resid,resname,rmsf_320,rmsf_348,rmsf_379,rmsf_413,rmsf_450,rmsf_average
+1a0aA00,0,MET,1.3483024,1.4334629,1.4772995,1.535583,1.5951369,1.477957
+1a0aA00,1,LYS,1.1942909,1.2852292,1.3467977,1.3957214,1.4604483,1.3364975
+1a0aA00,2,ARG,1.0236586,1.1520655,1.2123555,1.2685184,1.3335836,1.1980364
+1a0aA00,3,GLU,0.88456726,1.0097101,1.0923307,1.1422019,1.2270706,1.0711762
+1a0aA00,4,SER,0.80763894,0.9123613,0.9989087,1.065963,1.1463414,0.98624265
+1a0aA00,5,HSD,0.727569,0.83743477,0.9201416,1.0004411,1.0700214,0.91112155
+1a0aA00,6,LYS,0.65099525,0.7914341,0.86415035,0.96211654,1.0232189,0.858383
+1a0aA00,7,HSD,0.57902086,0.72878,0.8167307,0.92500556,0.9782146,0.8055504
+1a0aA00,8,ALA,0.5618905,0.7131204,0.8115508,0.90814066,0.9594307,0.7908266
+
+===== FILE: ./outputs/RMSF/replica_average/320/rmsf_replica_average_temperature320.csv =====
+domain_id,resid,resname,rmsf_320
+1a0aA00,0,MET,1.3483024
+1a0aA00,1,LYS,1.1942909
+1a0aA00,2,ARG,1.0236586
+1a0aA00,3,GLU,0.88456726
+1a0aA00,4,SER,0.80763894
+1a0aA00,5,HSD,0.727569
+1a0aA00,6,LYS,0.65099525
+1a0aA00,7,HSD,0.57902086
+1a0aA00,8,ALA,0.5618905
+
+===== FILE: ./outputs/pdbs/1a0aA00.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     -13.223 -22.589  20.858  0.00  0.00           C  
+ATOM      2 HY1  MET A   0     -13.643 -23.328  21.385  0.00  0.00           H  
+ATOM      3 HY2  MET A   0     -13.780 -22.385  20.054  0.00  0.00           H  
+ATOM      4 HY3  MET A   0     -13.134 -21.772  21.428  0.00  0.00           H  
+ATOM      5 CY   MET A   0     -12.313 -22.879  20.560  0.00  0.00           C  
+ATOM      6 OY   MET A   0     -11.893 -22.140  20.033  0.00  0.00           O  
+ATOM      7 N    MET A   0     -12.141 -23.806  20.892  1.00  0.00           N  
+ATOM      8 HN   MET A   0     -12.561 -24.545  21.419  0.00  0.00           H  
+ATOM      9 CA   MET A   0     -10.786 -24.237  20.447  1.00  0.00           C  
+
+===== FILE: ./outputs/pdbs/1a02F00.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140      16.299   1.661 -33.895  0.00  0.00           C  
+ATOM      2 HY1  ARG A 140      17.097   2.095 -33.477  0.00  0.00           H  
+ATOM      3 HY2  ARG A 140      15.484   1.847 -33.347  0.00  0.00           H  
+ATOM      4 HY3  ARG A 140      16.171   2.006 -34.825  0.00  0.00           H  
+ATOM      5 CY   ARG A 140      16.448   0.673 -33.933  0.00  0.00           C  
+ATOM      6 OY   ARG A 140      15.650   0.239 -34.350  0.00  0.00           O  
+ATOM      7 N    ARG A 140      17.343   0.463 -33.539  1.00  0.00           N  
+ATOM      8 HN   ARG A 140      18.141   0.897 -33.121  0.00  0.00           H  
+ATOM      9 CA   ARG A 140      17.565  -1.011 -33.595  1.00  0.00           C  
+
+===== FILE: ./outputs/frames/replica_2/450/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140      38.150-224.830 126.690  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140      38.150-224.830 126.690  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140      38.150-224.830 126.690  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140      38.150-224.830 126.690  0.00  0.00            H  
+ATOM      5 CY   ARG A 140      38.150-224.830 126.690  0.00  0.00            C  
+ATOM      6 OY   ARG A 140      38.150-224.830 126.690  0.00  0.00            O  
+ATOM      7 N    ARG A 140      38.150-224.830 126.690  1.00  0.00            N  
+ATOM      8 HN   ARG A 140      38.150-224.830 126.690  0.00  0.00            H  
+ATOM      9 CA   ARG A 140      38.150-224.830 126.690  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_2/450/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0      49.450   9.460 145.460  0.00  0.00            C  
+ATOM      2 HY1  MET A   0      49.450   9.460 145.460  0.00  0.00            H  
+ATOM      3 HY2  MET A   0      49.450   9.460 145.460  0.00  0.00            H  
+ATOM      4 HY3  MET A   0      49.450   9.460 145.460  0.00  0.00            H  
+ATOM      5 CY   MET A   0      49.450   9.460 145.460  0.00  0.00            C  
+ATOM      6 OY   MET A   0      49.450   9.460 145.460  0.00  0.00            O  
+ATOM      7 N    MET A   0      49.450   9.460 145.460  1.00  0.00            N  
+ATOM      8 HN   MET A   0      49.450   9.460 145.460  0.00  0.00            H  
+ATOM      9 CA   MET A   0      49.450   9.460 145.460  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_2/379/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140      76.490  98.920 145.990  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140      76.490  98.920 145.990  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140      76.490  98.920 145.990  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140      76.490  98.920 145.990  0.00  0.00            H  
+ATOM      5 CY   ARG A 140      76.490  98.920 145.990  0.00  0.00            C  
+ATOM      6 OY   ARG A 140      76.490  98.920 145.990  0.00  0.00            O  
+ATOM      7 N    ARG A 140      76.490  98.920 145.990  1.00  0.00            N  
+ATOM      8 HN   ARG A 140      76.490  98.920 145.990  0.00  0.00            H  
+ATOM      9 CA   ARG A 140      76.490  98.920 145.990  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_2/379/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     105.530 164.810 -14.970  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     105.530 164.810 -14.970  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     105.530 164.810 -14.970  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     105.530 164.810 -14.970  0.00  0.00            H  
+ATOM      5 CY   MET A   0     105.530 164.810 -14.970  0.00  0.00            C  
+ATOM      6 OY   MET A   0     105.530 164.810 -14.970  0.00  0.00            O  
+ATOM      7 N    MET A   0     105.530 164.810 -14.970  1.00  0.00            N  
+ATOM      8 HN   MET A   0     105.530 164.810 -14.970  0.00  0.00            H  
+ATOM      9 CA   MET A   0     105.530 164.810 -14.970  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_2/348/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     114.820  94.070 -38.730  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     114.820  94.070 -38.730  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     114.820  94.070 -38.730  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     114.820  94.070 -38.730  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     114.820  94.070 -38.730  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     114.820  94.070 -38.730  0.00  0.00            O  
+ATOM      7 N    ARG A 140     114.820  94.070 -38.730  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     114.820  94.070 -38.730  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     114.820  94.070 -38.730  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_2/348/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0      -6.600 -69.240 106.550  0.00  0.00            C  
+ATOM      2 HY1  MET A   0      -6.600 -69.240 106.550  0.00  0.00            H  
+ATOM      3 HY2  MET A   0      -6.600 -69.240 106.550  0.00  0.00            H  
+ATOM      4 HY3  MET A   0      -6.600 -69.240 106.550  0.00  0.00            H  
+ATOM      5 CY   MET A   0      -6.600 -69.240 106.550  0.00  0.00            C  
+ATOM      6 OY   MET A   0      -6.600 -69.240 106.550  0.00  0.00            O  
+ATOM      7 N    MET A   0      -6.600 -69.240 106.550  1.00  0.00            N  
+ATOM      8 HN   MET A   0      -6.600 -69.240 106.550  0.00  0.00            H  
+ATOM      9 CA   MET A   0      -6.600 -69.240 106.550  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_2/413/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     358.730 -67.080 192.100  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     358.730 -67.080 192.100  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     358.730 -67.080 192.100  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     358.730 -67.080 192.100  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     358.730 -67.080 192.100  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     358.730 -67.080 192.100  0.00  0.00            O  
+ATOM      7 N    ARG A 140     358.730 -67.080 192.100  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     358.730 -67.080 192.100  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     358.730 -67.080 192.100  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_2/413/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     -35.500 -23.390  26.430  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     -35.500 -23.390  26.430  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     -35.500 -23.390  26.430  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     -35.500 -23.390  26.430  0.00  0.00            H  
+ATOM      5 CY   MET A   0     -35.500 -23.390  26.430  0.00  0.00            C  
+ATOM      6 OY   MET A   0     -35.500 -23.390  26.430  0.00  0.00            O  
+ATOM      7 N    MET A   0     -35.500 -23.390  26.430  1.00  0.00            N  
+ATOM      8 HN   MET A   0     -35.500 -23.390  26.430  0.00  0.00            H  
+ATOM      9 CA   MET A   0     -35.500 -23.390  26.430  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_2/320/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     351.100 -37.860 224.700  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     351.100 -37.860 224.700  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     351.100 -37.860 224.700  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     351.100 -37.860 224.700  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     351.100 -37.860 224.700  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     351.100 -37.860 224.700  0.00  0.00            O  
+ATOM      7 N    ARG A 140     351.100 -37.860 224.700  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     351.100 -37.860 224.700  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     351.100 -37.860 224.700  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_2/320/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     -70.770 142.130 -99.930  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     -70.770 142.130 -99.930  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     -70.770 142.130 -99.930  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     -70.770 142.130 -99.930  0.00  0.00            H  
+ATOM      5 CY   MET A   0     -70.770 142.130 -99.930  0.00  0.00            C  
+ATOM      6 OY   MET A   0     -70.770 142.130 -99.930  0.00  0.00            O  
+ATOM      7 N    MET A   0     -70.770 142.130 -99.930  1.00  0.00            N  
+ATOM      8 HN   MET A   0     -70.770 142.130 -99.930  0.00  0.00            H  
+ATOM      9 CA   MET A   0     -70.770 142.130 -99.930  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_4/450/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140    -115.450 208.680 -52.340  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140    -115.450 208.680 -52.340  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140    -115.450 208.680 -52.340  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140    -115.450 208.680 -52.340  0.00  0.00            H  
+ATOM      5 CY   ARG A 140    -115.450 208.680 -52.340  0.00  0.00            C  
+ATOM      6 OY   ARG A 140    -115.450 208.680 -52.340  0.00  0.00            O  
+ATOM      7 N    ARG A 140    -115.450 208.680 -52.340  1.00  0.00            N  
+ATOM      8 HN   ARG A 140    -115.450 208.680 -52.340  0.00  0.00            H  
+ATOM      9 CA   ARG A 140    -115.450 208.680 -52.340  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_4/450/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0      80.350-105.930-213.540  0.00  0.00            C  
+ATOM      2 HY1  MET A   0      80.350-105.930-213.540  0.00  0.00            H  
+ATOM      3 HY2  MET A   0      80.350-105.930-213.540  0.00  0.00            H  
+ATOM      4 HY3  MET A   0      80.350-105.930-213.540  0.00  0.00            H  
+ATOM      5 CY   MET A   0      80.350-105.930-213.540  0.00  0.00            C  
+ATOM      6 OY   MET A   0      80.350-105.930-213.540  0.00  0.00            O  
+ATOM      7 N    MET A   0      80.350-105.930-213.540  1.00  0.00            N  
+ATOM      8 HN   MET A   0      80.350-105.930-213.540  0.00  0.00            H  
+ATOM      9 CA   MET A   0      80.350-105.930-213.540  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_4/379/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140      25.150 338.900 229.660  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140      25.150 338.900 229.660  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140      25.150 338.900 229.660  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140      25.150 338.900 229.660  0.00  0.00            H  
+ATOM      5 CY   ARG A 140      25.150 338.900 229.660  0.00  0.00            C  
+ATOM      6 OY   ARG A 140      25.150 338.900 229.660  0.00  0.00            O  
+ATOM      7 N    ARG A 140      25.150 338.900 229.660  1.00  0.00            N  
+ATOM      8 HN   ARG A 140      25.150 338.900 229.660  0.00  0.00            H  
+ATOM      9 CA   ARG A 140      25.150 338.900 229.660  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_4/379/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0    -117.290  32.370-268.500  0.00  0.00            C  
+ATOM      2 HY1  MET A   0    -117.290  32.370-268.500  0.00  0.00            H  
+ATOM      3 HY2  MET A   0    -117.290  32.370-268.500  0.00  0.00            H  
+ATOM      4 HY3  MET A   0    -117.290  32.370-268.500  0.00  0.00            H  
+ATOM      5 CY   MET A   0    -117.290  32.370-268.500  0.00  0.00            C  
+ATOM      6 OY   MET A   0    -117.290  32.370-268.500  0.00  0.00            O  
+ATOM      7 N    MET A   0    -117.290  32.370-268.500  1.00  0.00            N  
+ATOM      8 HN   MET A   0    -117.290  32.370-268.500  0.00  0.00            H  
+ATOM      9 CA   MET A   0    -117.290  32.370-268.500  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_4/348/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140      18.870  56.840 270.850  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140      18.870  56.840 270.850  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140      18.870  56.840 270.850  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140      18.870  56.840 270.850  0.00  0.00            H  
+ATOM      5 CY   ARG A 140      18.870  56.840 270.850  0.00  0.00            C  
+ATOM      6 OY   ARG A 140      18.870  56.840 270.850  0.00  0.00            O  
+ATOM      7 N    ARG A 140      18.870  56.840 270.850  1.00  0.00            N  
+ATOM      8 HN   ARG A 140      18.870  56.840 270.850  0.00  0.00            H  
+ATOM      9 CA   ARG A 140      18.870  56.840 270.850  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_4/348/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     157.580 106.370 185.640  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     157.580 106.370 185.640  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     157.580 106.370 185.640  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     157.580 106.370 185.640  0.00  0.00            H  
+ATOM      5 CY   MET A   0     157.580 106.370 185.640  0.00  0.00            C  
+ATOM      6 OY   MET A   0     157.580 106.370 185.640  0.00  0.00            O  
+ATOM      7 N    MET A   0     157.580 106.370 185.640  1.00  0.00            N  
+ATOM      8 HN   MET A   0     157.580 106.370 185.640  0.00  0.00            H  
+ATOM      9 CA   MET A   0     157.580 106.370 185.640  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_4/413/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     -54.000 -56.960  55.780  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     -54.000 -56.960  55.780  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     -54.000 -56.960  55.780  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     -54.000 -56.960  55.780  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     -54.000 -56.960  55.780  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     -54.000 -56.960  55.780  0.00  0.00            O  
+ATOM      7 N    ARG A 140     -54.000 -56.960  55.780  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     -54.000 -56.960  55.780  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     -54.000 -56.960  55.780  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_4/413/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0      -2.040  39.200  90.030  0.00  0.00            C  
+ATOM      2 HY1  MET A   0      -2.040  39.200  90.030  0.00  0.00            H  
+ATOM      3 HY2  MET A   0      -2.040  39.200  90.030  0.00  0.00            H  
+ATOM      4 HY3  MET A   0      -2.040  39.200  90.030  0.00  0.00            H  
+ATOM      5 CY   MET A   0      -2.040  39.200  90.030  0.00  0.00            C  
+ATOM      6 OY   MET A   0      -2.040  39.200  90.030  0.00  0.00            O  
+ATOM      7 N    MET A   0      -2.040  39.200  90.030  1.00  0.00            N  
+ATOM      8 HN   MET A   0      -2.040  39.200  90.030  0.00  0.00            H  
+ATOM      9 CA   MET A   0      -2.040  39.200  90.030  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_4/320/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140       7.090-117.960  45.340  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140       7.090-117.960  45.340  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140       7.090-117.960  45.340  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140       7.090-117.960  45.340  0.00  0.00            H  
+ATOM      5 CY   ARG A 140       7.090-117.960  45.340  0.00  0.00            C  
+ATOM      6 OY   ARG A 140       7.090-117.960  45.340  0.00  0.00            O  
+ATOM      7 N    ARG A 140       7.090-117.960  45.340  1.00  0.00            N  
+ATOM      8 HN   ARG A 140       7.090-117.960  45.340  0.00  0.00            H  
+ATOM      9 CA   ARG A 140       7.090-117.960  45.340  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_4/320/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     126.180  28.310 -31.350  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     126.180  28.310 -31.350  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     126.180  28.310 -31.350  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     126.180  28.310 -31.350  0.00  0.00            H  
+ATOM      5 CY   MET A   0     126.180  28.310 -31.350  0.00  0.00            C  
+ATOM      6 OY   MET A   0     126.180  28.310 -31.350  0.00  0.00            O  
+ATOM      7 N    MET A   0     126.180  28.310 -31.350  1.00  0.00            N  
+ATOM      8 HN   MET A   0     126.180  28.310 -31.350  0.00  0.00            H  
+ATOM      9 CA   MET A   0     126.180  28.310 -31.350  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_0/450/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     119.490  53.590 205.540  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     119.490  53.590 205.540  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     119.490  53.590 205.540  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     119.490  53.590 205.540  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     119.490  53.590 205.540  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     119.490  53.590 205.540  0.00  0.00            O  
+ATOM      7 N    ARG A 140     119.490  53.590 205.540  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     119.490  53.590 205.540  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     119.490  53.590 205.540  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_0/450/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     277.330 -46.270  -6.970  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     277.330 -46.270  -6.970  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     277.330 -46.270  -6.970  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     277.330 -46.270  -6.970  0.00  0.00            H  
+ATOM      5 CY   MET A   0     277.330 -46.270  -6.970  0.00  0.00            C  
+ATOM      6 OY   MET A   0     277.330 -46.270  -6.970  0.00  0.00            O  
+ATOM      7 N    MET A   0     277.330 -46.270  -6.970  1.00  0.00            N  
+ATOM      8 HN   MET A   0     277.330 -46.270  -6.970  0.00  0.00            H  
+ATOM      9 CA   MET A   0     277.330 -46.270  -6.970  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_0/379/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     286.190  53.910-119.060  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     286.190  53.910-119.060  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     286.190  53.910-119.060  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     286.190  53.910-119.060  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     286.190  53.910-119.060  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     286.190  53.910-119.060  0.00  0.00            O  
+ATOM      7 N    ARG A 140     286.190  53.910-119.060  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     286.190  53.910-119.060  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     286.190  53.910-119.060  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_0/379/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     115.500  -7.610-138.030  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     115.500  -7.610-138.030  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     115.500  -7.610-138.030  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     115.500  -7.610-138.030  0.00  0.00            H  
+ATOM      5 CY   MET A   0     115.500  -7.610-138.030  0.00  0.00            C  
+ATOM      6 OY   MET A   0     115.500  -7.610-138.030  0.00  0.00            O  
+ATOM      7 N    MET A   0     115.500  -7.610-138.030  1.00  0.00            N  
+ATOM      8 HN   MET A   0     115.500  -7.610-138.030  0.00  0.00            H  
+ATOM      9 CA   MET A   0     115.500  -7.610-138.030  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_0/348/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140       7.010 158.680 111.020  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140       7.010 158.680 111.020  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140       7.010 158.680 111.020  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140       7.010 158.680 111.020  0.00  0.00            H  
+ATOM      5 CY   ARG A 140       7.010 158.680 111.020  0.00  0.00            C  
+ATOM      6 OY   ARG A 140       7.010 158.680 111.020  0.00  0.00            O  
+ATOM      7 N    ARG A 140       7.010 158.680 111.020  1.00  0.00            N  
+ATOM      8 HN   ARG A 140       7.010 158.680 111.020  0.00  0.00            H  
+ATOM      9 CA   ARG A 140       7.010 158.680 111.020  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_0/348/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     204.940  27.560  92.320  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     204.940  27.560  92.320  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     204.940  27.560  92.320  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     204.940  27.560  92.320  0.00  0.00            H  
+ATOM      5 CY   MET A   0     204.940  27.560  92.320  0.00  0.00            C  
+ATOM      6 OY   MET A   0     204.940  27.560  92.320  0.00  0.00            O  
+ATOM      7 N    MET A   0     204.940  27.560  92.320  1.00  0.00            N  
+ATOM      8 HN   MET A   0     204.940  27.560  92.320  0.00  0.00            H  
+ATOM      9 CA   MET A   0     204.940  27.560  92.320  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_0/413/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140      45.730 114.660-103.630  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140      45.730 114.660-103.630  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140      45.730 114.660-103.630  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140      45.730 114.660-103.630  0.00  0.00            H  
+ATOM      5 CY   ARG A 140      45.730 114.660-103.630  0.00  0.00            C  
+ATOM      6 OY   ARG A 140      45.730 114.660-103.630  0.00  0.00            O  
+ATOM      7 N    ARG A 140      45.730 114.660-103.630  1.00  0.00            N  
+ATOM      8 HN   ARG A 140      45.730 114.660-103.630  0.00  0.00            H  
+ATOM      9 CA   ARG A 140      45.730 114.660-103.630  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_0/413/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     131.150 -26.510 -96.150  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     131.150 -26.510 -96.150  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     131.150 -26.510 -96.150  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     131.150 -26.510 -96.150  0.00  0.00            H  
+ATOM      5 CY   MET A   0     131.150 -26.510 -96.150  0.00  0.00            C  
+ATOM      6 OY   MET A   0     131.150 -26.510 -96.150  0.00  0.00            O  
+ATOM      7 N    MET A   0     131.150 -26.510 -96.150  1.00  0.00            N  
+ATOM      8 HN   MET A   0     131.150 -26.510 -96.150  0.00  0.00            H  
+ATOM      9 CA   MET A   0     131.150 -26.510 -96.150  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_0/320/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     180.840 -42.240  96.420  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     180.840 -42.240  96.420  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     180.840 -42.240  96.420  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     180.840 -42.240  96.420  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     180.840 -42.240  96.420  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     180.840 -42.240  96.420  0.00  0.00            O  
+ATOM      7 N    ARG A 140     180.840 -42.240  96.420  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     180.840 -42.240  96.420  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     180.840 -42.240  96.420  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_0/320/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     195.640  59.670-110.600  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     195.640  59.670-110.600  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     195.640  59.670-110.600  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     195.640  59.670-110.600  0.00  0.00            H  
+ATOM      5 CY   MET A   0     195.640  59.670-110.600  0.00  0.00            C  
+ATOM      6 OY   MET A   0     195.640  59.670-110.600  0.00  0.00            O  
+ATOM      7 N    MET A   0     195.640  59.670-110.600  1.00  0.00            N  
+ATOM      8 HN   MET A   0     195.640  59.670-110.600  0.00  0.00            H  
+ATOM      9 CA   MET A   0     195.640  59.670-110.600  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_1/450/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140      36.020 -76.710-109.780  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140      36.020 -76.710-109.780  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140      36.020 -76.710-109.780  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140      36.020 -76.710-109.780  0.00  0.00            H  
+ATOM      5 CY   ARG A 140      36.020 -76.710-109.780  0.00  0.00            C  
+ATOM      6 OY   ARG A 140      36.020 -76.710-109.780  0.00  0.00            O  
+ATOM      7 N    ARG A 140      36.020 -76.710-109.780  1.00  0.00            N  
+ATOM      8 HN   ARG A 140      36.020 -76.710-109.780  0.00  0.00            H  
+ATOM      9 CA   ARG A 140      36.020 -76.710-109.780  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_1/450/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     300.360 -39.740 140.290  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     300.360 -39.740 140.290  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     300.360 -39.740 140.290  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     300.360 -39.740 140.290  0.00  0.00            H  
+ATOM      5 CY   MET A   0     300.360 -39.740 140.290  0.00  0.00            C  
+ATOM      6 OY   MET A   0     300.360 -39.740 140.290  0.00  0.00            O  
+ATOM      7 N    MET A   0     300.360 -39.740 140.290  1.00  0.00            N  
+ATOM      8 HN   MET A   0     300.360 -39.740 140.290  0.00  0.00            H  
+ATOM      9 CA   MET A   0     300.360 -39.740 140.290  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_1/379/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140      32.830-100.760  97.990  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140      32.830-100.760  97.990  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140      32.830-100.760  97.990  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140      32.830-100.760  97.990  0.00  0.00            H  
+ATOM      5 CY   ARG A 140      32.830-100.760  97.990  0.00  0.00            C  
+ATOM      6 OY   ARG A 140      32.830-100.760  97.990  0.00  0.00            O  
+ATOM      7 N    ARG A 140      32.830-100.760  97.990  1.00  0.00            N  
+ATOM      8 HN   ARG A 140      32.830-100.760  97.990  0.00  0.00            H  
+ATOM      9 CA   ARG A 140      32.830-100.760  97.990  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_1/379/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0      40.420   9.130 254.430  0.00  0.00            C  
+ATOM      2 HY1  MET A   0      40.420   9.130 254.430  0.00  0.00            H  
+ATOM      3 HY2  MET A   0      40.420   9.130 254.430  0.00  0.00            H  
+ATOM      4 HY3  MET A   0      40.420   9.130 254.430  0.00  0.00            H  
+ATOM      5 CY   MET A   0      40.420   9.130 254.430  0.00  0.00            C  
+ATOM      6 OY   MET A   0      40.420   9.130 254.430  0.00  0.00            O  
+ATOM      7 N    MET A   0      40.420   9.130 254.430  1.00  0.00            N  
+ATOM      8 HN   MET A   0      40.420   9.130 254.430  0.00  0.00            H  
+ATOM      9 CA   MET A   0      40.420   9.130 254.430  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_1/348/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140      92.600 -51.830  88.910  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140      92.600 -51.830  88.910  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140      92.600 -51.830  88.910  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140      92.600 -51.830  88.910  0.00  0.00            H  
+ATOM      5 CY   ARG A 140      92.600 -51.830  88.910  0.00  0.00            C  
+ATOM      6 OY   ARG A 140      92.600 -51.830  88.910  0.00  0.00            O  
+ATOM      7 N    ARG A 140      92.600 -51.830  88.910  1.00  0.00            N  
+ATOM      8 HN   ARG A 140      92.600 -51.830  88.910  0.00  0.00            H  
+ATOM      9 CA   ARG A 140      92.600 -51.830  88.910  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_1/348/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0      -1.820 -48.950  94.020  0.00  0.00            C  
+ATOM      2 HY1  MET A   0      -1.820 -48.950  94.020  0.00  0.00            H  
+ATOM      3 HY2  MET A   0      -1.820 -48.950  94.020  0.00  0.00            H  
+ATOM      4 HY3  MET A   0      -1.820 -48.950  94.020  0.00  0.00            H  
+ATOM      5 CY   MET A   0      -1.820 -48.950  94.020  0.00  0.00            C  
+ATOM      6 OY   MET A   0      -1.820 -48.950  94.020  0.00  0.00            O  
+ATOM      7 N    MET A   0      -1.820 -48.950  94.020  1.00  0.00            N  
+ATOM      8 HN   MET A   0      -1.820 -48.950  94.020  0.00  0.00            H  
+ATOM      9 CA   MET A   0      -1.820 -48.950  94.020  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_1/413/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140      37.560  98.880 236.320  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140      37.560  98.880 236.320  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140      37.560  98.880 236.320  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140      37.560  98.880 236.320  0.00  0.00            H  
+ATOM      5 CY   ARG A 140      37.560  98.880 236.320  0.00  0.00            C  
+ATOM      6 OY   ARG A 140      37.560  98.880 236.320  0.00  0.00            O  
+ATOM      7 N    ARG A 140      37.560  98.880 236.320  1.00  0.00            N  
+ATOM      8 HN   ARG A 140      37.560  98.880 236.320  0.00  0.00            H  
+ATOM      9 CA   ARG A 140      37.560  98.880 236.320  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_1/413/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0      35.810 -78.840 -40.590  0.00  0.00            C  
+ATOM      2 HY1  MET A   0      35.810 -78.840 -40.590  0.00  0.00            H  
+ATOM      3 HY2  MET A   0      35.810 -78.840 -40.590  0.00  0.00            H  
+ATOM      4 HY3  MET A   0      35.810 -78.840 -40.590  0.00  0.00            H  
+ATOM      5 CY   MET A   0      35.810 -78.840 -40.590  0.00  0.00            C  
+ATOM      6 OY   MET A   0      35.810 -78.840 -40.590  0.00  0.00            O  
+ATOM      7 N    MET A   0      35.810 -78.840 -40.590  1.00  0.00            N  
+ATOM      8 HN   MET A   0      35.810 -78.840 -40.590  0.00  0.00            H  
+ATOM      9 CA   MET A   0      35.810 -78.840 -40.590  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_1/320/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     -33.380 139.920 -25.280  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     -33.380 139.920 -25.280  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     -33.380 139.920 -25.280  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     -33.380 139.920 -25.280  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     -33.380 139.920 -25.280  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     -33.380 139.920 -25.280  0.00  0.00            O  
+ATOM      7 N    ARG A 140     -33.380 139.920 -25.280  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     -33.380 139.920 -25.280  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     -33.380 139.920 -25.280  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_1/320/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0      35.600  56.340 -21.860  0.00  0.00            C  
+ATOM      2 HY1  MET A   0      35.600  56.340 -21.860  0.00  0.00            H  
+ATOM      3 HY2  MET A   0      35.600  56.340 -21.860  0.00  0.00            H  
+ATOM      4 HY3  MET A   0      35.600  56.340 -21.860  0.00  0.00            H  
+ATOM      5 CY   MET A   0      35.600  56.340 -21.860  0.00  0.00            C  
+ATOM      6 OY   MET A   0      35.600  56.340 -21.860  0.00  0.00            O  
+ATOM      7 N    MET A   0      35.600  56.340 -21.860  1.00  0.00            N  
+ATOM      8 HN   MET A   0      35.600  56.340 -21.860  0.00  0.00            H  
+ATOM      9 CA   MET A   0      35.600  56.340 -21.860  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_3/450/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     -31.150 226.830   2.110  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     -31.150 226.830   2.110  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     -31.150 226.830   2.110  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     -31.150 226.830   2.110  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     -31.150 226.830   2.110  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     -31.150 226.830   2.110  0.00  0.00            O  
+ATOM      7 N    ARG A 140     -31.150 226.830   2.110  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     -31.150 226.830   2.110  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     -31.150 226.830   2.110  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_3/450/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0      59.180 112.900  98.670  0.00  0.00            C  
+ATOM      2 HY1  MET A   0      59.180 112.900  98.670  0.00  0.00            H  
+ATOM      3 HY2  MET A   0      59.180 112.900  98.670  0.00  0.00            H  
+ATOM      4 HY3  MET A   0      59.180 112.900  98.670  0.00  0.00            H  
+ATOM      5 CY   MET A   0      59.180 112.900  98.670  0.00  0.00            C  
+ATOM      6 OY   MET A   0      59.180 112.900  98.670  0.00  0.00            O  
+ATOM      7 N    MET A   0      59.180 112.900  98.670  1.00  0.00            N  
+ATOM      8 HN   MET A   0      59.180 112.900  98.670  0.00  0.00            H  
+ATOM      9 CA   MET A   0      59.180 112.900  98.670  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_3/379/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     -15.060  74.050  87.110  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     -15.060  74.050  87.110  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     -15.060  74.050  87.110  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     -15.060  74.050  87.110  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     -15.060  74.050  87.110  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     -15.060  74.050  87.110  0.00  0.00            O  
+ATOM      7 N    ARG A 140     -15.060  74.050  87.110  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     -15.060  74.050  87.110  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     -15.060  74.050  87.110  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_3/379/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     282.160  11.220-202.430  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     282.160  11.220-202.430  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     282.160  11.220-202.430  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     282.160  11.220-202.430  0.00  0.00            H  
+ATOM      5 CY   MET A   0     282.160  11.220-202.430  0.00  0.00            C  
+ATOM      6 OY   MET A   0     282.160  11.220-202.430  0.00  0.00            O  
+ATOM      7 N    MET A   0     282.160  11.220-202.430  1.00  0.00            N  
+ATOM      8 HN   MET A   0     282.160  11.220-202.430  0.00  0.00            H  
+ATOM      9 CA   MET A   0     282.160  11.220-202.430  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_3/348/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     150.710  13.520  48.820  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     150.710  13.520  48.820  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     150.710  13.520  48.820  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     150.710  13.520  48.820  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     150.710  13.520  48.820  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     150.710  13.520  48.820  0.00  0.00            O  
+ATOM      7 N    ARG A 140     150.710  13.520  48.820  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     150.710  13.520  48.820  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     150.710  13.520  48.820  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_3/348/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0      55.400-148.450  42.270  0.00  0.00            C  
+ATOM      2 HY1  MET A   0      55.400-148.450  42.270  0.00  0.00            H  
+ATOM      3 HY2  MET A   0      55.400-148.450  42.270  0.00  0.00            H  
+ATOM      4 HY3  MET A   0      55.400-148.450  42.270  0.00  0.00            H  
+ATOM      5 CY   MET A   0      55.400-148.450  42.270  0.00  0.00            C  
+ATOM      6 OY   MET A   0      55.400-148.450  42.270  0.00  0.00            O  
+ATOM      7 N    MET A   0      55.400-148.450  42.270  1.00  0.00            N  
+ATOM      8 HN   MET A   0      55.400-148.450  42.270  0.00  0.00            H  
+ATOM      9 CA   MET A   0      55.400-148.450  42.270  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_3/413/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     -60.170-126.820 224.170  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     -60.170-126.820 224.170  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     -60.170-126.820 224.170  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     -60.170-126.820 224.170  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     -60.170-126.820 224.170  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     -60.170-126.820 224.170  0.00  0.00            O  
+ATOM      7 N    ARG A 140     -60.170-126.820 224.170  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     -60.170-126.820 224.170  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     -60.170-126.820 224.170  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_3/413/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0     510.430 -78.580 -88.660  0.00  0.00            C  
+ATOM      2 HY1  MET A   0     510.430 -78.580 -88.660  0.00  0.00            H  
+ATOM      3 HY2  MET A   0     510.430 -78.580 -88.660  0.00  0.00            H  
+ATOM      4 HY3  MET A   0     510.430 -78.580 -88.660  0.00  0.00            H  
+ATOM      5 CY   MET A   0     510.430 -78.580 -88.660  0.00  0.00            C  
+ATOM      6 OY   MET A   0     510.430 -78.580 -88.660  0.00  0.00            O  
+ATOM      7 N    MET A   0     510.430 -78.580 -88.660  1.00  0.00            N  
+ATOM      8 HN   MET A   0     510.430 -78.580 -88.660  0.00  0.00            H  
+ATOM      9 CA   MET A   0     510.430 -78.580 -88.660  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_3/320/1a02F00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    ARG A 140     -14.750 194.240 -36.580  0.00  0.00            C  
+ATOM      2 HY1  ARG A 140     -14.750 194.240 -36.580  0.00  0.00            H  
+ATOM      3 HY2  ARG A 140     -14.750 194.240 -36.580  0.00  0.00            H  
+ATOM      4 HY3  ARG A 140     -14.750 194.240 -36.580  0.00  0.00            H  
+ATOM      5 CY   ARG A 140     -14.750 194.240 -36.580  0.00  0.00            C  
+ATOM      6 OY   ARG A 140     -14.750 194.240 -36.580  0.00  0.00            O  
+ATOM      7 N    ARG A 140     -14.750 194.240 -36.580  1.00  0.00            N  
+ATOM      8 HN   ARG A 140     -14.750 194.240 -36.580  0.00  0.00            H  
+ATOM      9 CA   ARG A 140     -14.750 194.240 -36.580  1.00  0.00            C  
+
+===== FILE: ./outputs/frames/replica_3/320/1a0aA00_frame.pdb =====
+CRYST1  100.000  100.000  100.000  90.00  90.00  90.00 P 1           1
+ATOM      1 N    MET A   0       1.320  70.200 131.660  0.00  0.00            C  
+ATOM      2 HY1  MET A   0       1.320  70.200 131.660  0.00  0.00            H  
+ATOM      3 HY2  MET A   0       1.320  70.200 131.660  0.00  0.00            H  
+ATOM      4 HY3  MET A   0       1.320  70.200 131.660  0.00  0.00            H  
+ATOM      5 CY   MET A   0       1.320  70.200 131.660  0.00  0.00            C  
+ATOM      6 OY   MET A   0       1.320  70.200 131.660  0.00  0.00            O  
+ATOM      7 N    MET A   0       1.320  70.200 131.660  1.00  0.00            N  
+ATOM      8 HN   MET A   0       1.320  70.200 131.660  0.00  0.00            H  
+ATOM      9 CA   MET A   0       1.320  70.200 131.660  1.00  0.00            C  
 
 ===== FILE: ./src/mdcath.egg-info/SOURCES.txt =====
 LICENSE
@@ -3672,8 +5002,8 @@ Processing module for voxelizing protein structures using aposteriori.
 import os
 import logging
 import subprocess
-from typing import Dict, Any, Optional, List, Tuple
-from concurrent.futures import ProcessPoolExecutor, as_completed
+import traceback
+import sys
 
 ===== FILE: ./src/mdcath/processing/__init__.py =====
 """
